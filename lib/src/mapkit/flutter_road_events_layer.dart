@@ -9,6 +9,8 @@ import 'package:yandex_maps_navikit/src/mapkit/road_events_layer/road_events_lay
 import 'package:yandex_maps_navikit/src/mapkit/road_events_layer/style_provider.dart'
     as mapkit_road_events_layer_style_provider;
 
+part 'flutter_road_events_layer.impl.dart';
+
 class FlutterRoadEventsLayerFactory {
   FlutterRoadEventsLayerFactory._();
 
@@ -20,9 +22,9 @@ class FlutterRoadEventsLayerFactory {
   static void setRoadEventsStyleProvider(
       mapkit_road_events_layer_style_provider.RoadEventsLayerStyleProvider
           styleProvider) {
-    _FlutterRoadEventsLayerFactory_setRoadEventsStyleProvider(
-        mapkit_road_events_layer_style_provider.RoadEventsLayerStyleProvider
-            .getNativePtr(styleProvider));
+    _setRoadEventsStyleProvider(
+      styleProvider,
+    );
   }
 
   /// Creates the
@@ -34,25 +36,8 @@ class FlutterRoadEventsLayerFactory {
   static mapkit_road_events_layer_road_events_layer.RoadEventsLayer
       createRouteRoadEventsLayerWithPresetStyleProvider(
           mapkit_map_map_window.MapWindow mapWindow) {
-    return mapkit_road_events_layer_road_events_layer.RoadEventsLayer.fromNativePtr(
-        _FlutterRoadEventsLayerFactory_createRouteRoadEventsLayerWithPresetStyleProvider(
-            mapkit_map_map_window.MapWindow.getNativePtr(mapWindow)));
+    return _createRouteRoadEventsLayerWithPresetStyleProvider(
+      mapWindow,
+    );
   }
 }
-
-final void Function(
-    ffi.Pointer<
-        ffi
-        .Void>) _FlutterRoadEventsLayerFactory_setRoadEventsStyleProvider = lib
-    .library
-    .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_mapkit_FlutterRoadEventsLayerFactory_setRoadEventsStyleProvider')
-    .asFunction();
-final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)
-    _FlutterRoadEventsLayerFactory_createRouteRoadEventsLayerWithPresetStyleProvider =
-    lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_mapkit_FlutterRoadEventsLayerFactory_createRouteRoadEventsLayerWithPresetStyleProvider')
-        .asFunction();

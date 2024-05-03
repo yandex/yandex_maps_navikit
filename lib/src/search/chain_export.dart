@@ -1,2 +1,2 @@
 export 'package:yandex_maps_navikit/src/search/chain.dart'
-    hide SearchChainNative, SearchChainContainerExtension;
+    hide SearchChainImpl, SearchChainNative, SearchChainContainerExtension;

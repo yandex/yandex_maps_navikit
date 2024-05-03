@@ -1,2 +1,4 @@
 export 'package:yandex_maps_navikit/src/mapkit/location/error.dart'
-    hide LocationUnavailableErrorContainerExtension;
+    hide
+        LocationUnavailableErrorContainerExtension,
+        LocationUnavailableErrorImpl;

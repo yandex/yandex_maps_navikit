@@ -1,6 +1,9 @@
 export 'package:yandex_maps_navikit/src/search/availability.dart'
     hide
-        SearchDayGroupContainerExtension,
+        SearchAvailabilityImpl,
         SearchAvailabilityContainerExtension,
-        SearchTimeRangeNative,
-        SearchTimeRangeContainerExtension;
+        SearchDayGroupContainerExtension,
+        SearchTimeRangeContainerExtension,
+        SearchTimeRangeImpl,
+        SearchDayGroupImpl,
+        SearchTimeRangeNative;

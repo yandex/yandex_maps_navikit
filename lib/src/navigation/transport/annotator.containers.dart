@@ -14,7 +14,8 @@ extension TransportAnnotationLanguageContainerExtension
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, TransportAnnotationLanguage.toPointer);
+    return string_map.toNativeMap(
+        obj, TransportAnnotationLanguageImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -43,7 +44,8 @@ extension TransportAnnotationLanguageContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, TransportAnnotationLanguage.toPointer);
+    return vector.toNativeVector(
+        obj, TransportAnnotationLanguageImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -66,8 +68,10 @@ extension TransportAnnotationLanguageContainerExtension
 
   static string_map.StringMap<TransportAnnotationLanguage> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(ptr,
-        (val) => TransportAnnotationLanguage.fromPointer(val, needFree: false));
+    return string_map.StringMap(
+        ptr,
+        (val) =>
+            TransportAnnotationLanguageImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<TransportAnnotationLanguage>>
@@ -90,8 +94,10 @@ extension TransportAnnotationLanguageContainerExtension
 
   static vector.Vector<TransportAnnotationLanguage> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(ptr,
-        (val) => TransportAnnotationLanguage.fromPointer(val, needFree: false));
+    return vector.Vector(
+        ptr,
+        (val) =>
+            TransportAnnotationLanguageImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<TransportAnnotationLanguage>>

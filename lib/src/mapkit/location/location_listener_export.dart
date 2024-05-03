@@ -1,1 +1,2 @@
-export 'package:yandex_maps_navikit/src/mapkit/location/location_listener.dart';
+export 'package:yandex_maps_navikit/src/mapkit/location/location_listener.dart'
+    hide LocationListenerImpl;

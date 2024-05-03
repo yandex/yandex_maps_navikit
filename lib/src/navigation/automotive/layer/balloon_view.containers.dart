@@ -13,7 +13,7 @@ extension BalloonViewContainerExtension on BalloonView {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, BalloonView.getNativePtr);
+    return string_map.toNativeMap(obj, BalloonViewImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -39,7 +39,7 @@ extension BalloonViewContainerExtension on BalloonView {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, BalloonView.getNativePtr);
+    return vector.toNativeVector(obj, BalloonViewImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -64,7 +64,7 @@ extension BalloonViewContainerExtension on BalloonView {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => BalloonView.fromOptionalPtr(
+        (val) => BalloonViewImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -90,7 +90,7 @@ extension BalloonViewContainerExtension on BalloonView {
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => BalloonView.fromOptionalPtr(
+        (val) => BalloonViewImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 

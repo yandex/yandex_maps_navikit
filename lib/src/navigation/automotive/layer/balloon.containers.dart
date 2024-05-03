@@ -6,108 +6,6 @@ part of 'balloon.dart';
 // ContainerGenerator
 // **************************************************************************
 
-extension ManoeuvreContainerExtension on Manoeuvre {
-  static ffi.Pointer<ffi.Void> toNativeMap(
-      core.Map<core.String, Manoeuvre?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, Manoeuvre.toPointer);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeMapVector(
-      core.Map<core.String, core.List<Manoeuvre?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, toNativeVector);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeMapDictionary(
-      core.Map<core.String, core.Map<core.String, Manoeuvre?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, toNativeMap);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVector(core.List<Manoeuvre?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, Manoeuvre.toPointer);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVectorVector(
-      core.List<core.List<Manoeuvre?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, toNativeVector);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVectorDictionary(
-      core.List<core.Map<core.String, Manoeuvre?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, toNativeMap);
-  }
-
-  static string_map.StringMap<Manoeuvre> toPlatformMap(
-      ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr, (val) => Manoeuvre.fromPointer(val, needFree: false));
-  }
-
-  static string_map.StringMap<vector.Vector<Manoeuvre>> toPlatformMapVector(
-      ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static string_map.StringMap<string_map.StringMap<Manoeuvre>>
-      toPlatformMapDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<Manoeuvre> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr, (val) => Manoeuvre.fromPointer(val, needFree: false));
-  }
-
-  static vector.Vector<vector.Vector<Manoeuvre>> toPlatformVectorVector(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<string_map.StringMap<Manoeuvre>>
-      toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-}
-
 extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
   static ffi.Pointer<ffi.Void> toNativeMap(
       core.Map<core.String, ManoeuvreBalloon?>? obj) {
@@ -115,7 +13,7 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, ManoeuvreBalloon.toPointer);
+    return string_map.toNativeMap(obj, ManoeuvreBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -142,7 +40,7 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, ManoeuvreBalloon.toPointer);
+    return vector.toNativeVector(obj, ManoeuvreBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -166,7 +64,7 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
   static string_map.StringMap<ManoeuvreBalloon> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => ManoeuvreBalloon.fromPointer(val, needFree: false));
+        ptr, (val) => ManoeuvreBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<ManoeuvreBalloon>>
@@ -190,7 +88,7 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
   static vector.Vector<ManoeuvreBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => ManoeuvreBalloon.fromPointer(val, needFree: false));
+        ptr, (val) => ManoeuvreBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<ManoeuvreBalloon>> toPlatformVectorVector(
@@ -220,7 +118,8 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, ManoeuvreWithLaneSignBalloon.toPointer);
+    return string_map.toNativeMap(
+        obj, ManoeuvreWithLaneSignBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -249,7 +148,8 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, ManoeuvreWithLaneSignBalloon.toPointer);
+    return vector.toNativeVector(
+        obj, ManoeuvreWithLaneSignBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -275,7 +175,7 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
     return string_map.StringMap(
         ptr,
         (val) =>
-            ManoeuvreWithLaneSignBalloon.fromPointer(val, needFree: false));
+            ManoeuvreWithLaneSignBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<ManoeuvreWithLaneSignBalloon>>
@@ -302,7 +202,7 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
     return vector.Vector(
         ptr,
         (val) =>
-            ManoeuvreWithLaneSignBalloon.fromPointer(val, needFree: false));
+            ManoeuvreWithLaneSignBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<ManoeuvreWithLaneSignBalloon>>
@@ -331,7 +231,7 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, LaneSignBalloon.toPointer);
+    return string_map.toNativeMap(obj, LaneSignBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -358,7 +258,7 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, LaneSignBalloon.toPointer);
+    return vector.toNativeVector(obj, LaneSignBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -382,7 +282,7 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
   static string_map.StringMap<LaneSignBalloon> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => LaneSignBalloon.fromPointer(val, needFree: false));
+        ptr, (val) => LaneSignBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<LaneSignBalloon>>
@@ -406,7 +306,7 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
   static vector.Vector<LaneSignBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => LaneSignBalloon.fromPointer(val, needFree: false));
+        ptr, (val) => LaneSignBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<LaneSignBalloon>> toPlatformVectorVector(
@@ -435,7 +335,7 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, RouteSummaryBalloon.toPointer);
+    return string_map.toNativeMap(obj, RouteSummaryBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -463,7 +363,7 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, RouteSummaryBalloon.toPointer);
+    return vector.toNativeVector(obj, RouteSummaryBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -486,8 +386,8 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
 
   static string_map.StringMap<RouteSummaryBalloon> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr, (val) => RouteSummaryBalloon.fromPointer(val, needFree: false));
+    return string_map.StringMap(ptr,
+        (val) => RouteSummaryBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<RouteSummaryBalloon>>
@@ -510,8 +410,8 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
 
   static vector.Vector<RouteSummaryBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr, (val) => RouteSummaryBalloon.fromPointer(val, needFree: false));
+    return vector.Vector(ptr,
+        (val) => RouteSummaryBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<RouteSummaryBalloon>>
@@ -540,7 +440,7 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, AlternativeBalloon.toPointer);
+    return string_map.toNativeMap(obj, AlternativeBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -567,7 +467,7 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, AlternativeBalloon.toPointer);
+    return vector.toNativeVector(obj, AlternativeBalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -591,7 +491,7 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
   static string_map.StringMap<AlternativeBalloon> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => AlternativeBalloon.fromPointer(val, needFree: false));
+        ptr, (val) => AlternativeBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<AlternativeBalloon>>
@@ -615,7 +515,7 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
   static vector.Vector<AlternativeBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => AlternativeBalloon.fromPointer(val, needFree: false));
+        ptr, (val) => AlternativeBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<AlternativeBalloon>>
@@ -637,6 +537,108 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
   }
 }
 
+extension ManoeuvreContainerExtension on Manoeuvre {
+  static ffi.Pointer<ffi.Void> toNativeMap(
+      core.Map<core.String, Manoeuvre?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, ManoeuvreImpl.toPointer);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeMapVector(
+      core.Map<core.String, core.List<Manoeuvre?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, toNativeVector);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeMapDictionary(
+      core.Map<core.String, core.Map<core.String, Manoeuvre?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, toNativeMap);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVector(core.List<Manoeuvre?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, ManoeuvreImpl.toPointer);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVectorVector(
+      core.List<core.List<Manoeuvre?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, toNativeVector);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVectorDictionary(
+      core.List<core.Map<core.String, Manoeuvre?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, toNativeMap);
+  }
+
+  static string_map.StringMap<Manoeuvre> toPlatformMap(
+      ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr, (val) => ManoeuvreImpl.fromPointer(val, needFree: false));
+  }
+
+  static string_map.StringMap<vector.Vector<Manoeuvre>> toPlatformMapVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static string_map.StringMap<string_map.StringMap<Manoeuvre>>
+      toPlatformMapDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<Manoeuvre> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr, (val) => ManoeuvreImpl.fromPointer(val, needFree: false));
+  }
+
+  static vector.Vector<vector.Vector<Manoeuvre>> toPlatformVectorVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<string_map.StringMap<Manoeuvre>>
+      toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+}
+
 extension BalloonContainerExtension on Balloon {
   static ffi.Pointer<ffi.Void> toNativeMap(
       core.Map<core.String, Balloon?>? obj) {
@@ -644,7 +646,7 @@ extension BalloonContainerExtension on Balloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, Balloon.toPointer);
+    return string_map.toNativeMap(obj, BalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -670,7 +672,7 @@ extension BalloonContainerExtension on Balloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, Balloon.toPointer);
+    return vector.toNativeVector(obj, BalloonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -694,7 +696,7 @@ extension BalloonContainerExtension on Balloon {
   static string_map.StringMap<Balloon> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => Balloon.fromPointer(val, needFree: false));
+        ptr, (val) => BalloonImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<Balloon>> toPlatformMapVector(
@@ -717,7 +719,7 @@ extension BalloonContainerExtension on Balloon {
 
   static vector.Vector<Balloon> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => Balloon.fromPointer(val, needFree: false));
+        ptr, (val) => BalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<Balloon>> toPlatformVectorVector(

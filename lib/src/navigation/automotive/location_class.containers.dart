@@ -13,7 +13,7 @@ extension LocationClassContainerExtension on LocationClass {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, LocationClass.toPointer);
+    return string_map.toNativeMap(obj, LocationClassImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -39,7 +39,7 @@ extension LocationClassContainerExtension on LocationClass {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, LocationClass.toPointer);
+    return vector.toNativeVector(obj, LocationClassImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -63,7 +63,7 @@ extension LocationClassContainerExtension on LocationClass {
   static string_map.StringMap<LocationClass> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => LocationClass.fromPointer(val, needFree: false));
+        ptr, (val) => LocationClassImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<LocationClass>> toPlatformMapVector(
@@ -87,7 +87,7 @@ extension LocationClassContainerExtension on LocationClass {
   static vector.Vector<LocationClass> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => LocationClass.fromPointer(val, needFree: false));
+        ptr, (val) => LocationClassImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<LocationClass>> toPlatformVectorVector(

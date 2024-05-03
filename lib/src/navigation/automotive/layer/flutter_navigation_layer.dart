@@ -13,6 +13,8 @@ import 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/styl
 import 'package:yandex_maps_navikit/src/navigation/automotive/navigation.dart'
     as navigation_automotive_navigation;
 
+part 'flutter_navigation_layer.impl.dart';
+
 class FlutterNavigationLayerFactory {
   FlutterNavigationLayerFactory._();
 
@@ -24,9 +26,9 @@ class FlutterNavigationLayerFactory {
   static void setStyleProvider(
       navigation_automotive_layer_styling_style_provider.NavigationStyleProvider
           styleProvider) {
-    _FlutterNavigationLayerFactory_setStyleProvider(
-        navigation_automotive_layer_styling_style_provider
-            .NavigationStyleProvider.getNativePtr(styleProvider));
+    _setStyleProvider(
+      styleProvider,
+    );
   }
 
   /// Adds navigation layer on the map using the StyleProvider set by
@@ -37,30 +39,10 @@ class FlutterNavigationLayerFactory {
           mapkit_road_events_layer_road_events_layer.RoadEventsLayer
               roadEventsLayer,
           navigation_automotive_navigation.Navigation navigation) {
-    return navigation_automotive_layer_navigation_layer.NavigationLayer
-        .fromNativePtr(
-            _FlutterNavigationLayerFactory_createNavigationLayerWithPresetStyleProvider(
-                mapkit_map_map_window.MapWindow.getNativePtr(mapWindow),
-                mapkit_road_events_layer_road_events_layer.RoadEventsLayer
-                    .getNativePtr(roadEventsLayer),
-                navigation_automotive_navigation.Navigation.getNativePtr(
-                    navigation)));
+    return _createNavigationLayerWithPresetStyleProvider(
+      mapWindow,
+      roadEventsLayer,
+      navigation,
+    );
   }
 }
-
-final void Function(
-    ffi.Pointer<
-        ffi.Void>) _FlutterNavigationLayerFactory_setStyleProvider = lib.library
-    .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_layer_FlutterNavigationLayerFactory_setStyleProvider')
-    .asFunction();
-final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
-    _FlutterNavigationLayerFactory_createNavigationLayerWithPresetStyleProvider =
-    lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-                        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_navigation_automotive_layer_FlutterNavigationLayerFactory_createNavigationLayerWithPresetStyleProvider')
-        .asFunction();

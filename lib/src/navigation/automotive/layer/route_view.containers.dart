@@ -13,7 +13,7 @@ extension RouteViewContainerExtension on RouteView {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, RouteView.getNativePtr);
+    return string_map.toNativeMap(obj, RouteViewImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -39,7 +39,7 @@ extension RouteViewContainerExtension on RouteView {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, RouteView.getNativePtr);
+    return vector.toNativeVector(obj, RouteViewImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -64,8 +64,8 @@ extension RouteViewContainerExtension on RouteView {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) =>
-            RouteView.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
+        (val) => RouteViewImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static string_map.StringMap<vector.Vector<RouteView>> toPlatformMapVector(
@@ -89,8 +89,8 @@ extension RouteViewContainerExtension on RouteView {
   static vector.Vector<RouteView> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) =>
-            RouteView.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
+        (val) => RouteViewImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<RouteView>> toPlatformVectorVector(

@@ -13,7 +13,7 @@ extension NavigationJamStyleContainerExtension on NavigationJamStyle {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, NavigationJamStyle.getNativePtr);
+    return string_map.toNativeMap(obj, NavigationJamStyleImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -40,7 +40,7 @@ extension NavigationJamStyleContainerExtension on NavigationJamStyle {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationJamStyle.getNativePtr);
+    return vector.toNativeVector(obj, NavigationJamStyleImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -65,7 +65,7 @@ extension NavigationJamStyleContainerExtension on NavigationJamStyle {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationJamStyle.fromOptionalPtr(
+        (val) => NavigationJamStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -91,7 +91,7 @@ extension NavigationJamStyleContainerExtension on NavigationJamStyle {
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationJamStyle.fromOptionalPtr(
+        (val) => NavigationJamStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -121,7 +121,7 @@ extension NavigationRouteStyleContainerExtension on NavigationRouteStyle {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, NavigationRouteStyle.getNativePtr);
+    return string_map.toNativeMap(obj, NavigationRouteStyleImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -149,7 +149,7 @@ extension NavigationRouteStyleContainerExtension on NavigationRouteStyle {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationRouteStyle.getNativePtr);
+    return vector.toNativeVector(obj, NavigationRouteStyleImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -174,7 +174,7 @@ extension NavigationRouteStyleContainerExtension on NavigationRouteStyle {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationRouteStyle.fromOptionalPtr(
+        (val) => NavigationRouteStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -200,7 +200,7 @@ extension NavigationRouteStyleContainerExtension on NavigationRouteStyle {
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationRouteStyle.fromOptionalPtr(
+        (val) => NavigationRouteStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 

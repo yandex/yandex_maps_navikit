@@ -13,7 +13,7 @@ extension CameraContainerExtension on Camera {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, Camera.getNativePtr);
+    return string_map.toNativeMap(obj, CameraImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -39,7 +39,7 @@ extension CameraContainerExtension on Camera {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, Camera.getNativePtr);
+    return vector.toNativeVector(obj, CameraImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -63,8 +63,8 @@ extension CameraContainerExtension on Camera {
   static string_map.StringMap<Camera> toPlatformMap(ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) =>
-            Camera.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
+        (val) => CameraImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static string_map.StringMap<vector.Vector<Camera>> toPlatformMapVector(
@@ -88,8 +88,8 @@ extension CameraContainerExtension on Camera {
   static vector.Vector<Camera> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) =>
-            Camera.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
+        (val) => CameraImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<Camera>> toPlatformVectorVector(
@@ -118,7 +118,7 @@ extension CameraModeContainerExtension on CameraMode {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, CameraMode.toPointer);
+    return string_map.toNativeMap(obj, CameraModeImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -144,7 +144,7 @@ extension CameraModeContainerExtension on CameraMode {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, CameraMode.toPointer);
+    return vector.toNativeVector(obj, CameraModeImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -168,7 +168,7 @@ extension CameraModeContainerExtension on CameraMode {
   static string_map.StringMap<CameraMode> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => CameraMode.fromPointer(val, needFree: false));
+        ptr, (val) => CameraModeImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<CameraMode>> toPlatformMapVector(
@@ -191,7 +191,7 @@ extension CameraModeContainerExtension on CameraMode {
 
   static vector.Vector<CameraMode> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => CameraMode.fromPointer(val, needFree: false));
+        ptr, (val) => CameraModeImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<CameraMode>> toPlatformVectorVector(

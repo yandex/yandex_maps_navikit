@@ -13,7 +13,7 @@ extension SpeedLimitStatusContainerExtension on SpeedLimitStatus {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, SpeedLimitStatus.toPointer);
+    return string_map.toNativeMap(obj, SpeedLimitStatusImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -40,7 +40,7 @@ extension SpeedLimitStatusContainerExtension on SpeedLimitStatus {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, SpeedLimitStatus.toPointer);
+    return vector.toNativeVector(obj, SpeedLimitStatusImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -64,7 +64,7 @@ extension SpeedLimitStatusContainerExtension on SpeedLimitStatus {
   static string_map.StringMap<SpeedLimitStatus> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => SpeedLimitStatus.fromPointer(val, needFree: false));
+        ptr, (val) => SpeedLimitStatusImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<SpeedLimitStatus>>
@@ -88,7 +88,7 @@ extension SpeedLimitStatusContainerExtension on SpeedLimitStatus {
   static vector.Vector<SpeedLimitStatus> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => SpeedLimitStatus.fromPointer(val, needFree: false));
+        ptr, (val) => SpeedLimitStatusImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedLimitStatus>> toPlatformVectorVector(

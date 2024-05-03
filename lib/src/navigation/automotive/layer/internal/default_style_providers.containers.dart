@@ -15,7 +15,7 @@ extension InternalDefaultUserPlacemarkStyleProviderContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, InternalDefaultUserPlacemarkStyleProvider.getNativePtr);
+        obj, InternalDefaultUserPlacemarkStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -49,7 +49,7 @@ extension InternalDefaultUserPlacemarkStyleProviderContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, InternalDefaultUserPlacemarkStyleProvider.getNativePtr);
+        obj, InternalDefaultUserPlacemarkStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -77,7 +77,7 @@ extension InternalDefaultUserPlacemarkStyleProviderContainerExtension
       toPlatformMap(ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => InternalDefaultUserPlacemarkStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultUserPlacemarkStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -105,7 +105,7 @@ extension InternalDefaultUserPlacemarkStyleProviderContainerExtension
       toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => InternalDefaultUserPlacemarkStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultUserPlacemarkStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -138,7 +138,7 @@ extension InternalDefaultRequestPointStyleProviderContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, InternalDefaultRequestPointStyleProvider.getNativePtr);
+        obj, InternalDefaultRequestPointStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -172,7 +172,7 @@ extension InternalDefaultRequestPointStyleProviderContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, InternalDefaultRequestPointStyleProvider.getNativePtr);
+        obj, InternalDefaultRequestPointStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -200,7 +200,7 @@ extension InternalDefaultRequestPointStyleProviderContainerExtension
       toPlatformMap(ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => InternalDefaultRequestPointStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultRequestPointStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -228,7 +228,7 @@ extension InternalDefaultRequestPointStyleProviderContainerExtension
       toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => InternalDefaultRequestPointStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultRequestPointStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -261,7 +261,7 @@ extension InternalDefaultRoutePinsStyleProviderContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, InternalDefaultRoutePinsStyleProvider.getNativePtr);
+        obj, InternalDefaultRoutePinsStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -292,7 +292,7 @@ extension InternalDefaultRoutePinsStyleProviderContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, InternalDefaultRoutePinsStyleProvider.getNativePtr);
+        obj, InternalDefaultRoutePinsStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -318,7 +318,7 @@ extension InternalDefaultRoutePinsStyleProviderContainerExtension
       toPlatformMap(ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => InternalDefaultRoutePinsStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultRoutePinsStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -346,7 +346,7 @@ extension InternalDefaultRoutePinsStyleProviderContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => InternalDefaultRoutePinsStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultRoutePinsStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -379,7 +379,7 @@ extension InternalDefaultRouteViewStyleProviderContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, InternalDefaultRouteViewStyleProvider.getNativePtr);
+        obj, InternalDefaultRouteViewStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -410,7 +410,7 @@ extension InternalDefaultRouteViewStyleProviderContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, InternalDefaultRouteViewStyleProvider.getNativePtr);
+        obj, InternalDefaultRouteViewStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -436,7 +436,7 @@ extension InternalDefaultRouteViewStyleProviderContainerExtension
       toPlatformMap(ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => InternalDefaultRouteViewStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultRouteViewStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -464,7 +464,7 @@ extension InternalDefaultRouteViewStyleProviderContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => InternalDefaultRouteViewStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultRouteViewStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -497,7 +497,7 @@ extension InternalDefaultBalloonImageProviderContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, InternalDefaultBalloonImageProvider.getNativePtr);
+        obj, InternalDefaultBalloonImageProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -528,7 +528,7 @@ extension InternalDefaultBalloonImageProviderContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, InternalDefaultBalloonImageProvider.getNativePtr);
+        obj, InternalDefaultBalloonImageProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -554,7 +554,7 @@ extension InternalDefaultBalloonImageProviderContainerExtension
       toPlatformMap(ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => InternalDefaultBalloonImageProvider.fromOptionalPtr(
+        (val) => InternalDefaultBalloonImageProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -582,7 +582,7 @@ extension InternalDefaultBalloonImageProviderContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => InternalDefaultBalloonImageProvider.fromOptionalPtr(
+        (val) => InternalDefaultBalloonImageProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 

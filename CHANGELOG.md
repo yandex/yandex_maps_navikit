@@ -1,3 +1,8 @@
+## 4.6.1-beta1
+
+* Fix crashes
+* Add comparsion for structures
+
 ## 4.6.1-beta
 
 * Fix crash on foreground

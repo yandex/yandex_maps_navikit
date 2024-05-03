@@ -13,7 +13,7 @@ extension RouteChangeReasonContainerExtension on RouteChangeReason {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, RouteChangeReason.toPointer);
+    return string_map.toNativeMap(obj, RouteChangeReasonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -40,7 +40,7 @@ extension RouteChangeReasonContainerExtension on RouteChangeReason {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, RouteChangeReason.toPointer);
+    return vector.toNativeVector(obj, RouteChangeReasonImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -64,7 +64,7 @@ extension RouteChangeReasonContainerExtension on RouteChangeReason {
   static string_map.StringMap<RouteChangeReason> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => RouteChangeReason.fromPointer(val, needFree: false));
+        ptr, (val) => RouteChangeReasonImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<RouteChangeReason>>
@@ -88,7 +88,7 @@ extension RouteChangeReasonContainerExtension on RouteChangeReason {
   static vector.Vector<RouteChangeReason> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => RouteChangeReason.fromPointer(val, needFree: false));
+        ptr, (val) => RouteChangeReasonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<RouteChangeReason>> toPlatformVectorVector(

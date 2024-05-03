@@ -13,7 +13,7 @@ extension CustomRouteNavigationContainerExtension on CustomRouteNavigation {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, CustomRouteNavigation.getNativePtr);
+    return string_map.toNativeMap(obj, CustomRouteNavigationImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -41,7 +41,7 @@ extension CustomRouteNavigationContainerExtension on CustomRouteNavigation {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, CustomRouteNavigation.getNativePtr);
+    return vector.toNativeVector(obj, CustomRouteNavigationImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -66,7 +66,7 @@ extension CustomRouteNavigationContainerExtension on CustomRouteNavigation {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => CustomRouteNavigation.fromOptionalPtr(
+        (val) => CustomRouteNavigationImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -92,7 +92,7 @@ extension CustomRouteNavigationContainerExtension on CustomRouteNavigation {
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => CustomRouteNavigation.fromOptionalPtr(
+        (val) => CustomRouteNavigationImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 

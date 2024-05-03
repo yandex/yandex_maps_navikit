@@ -13,7 +13,7 @@ extension BalloonGeometryContainerExtension on BalloonGeometry {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, BalloonGeometry.toPointer);
+    return string_map.toNativeMap(obj, BalloonGeometryImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -40,7 +40,7 @@ extension BalloonGeometryContainerExtension on BalloonGeometry {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, BalloonGeometry.toPointer);
+    return vector.toNativeVector(obj, BalloonGeometryImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -64,7 +64,7 @@ extension BalloonGeometryContainerExtension on BalloonGeometry {
   static string_map.StringMap<BalloonGeometry> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => BalloonGeometry.fromPointer(val, needFree: false));
+        ptr, (val) => BalloonGeometryImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<BalloonGeometry>>
@@ -88,7 +88,7 @@ extension BalloonGeometryContainerExtension on BalloonGeometry {
   static vector.Vector<BalloonGeometry> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => BalloonGeometry.fromPointer(val, needFree: false));
+        ptr, (val) => BalloonGeometryImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<BalloonGeometry>> toPlatformVectorVector(

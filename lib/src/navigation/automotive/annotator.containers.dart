@@ -6,6 +6,112 @@ part of 'annotator.dart';
 // ContainerGenerator
 // **************************************************************************
 
+extension AnnotatorContainerExtension on Annotator {
+  static ffi.Pointer<ffi.Void> toNativeMap(
+      core.Map<core.String, Annotator?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, AnnotatorImpl.getNativePtr);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeMapVector(
+      core.Map<core.String, core.List<Annotator?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, toNativeVector);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeMapDictionary(
+      core.Map<core.String, core.Map<core.String, Annotator?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, toNativeMap);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVector(core.List<Annotator?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, AnnotatorImpl.getNativePtr);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVectorVector(
+      core.List<core.List<Annotator?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, toNativeVector);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVectorDictionary(
+      core.List<core.Map<core.String, Annotator?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, toNativeMap);
+  }
+
+  static string_map.StringMap<Annotator> toPlatformMap(
+      ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => AnnotatorImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static string_map.StringMap<vector.Vector<Annotator>> toPlatformMapVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static string_map.StringMap<string_map.StringMap<Annotator>>
+      toPlatformMapDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<Annotator> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => AnnotatorImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<vector.Vector<Annotator>> toPlatformVectorVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<string_map.StringMap<Annotator>>
+      toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+}
+
 extension AnnotatedEventsContainerExtension on AnnotatedEvents {
   static ffi.Pointer<ffi.Void> toNativeMap(
       core.Map<core.String, AnnotatedEvents?>? obj) {
@@ -13,7 +119,7 @@ extension AnnotatedEventsContainerExtension on AnnotatedEvents {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, AnnotatedEvents.toPointer);
+    return string_map.toNativeMap(obj, AnnotatedEventsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -40,7 +146,7 @@ extension AnnotatedEventsContainerExtension on AnnotatedEvents {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, AnnotatedEvents.toPointer);
+    return vector.toNativeVector(obj, AnnotatedEventsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -64,7 +170,7 @@ extension AnnotatedEventsContainerExtension on AnnotatedEvents {
   static string_map.StringMap<AnnotatedEvents> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => AnnotatedEvents.fromPointer(val, needFree: false));
+        ptr, (val) => AnnotatedEventsImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<AnnotatedEvents>>
@@ -88,7 +194,7 @@ extension AnnotatedEventsContainerExtension on AnnotatedEvents {
   static vector.Vector<AnnotatedEvents> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => AnnotatedEvents.fromPointer(val, needFree: false));
+        ptr, (val) => AnnotatedEventsImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<AnnotatedEvents>> toPlatformVectorVector(
@@ -117,7 +223,7 @@ extension AnnotatedRoadEventsContainerExtension on AnnotatedRoadEvents {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, AnnotatedRoadEvents.toPointer);
+    return string_map.toNativeMap(obj, AnnotatedRoadEventsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -145,7 +251,7 @@ extension AnnotatedRoadEventsContainerExtension on AnnotatedRoadEvents {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, AnnotatedRoadEvents.toPointer);
+    return vector.toNativeVector(obj, AnnotatedRoadEventsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -168,8 +274,8 @@ extension AnnotatedRoadEventsContainerExtension on AnnotatedRoadEvents {
 
   static string_map.StringMap<AnnotatedRoadEvents> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr, (val) => AnnotatedRoadEvents.fromPointer(val, needFree: false));
+    return string_map.StringMap(ptr,
+        (val) => AnnotatedRoadEventsImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<AnnotatedRoadEvents>>
@@ -192,8 +298,8 @@ extension AnnotatedRoadEventsContainerExtension on AnnotatedRoadEvents {
 
   static vector.Vector<AnnotatedRoadEvents> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr, (val) => AnnotatedRoadEvents.fromPointer(val, needFree: false));
+    return vector.Vector(ptr,
+        (val) => AnnotatedRoadEventsImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<AnnotatedRoadEvents>>
@@ -206,112 +312,6 @@ extension AnnotatedRoadEventsContainerExtension on AnnotatedRoadEvents {
   }
 
   static vector.Vector<string_map.StringMap<AnnotatedRoadEvents>>
-      toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-}
-
-extension AnnotatorContainerExtension on Annotator {
-  static ffi.Pointer<ffi.Void> toNativeMap(
-      core.Map<core.String, Annotator?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, Annotator.getNativePtr);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeMapVector(
-      core.Map<core.String, core.List<Annotator?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, toNativeVector);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeMapDictionary(
-      core.Map<core.String, core.Map<core.String, Annotator?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, toNativeMap);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVector(core.List<Annotator?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, Annotator.getNativePtr);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVectorVector(
-      core.List<core.List<Annotator?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, toNativeVector);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVectorDictionary(
-      core.List<core.Map<core.String, Annotator?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, toNativeMap);
-  }
-
-  static string_map.StringMap<Annotator> toPlatformMap(
-      ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) =>
-            Annotator.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static string_map.StringMap<vector.Vector<Annotator>> toPlatformMapVector(
-      ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static string_map.StringMap<string_map.StringMap<Annotator>>
-      toPlatformMapDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<Annotator> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) =>
-            Annotator.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<vector.Vector<Annotator>> toPlatformVectorVector(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<string_map.StringMap<Annotator>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,

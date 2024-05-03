@@ -13,7 +13,7 @@ extension NavigationAlternativeContainerExtension on NavigationAlternative {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, NavigationAlternative.getNativePtr);
+    return string_map.toNativeMap(obj, NavigationAlternativeImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -41,7 +41,7 @@ extension NavigationAlternativeContainerExtension on NavigationAlternative {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationAlternative.getNativePtr);
+    return vector.toNativeVector(obj, NavigationAlternativeImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -66,7 +66,7 @@ extension NavigationAlternativeContainerExtension on NavigationAlternative {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationAlternative.fromOptionalPtr(
+        (val) => NavigationAlternativeImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -92,7 +92,7 @@ extension NavigationAlternativeContainerExtension on NavigationAlternative {
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationAlternative.fromOptionalPtr(
+        (val) => NavigationAlternativeImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 

@@ -15,7 +15,7 @@ extension InternalDefaultStyleProviderContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, InternalDefaultStyleProvider.getNativePtr);
+        obj, InternalDefaultStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -45,7 +45,7 @@ extension InternalDefaultStyleProviderContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, InternalDefaultStyleProvider.getNativePtr);
+        obj, InternalDefaultStyleProviderImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -70,7 +70,7 @@ extension InternalDefaultStyleProviderContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => InternalDefaultStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -97,7 +97,7 @@ extension InternalDefaultStyleProviderContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => InternalDefaultStyleProvider.fromOptionalPtr(
+        (val) => InternalDefaultStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 

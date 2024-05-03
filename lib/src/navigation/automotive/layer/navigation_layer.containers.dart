@@ -13,7 +13,7 @@ extension NavigationLayerContainerExtension on NavigationLayer {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, NavigationLayer.getNativePtr);
+    return string_map.toNativeMap(obj, NavigationLayerImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -40,7 +40,7 @@ extension NavigationLayerContainerExtension on NavigationLayer {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationLayer.getNativePtr);
+    return vector.toNativeVector(obj, NavigationLayerImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -65,7 +65,7 @@ extension NavigationLayerContainerExtension on NavigationLayer {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationLayer.fromOptionalPtr(
+        (val) => NavigationLayerImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -91,7 +91,7 @@ extension NavigationLayerContainerExtension on NavigationLayer {
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationLayer.fromOptionalPtr(
+        (val) => NavigationLayerImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -121,7 +121,7 @@ extension RoutesSourceContainerExtension on RoutesSource {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, RoutesSource.toPointer);
+    return string_map.toNativeMap(obj, RoutesSourceImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -147,7 +147,7 @@ extension RoutesSourceContainerExtension on RoutesSource {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, RoutesSource.toPointer);
+    return vector.toNativeVector(obj, RoutesSourceImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -171,7 +171,7 @@ extension RoutesSourceContainerExtension on RoutesSource {
   static string_map.StringMap<RoutesSource> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => RoutesSource.fromPointer(val, needFree: false));
+        ptr, (val) => RoutesSourceImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<RoutesSource>> toPlatformMapVector(
@@ -195,7 +195,7 @@ extension RoutesSourceContainerExtension on RoutesSource {
   static vector.Vector<RoutesSource> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => RoutesSource.fromPointer(val, needFree: false));
+        ptr, (val) => RoutesSourceImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<RoutesSource>> toPlatformVectorVector(

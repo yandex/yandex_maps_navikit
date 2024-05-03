@@ -1,2 +1,2 @@
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/route_view.dart'
-    hide RouteViewContainerExtension;
+    hide RouteViewListenerImpl, RouteViewContainerExtension, RouteViewImpl;

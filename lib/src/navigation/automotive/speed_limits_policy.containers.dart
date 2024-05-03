@@ -6,6 +6,114 @@ part of 'speed_limits_policy.dart';
 // ContainerGenerator
 // **************************************************************************
 
+extension SpeedLimitsPolicyContainerExtension on SpeedLimitsPolicy {
+  static ffi.Pointer<ffi.Void> toNativeMap(
+      core.Map<core.String, SpeedLimitsPolicy?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, SpeedLimitsPolicyImpl.getNativePtr);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeMapVector(
+      core.Map<core.String, core.List<SpeedLimitsPolicy?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, toNativeVector);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeMapDictionary(
+      core.Map<core.String, core.Map<core.String, SpeedLimitsPolicy?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return string_map.toNativeMap(obj, toNativeMap);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVector(
+      core.List<SpeedLimitsPolicy?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, SpeedLimitsPolicyImpl.getNativePtr);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVectorVector(
+      core.List<core.List<SpeedLimitsPolicy?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, toNativeVector);
+  }
+
+  static ffi.Pointer<ffi.Void> toNativeVectorDictionary(
+      core.List<core.Map<core.String, SpeedLimitsPolicy?>?>? obj) {
+    if (obj == null) {
+      return ffi.nullptr;
+    }
+
+    return vector.toNativeVector(obj, toNativeMap);
+  }
+
+  static string_map.StringMap<SpeedLimitsPolicy> toPlatformMap(
+      ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => SpeedLimitsPolicyImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static string_map.StringMap<vector.Vector<SpeedLimitsPolicy>>
+      toPlatformMapVector(ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static string_map.StringMap<string_map.StringMap<SpeedLimitsPolicy>>
+      toPlatformMapDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return string_map.StringMap(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<SpeedLimitsPolicy> toPlatformVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => SpeedLimitsPolicyImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<vector.Vector<SpeedLimitsPolicy>> toPlatformVectorVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+
+  static vector.Vector<string_map.StringMap<SpeedLimitsPolicy>>
+      toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => val == ffi.nullptr
+            ? null
+            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
+  }
+}
+
 extension SpeedLimitsContainerExtension on SpeedLimits {
   static ffi.Pointer<ffi.Void> toNativeMap(
       core.Map<core.String, SpeedLimits?>? obj) {
@@ -13,7 +121,7 @@ extension SpeedLimitsContainerExtension on SpeedLimits {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, SpeedLimits.toPointer);
+    return string_map.toNativeMap(obj, SpeedLimitsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -39,7 +147,7 @@ extension SpeedLimitsContainerExtension on SpeedLimits {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, SpeedLimits.toPointer);
+    return vector.toNativeVector(obj, SpeedLimitsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -63,7 +171,7 @@ extension SpeedLimitsContainerExtension on SpeedLimits {
   static string_map.StringMap<SpeedLimits> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => SpeedLimits.fromPointer(val, needFree: false));
+        ptr, (val) => SpeedLimitsImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<SpeedLimits>> toPlatformMapVector(
@@ -87,7 +195,7 @@ extension SpeedLimitsContainerExtension on SpeedLimits {
   static vector.Vector<SpeedLimits> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => SpeedLimits.fromPointer(val, needFree: false));
+        ptr, (val) => SpeedLimitsImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedLimits>> toPlatformVectorVector(
@@ -116,7 +224,7 @@ extension SpeedLimitsRulesContainerExtension on SpeedLimitsRules {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, SpeedLimitsRules.toPointer);
+    return string_map.toNativeMap(obj, SpeedLimitsRulesImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -143,7 +251,7 @@ extension SpeedLimitsRulesContainerExtension on SpeedLimitsRules {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, SpeedLimitsRules.toPointer);
+    return vector.toNativeVector(obj, SpeedLimitsRulesImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -167,7 +275,7 @@ extension SpeedLimitsRulesContainerExtension on SpeedLimitsRules {
   static string_map.StringMap<SpeedLimitsRules> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
-        ptr, (val) => SpeedLimitsRules.fromPointer(val, needFree: false));
+        ptr, (val) => SpeedLimitsRulesImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<SpeedLimitsRules>>
@@ -191,7 +299,7 @@ extension SpeedLimitsRulesContainerExtension on SpeedLimitsRules {
   static vector.Vector<SpeedLimitsRules> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => SpeedLimitsRules.fromPointer(val, needFree: false));
+        ptr, (val) => SpeedLimitsRulesImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedLimitsRules>> toPlatformVectorVector(
@@ -213,114 +321,6 @@ extension SpeedLimitsRulesContainerExtension on SpeedLimitsRules {
   }
 }
 
-extension SpeedLimitsPolicyContainerExtension on SpeedLimitsPolicy {
-  static ffi.Pointer<ffi.Void> toNativeMap(
-      core.Map<core.String, SpeedLimitsPolicy?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, SpeedLimitsPolicy.getNativePtr);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeMapVector(
-      core.Map<core.String, core.List<SpeedLimitsPolicy?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, toNativeVector);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeMapDictionary(
-      core.Map<core.String, core.Map<core.String, SpeedLimitsPolicy?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return string_map.toNativeMap(obj, toNativeMap);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVector(
-      core.List<SpeedLimitsPolicy?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, SpeedLimitsPolicy.getNativePtr);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVectorVector(
-      core.List<core.List<SpeedLimitsPolicy?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, toNativeVector);
-  }
-
-  static ffi.Pointer<ffi.Void> toNativeVectorDictionary(
-      core.List<core.Map<core.String, SpeedLimitsPolicy?>?>? obj) {
-    if (obj == null) {
-      return ffi.nullptr;
-    }
-
-    return vector.toNativeVector(obj, toNativeMap);
-  }
-
-  static string_map.StringMap<SpeedLimitsPolicy> toPlatformMap(
-      ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) => SpeedLimitsPolicy.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static string_map.StringMap<vector.Vector<SpeedLimitsPolicy>>
-      toPlatformMapVector(ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static string_map.StringMap<string_map.StringMap<SpeedLimitsPolicy>>
-      toPlatformMapDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<SpeedLimitsPolicy> toPlatformVector(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => SpeedLimitsPolicy.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<vector.Vector<SpeedLimitsPolicy>> toPlatformVectorVector(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-
-  static vector.Vector<string_map.StringMap<SpeedLimitsPolicy>>
-      toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => val == ffi.nullptr
-            ? null
-            : toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value));
-  }
-}
-
 extension SpeedLimitsRulesTypeContainerExtension on SpeedLimitsRulesType {
   static ffi.Pointer<ffi.Void> toNativeMap(
       core.Map<core.String, SpeedLimitsRulesType?>? obj) {
@@ -328,7 +328,7 @@ extension SpeedLimitsRulesTypeContainerExtension on SpeedLimitsRulesType {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, SpeedLimitsRulesType.toPointer);
+    return string_map.toNativeMap(obj, SpeedLimitsRulesTypeImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -356,7 +356,7 @@ extension SpeedLimitsRulesTypeContainerExtension on SpeedLimitsRulesType {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, SpeedLimitsRulesType.toPointer);
+    return vector.toNativeVector(obj, SpeedLimitsRulesTypeImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -379,8 +379,8 @@ extension SpeedLimitsRulesTypeContainerExtension on SpeedLimitsRulesType {
 
   static string_map.StringMap<SpeedLimitsRulesType> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(
-        ptr, (val) => SpeedLimitsRulesType.fromPointer(val, needFree: false));
+    return string_map.StringMap(ptr,
+        (val) => SpeedLimitsRulesTypeImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<SpeedLimitsRulesType>>
@@ -403,8 +403,8 @@ extension SpeedLimitsRulesTypeContainerExtension on SpeedLimitsRulesType {
 
   static vector.Vector<SpeedLimitsRulesType> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr, (val) => SpeedLimitsRulesType.fromPointer(val, needFree: false));
+    return vector.Vector(ptr,
+        (val) => SpeedLimitsRulesTypeImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedLimitsRulesType>>

@@ -15,7 +15,7 @@ extension NavigationUpcomingManoeuvreContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, NavigationUpcomingManoeuvre.getNativePtr);
+        obj, NavigationUpcomingManoeuvreImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -44,7 +44,8 @@ extension NavigationUpcomingManoeuvreContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationUpcomingManoeuvre.getNativePtr);
+    return vector.toNativeVector(
+        obj, NavigationUpcomingManoeuvreImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -69,7 +70,7 @@ extension NavigationUpcomingManoeuvreContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationUpcomingManoeuvre.fromOptionalPtr(
+        (val) => NavigationUpcomingManoeuvreImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -95,7 +96,7 @@ extension NavigationUpcomingManoeuvreContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationUpcomingManoeuvre.fromOptionalPtr(
+        (val) => NavigationUpcomingManoeuvreImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -127,7 +128,7 @@ extension NavigationUpcomingRoadEventContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, NavigationUpcomingRoadEvent.getNativePtr);
+        obj, NavigationUpcomingRoadEventImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -156,7 +157,8 @@ extension NavigationUpcomingRoadEventContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationUpcomingRoadEvent.getNativePtr);
+    return vector.toNativeVector(
+        obj, NavigationUpcomingRoadEventImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -181,7 +183,7 @@ extension NavigationUpcomingRoadEventContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationUpcomingRoadEvent.fromOptionalPtr(
+        (val) => NavigationUpcomingRoadEventImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -207,7 +209,7 @@ extension NavigationUpcomingRoadEventContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationUpcomingRoadEvent.fromOptionalPtr(
+        (val) => NavigationUpcomingRoadEventImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -238,7 +240,8 @@ extension NavigationUpcomingLaneSignContainerExtension
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, NavigationUpcomingLaneSign.getNativePtr);
+    return string_map.toNativeMap(
+        obj, NavigationUpcomingLaneSignImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -267,7 +270,8 @@ extension NavigationUpcomingLaneSignContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationUpcomingLaneSign.getNativePtr);
+    return vector.toNativeVector(
+        obj, NavigationUpcomingLaneSignImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -292,7 +296,7 @@ extension NavigationUpcomingLaneSignContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationUpcomingLaneSign.fromOptionalPtr(
+        (val) => NavigationUpcomingLaneSignImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -318,7 +322,7 @@ extension NavigationUpcomingLaneSignContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationUpcomingLaneSign.fromOptionalPtr(
+        (val) => NavigationUpcomingLaneSignImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -350,7 +354,7 @@ extension NavigationUpcomingDirectionSignContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, NavigationUpcomingDirectionSign.getNativePtr);
+        obj, NavigationUpcomingDirectionSignImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -381,7 +385,7 @@ extension NavigationUpcomingDirectionSignContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, NavigationUpcomingDirectionSign.getNativePtr);
+        obj, NavigationUpcomingDirectionSignImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -407,7 +411,7 @@ extension NavigationUpcomingDirectionSignContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationUpcomingDirectionSign.fromOptionalPtr(
+        (val) => NavigationUpcomingDirectionSignImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -434,7 +438,7 @@ extension NavigationUpcomingDirectionSignContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationUpcomingDirectionSign.fromOptionalPtr(
+        (val) => NavigationUpcomingDirectionSignImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -464,7 +468,7 @@ extension NavigationWindshieldContainerExtension on NavigationWindshield {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, NavigationWindshield.getNativePtr);
+    return string_map.toNativeMap(obj, NavigationWindshieldImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -492,7 +496,7 @@ extension NavigationWindshieldContainerExtension on NavigationWindshield {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, NavigationWindshield.getNativePtr);
+    return vector.toNativeVector(obj, NavigationWindshieldImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -517,7 +521,7 @@ extension NavigationWindshieldContainerExtension on NavigationWindshield {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) => NavigationWindshield.fromOptionalPtr(
+        (val) => NavigationWindshieldImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
@@ -543,7 +547,7 @@ extension NavigationWindshieldContainerExtension on NavigationWindshield {
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) => NavigationWindshield.fromOptionalPtr(
+        (val) => NavigationWindshieldImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 

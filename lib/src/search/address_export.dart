@@ -1,5 +1,8 @@
 export 'package:yandex_maps_navikit/src/search/address.dart'
     hide
-        SearchAddressComponentKindContainerExtension,
+        SearchAddressComponentImpl,
+        SearchAddressContainerExtension,
         SearchAddressComponentContainerExtension,
-        SearchAddressContainerExtension;
+        SearchAddressComponentKindImpl,
+        SearchAddressComponentKindContainerExtension,
+        SearchAddressImpl;

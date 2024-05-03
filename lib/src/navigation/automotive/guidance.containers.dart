@@ -13,7 +13,7 @@ extension GuidanceContainerExtension on Guidance {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, Guidance.getNativePtr);
+    return string_map.toNativeMap(obj, GuidanceImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -39,7 +39,7 @@ extension GuidanceContainerExtension on Guidance {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, Guidance.getNativePtr);
+    return vector.toNativeVector(obj, GuidanceImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -64,8 +64,8 @@ extension GuidanceContainerExtension on Guidance {
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) =>
-            Guidance.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
+        (val) => GuidanceImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static string_map.StringMap<vector.Vector<Guidance>> toPlatformMapVector(
@@ -89,8 +89,8 @@ extension GuidanceContainerExtension on Guidance {
   static vector.Vector<Guidance> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) =>
-            Guidance.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value));
+        (val) => GuidanceImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<Guidance>> toPlatformVectorVector(

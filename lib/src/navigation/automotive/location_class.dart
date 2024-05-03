@@ -2,7 +2,6 @@ import 'dart:ffi' as ffi;
 
 import 'dart:core' as core;
 import 'package:ffi/ffi.dart';
-import 'package:meta/meta.dart';
 import 'package:yandex_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
 import 'package:yandex_maps_navikit/src/bindings/common/string_map.dart'
@@ -10,10 +9,8 @@ import 'package:yandex_maps_navikit/src/bindings/common/string_map.dart'
 import 'package:yandex_maps_navikit/src/bindings/common/vector.dart' as vector;
 
 part 'location_class.containers.dart';
+part 'location_class.impl.dart';
 
-@bindings_annotations.ContainerData(
-    toNative: 'LocationClass.toPointer',
-    toPlatform: '(val) => LocationClass.fromPointer(val, needFree: false)')
 enum LocationClass {
   Fine,
   Extrapolated,
@@ -22,44 +19,4 @@ enum LocationClass {
   /// We haven't received a precise location for a long time.
   Outdated,
   ;
-
-  /// @nodoc
-  @internal
-  static LocationClass fromInt(core.int val) {
-    return LocationClass.values[val];
-  }
-
-  /// @nodoc
-  @internal
-  static core.int toInt(LocationClass e) {
-    return e.index;
-  }
-
-  /// @nodoc
-  @internal
-  static LocationClass? fromPointer(ffi.Pointer<ffi.Void> ptr,
-      {core.bool needFree = true}) {
-    if (ptr.address == 0) {
-      return null;
-    }
-    final result = fromInt(ptr.cast<ffi.Int64>().value);
-
-    if (needFree) {
-      malloc.free(ptr);
-    }
-    return result;
-  }
-
-  /// @nodoc
-  @internal
-  static ffi.Pointer<ffi.Void> toPointer(LocationClass? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Int64>();
-    result.value = toInt(val);
-
-    return result.cast<ffi.Void>();
-  }
 }

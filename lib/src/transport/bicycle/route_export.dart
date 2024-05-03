@@ -1,7 +1,10 @@
 export 'package:yandex_maps_navikit/src/transport/bicycle/route.dart'
     hide
-        BicycleTrafficTypeSegmentContainerExtension,
-        BicycleConstructionSegmentNative,
         BicycleRouteContainerExtension,
+        BicycleRouteImpl,
+        BicycleTrafficTypeSegmentContainerExtension,
+        BicycleTrafficTypeSegmentImpl,
+        BicycleConstructionSegmentImpl,
+        BicycleConstructionSegmentNative,
         BicycleTrafficTypeSegmentNative,
         BicycleConstructionSegmentContainerExtension;

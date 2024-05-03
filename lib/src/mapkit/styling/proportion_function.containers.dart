@@ -14,7 +14,8 @@ extension StylingConstantFunctionPointsContainerExtension
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, StylingConstantFunctionPoints.toPointer);
+    return string_map.toNativeMap(
+        obj, StylingConstantFunctionPointsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -43,7 +44,8 @@ extension StylingConstantFunctionPointsContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, StylingConstantFunctionPoints.toPointer);
+    return vector.toNativeVector(
+        obj, StylingConstantFunctionPointsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -68,8 +70,8 @@ extension StylingConstantFunctionPointsContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) =>
-            StylingConstantFunctionPoints.fromPointer(val, needFree: false));
+        (val) => StylingConstantFunctionPointsImpl.fromPointer(val,
+            needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<StylingConstantFunctionPoints>>
@@ -95,8 +97,8 @@ extension StylingConstantFunctionPointsContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) =>
-            StylingConstantFunctionPoints.fromPointer(val, needFree: false));
+        (val) => StylingConstantFunctionPointsImpl.fromPointer(val,
+            needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingConstantFunctionPoints>>
@@ -127,7 +129,7 @@ extension StylingLinearZoomFunctionPointsContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, StylingLinearZoomFunctionPoints.toPointer);
+        obj, StylingLinearZoomFunctionPointsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -158,7 +160,7 @@ extension StylingLinearZoomFunctionPointsContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, StylingLinearZoomFunctionPoints.toPointer);
+        obj, StylingLinearZoomFunctionPointsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -184,8 +186,8 @@ extension StylingLinearZoomFunctionPointsContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) =>
-            StylingLinearZoomFunctionPoints.fromPointer(val, needFree: false));
+        (val) => StylingLinearZoomFunctionPointsImpl.fromPointer(val,
+            needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<StylingLinearZoomFunctionPoints>>
@@ -211,8 +213,8 @@ extension StylingLinearZoomFunctionPointsContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) =>
-            StylingLinearZoomFunctionPoints.fromPointer(val, needFree: false));
+        (val) => StylingLinearZoomFunctionPointsImpl.fromPointer(val,
+            needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingLinearZoomFunctionPoints>>
@@ -243,7 +245,7 @@ extension StylingLinearTiltFunctionPointsContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, StylingLinearTiltFunctionPoints.toPointer);
+        obj, StylingLinearTiltFunctionPointsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -274,7 +276,7 @@ extension StylingLinearTiltFunctionPointsContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, StylingLinearTiltFunctionPoints.toPointer);
+        obj, StylingLinearTiltFunctionPointsImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -300,8 +302,8 @@ extension StylingLinearTiltFunctionPointsContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) =>
-            StylingLinearTiltFunctionPoints.fromPointer(val, needFree: false));
+        (val) => StylingLinearTiltFunctionPointsImpl.fromPointer(val,
+            needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<StylingLinearTiltFunctionPoints>>
@@ -327,8 +329,8 @@ extension StylingLinearTiltFunctionPointsContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) =>
-            StylingLinearTiltFunctionPoints.fromPointer(val, needFree: false));
+        (val) => StylingLinearTiltFunctionPointsImpl.fromPointer(val,
+            needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingLinearTiltFunctionPoints>>
@@ -358,7 +360,8 @@ extension StylingBilinearFunctionMatrixContainerExtension
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, StylingBilinearFunctionMatrix.toPointer);
+    return string_map.toNativeMap(
+        obj, StylingBilinearFunctionMatrixImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -387,7 +390,8 @@ extension StylingBilinearFunctionMatrixContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, StylingBilinearFunctionMatrix.toPointer);
+    return vector.toNativeVector(
+        obj, StylingBilinearFunctionMatrixImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -412,8 +416,8 @@ extension StylingBilinearFunctionMatrixContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return string_map.StringMap(
         ptr,
-        (val) =>
-            StylingBilinearFunctionMatrix.fromPointer(val, needFree: false));
+        (val) => StylingBilinearFunctionMatrixImpl.fromPointer(val,
+            needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<StylingBilinearFunctionMatrix>>
@@ -439,8 +443,8 @@ extension StylingBilinearFunctionMatrixContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
-        (val) =>
-            StylingBilinearFunctionMatrix.fromPointer(val, needFree: false));
+        (val) => StylingBilinearFunctionMatrixImpl.fromPointer(val,
+            needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingBilinearFunctionMatrix>>
@@ -470,7 +474,7 @@ extension StylingProportionFunctionContainerExtension
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, StylingProportionFunction.toPointer);
+    return string_map.toNativeMap(obj, StylingProportionFunctionImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -498,7 +502,7 @@ extension StylingProportionFunctionContainerExtension
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, StylingProportionFunction.toPointer);
+    return vector.toNativeVector(obj, StylingProportionFunctionImpl.toPointer);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -521,8 +525,10 @@ extension StylingProportionFunctionContainerExtension
 
   static string_map.StringMap<StylingProportionFunction> toPlatformMap(
       ffi.Pointer<ffi.Void> ptr) {
-    return string_map.StringMap(ptr,
-        (val) => StylingProportionFunction.fromPointer(val, needFree: false));
+    return string_map.StringMap(
+        ptr,
+        (val) =>
+            StylingProportionFunctionImpl.fromPointer(val, needFree: false));
   }
 
   static string_map.StringMap<vector.Vector<StylingProportionFunction>>
@@ -545,8 +551,10 @@ extension StylingProportionFunctionContainerExtension
 
   static vector.Vector<StylingProportionFunction> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(ptr,
-        (val) => StylingProportionFunction.fromPointer(val, needFree: false));
+    return vector.Vector(
+        ptr,
+        (val) =>
+            StylingProportionFunctionImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingProportionFunction>>
