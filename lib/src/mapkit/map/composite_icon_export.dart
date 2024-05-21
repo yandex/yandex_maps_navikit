@@ -1,2 +1,2 @@
 export 'package:yandex_maps_navikit/src/mapkit/map/composite_icon.dart'
-    hide CompositeIconContainerExtension, CompositeIconImpl;
+    hide CompositeIconImpl, CompositeIconContainerExtension;

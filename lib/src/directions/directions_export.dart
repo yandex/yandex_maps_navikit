@@ -1,2 +1,2 @@
 export 'package:yandex_maps_navikit/src/directions/directions.dart'
-    hide DirectionsFactoryImpl, DirectionsContainerExtension, DirectionsImpl;
+    hide DirectionsImpl, DirectionsContainerExtension;

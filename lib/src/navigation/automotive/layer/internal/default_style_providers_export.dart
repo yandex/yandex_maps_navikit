@@ -1,13 +1,12 @@
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/internal/default_style_providers.dart'
     hide
-        InternalDefaultStyleProvidersFactoryImpl,
         InternalDefaultBalloonImageProviderContainerExtension,
-        InternalDefaultRouteViewStyleProviderContainerExtension,
         InternalDefaultBalloonImageProviderImpl,
         InternalDefaultRouteViewStyleProviderImpl,
-        InternalDefaultRoutePinsStyleProviderContainerExtension,
+        InternalDefaultRouteViewStyleProviderContainerExtension,
         InternalDefaultRoutePinsStyleProviderImpl,
-        InternalDefaultRequestPointStyleProviderContainerExtension,
+        InternalDefaultRoutePinsStyleProviderContainerExtension,
         InternalDefaultUserPlacemarkStyleProviderImpl,
         InternalDefaultRequestPointStyleProviderImpl,
+        InternalDefaultRequestPointStyleProviderContainerExtension,
         InternalDefaultUserPlacemarkStyleProviderContainerExtension;

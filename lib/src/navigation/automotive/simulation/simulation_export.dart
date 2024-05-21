@@ -1,2 +1,1 @@
-export 'package:yandex_maps_navikit/src/navigation/automotive/simulation/simulation.dart'
-    hide SimulationImpl;
+export 'package:yandex_maps_navikit/src/navigation/automotive/simulation/simulation.dart';

@@ -2,6 +2,6 @@ export 'package:yandex_maps_navikit/src/mapkit/road_events/road_events_manager.d
     hide
         RoadEventsManagerContainerExtension,
         RoadEventsEventInfoSessionEventInfoListenerImpl,
-        RoadEventsEventInfoSessionContainerExtension,
         RoadEventsManagerImpl,
-        RoadEventsEventInfoSessionImpl;
+        RoadEventsEventInfoSessionImpl,
+        RoadEventsEventInfoSessionContainerExtension;
