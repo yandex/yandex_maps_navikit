@@ -46,7 +46,7 @@ android {
     }
 
     dependencies {
-        api 'com.yandex.android:maps.mobile:4.6.1-beta1-navikit-flutter'
+        api 'com.yandex.android:maps.mobile:4.6.1-beta3-navikit-flutter'
     }
 
     defaultConfig {
