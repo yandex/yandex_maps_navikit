@@ -69,6 +69,15 @@ final void Function(
                     ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultUserPlacemarkStyleProvider_provideStyle')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _InternalDefaultUserPlacemarkStyleProvider_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultUserPlacemarkStyleProvider_set_')
+    .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
     toNative: 'InternalDefaultRequestPointStyleProviderImpl.getNativePtr',
@@ -135,30 +144,31 @@ final _InternalDefaultRequestPointStyleProvider_free = lib.library.lookup<
         ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
     'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_free');
 
+final void Function(ffi.Pointer<ffi.Void>, core.int, core.int, core.int,
+        core.double, core.bool, core.bool, ffi.Pointer<ffi.Void>)
+    _DefaultRequestPointStyleProvider_provideStyle = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(
+                        ffi.Pointer<ffi.Void>,
+                        ffi.Int,
+                        ffi.Int,
+                        ffi.Int64,
+                        ffi.Float,
+                        ffi.Bool,
+                        ffi.Bool,
+                        ffi.Pointer<ffi.Void>)>>(
+            'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_provideStyle')
+        .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
-    core.int,
-    core.int,
-    core.int,
-    core.double,
-    core.bool,
-    core.bool,
-    ffi
-        .Pointer<ffi.Void>) _DefaultRequestPointStyleProvider_provideStyle = lib
-    .library
+    core
+        .int) _InternalDefaultRequestPointStyleProvider_set = lib.library
     .lookup<
             ffi.NativeFunction<
-                ffi.Void Function(
-                    ffi.Pointer<ffi.Void>,
-                    ffi.Int,
-                    ffi.Int,
-                    ffi.Int64,
-                    ffi.Float,
-                    ffi.Bool,
-                    ffi.Bool,
-                    ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_provideStyle')
-    .asFunction();
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_set_')
+    .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
     toNative: 'InternalDefaultRoutePinsStyleProviderImpl.getNativePtr',
@@ -339,6 +349,15 @@ final void Function(
                     ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideSpeedBumpStyle')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _InternalDefaultRoutePinsStyleProvider_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_set_')
+    .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
     toNative: 'InternalDefaultRouteViewStyleProviderImpl.getNativePtr',
@@ -523,6 +542,15 @@ final void Function(
                     ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRouteViewStyleProvider_provideRouteStyle')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _InternalDefaultRouteViewStyleProvider_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRouteViewStyleProvider_set_')
+    .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
     toNative: 'InternalDefaultBalloonImageProviderImpl.getNativePtr',
@@ -631,6 +659,15 @@ final ffi.Pointer<ffi.Void> Function(
                     ffi.Bool)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultBalloonImageProvider_createImage')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _InternalDefaultBalloonImageProvider_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultBalloonImageProvider_set_')
+    .asFunction(isLeaf: true);
 
 InternalDefaultUserPlacemarkStyleProvider _userPlacemarkStyleProvider() {
   return InternalDefaultUserPlacemarkStyleProviderImpl.fromNativePtr(

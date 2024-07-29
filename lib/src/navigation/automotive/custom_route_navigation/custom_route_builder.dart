@@ -24,6 +24,9 @@ part 'custom_route_builder.containers.dart';
 part 'custom_route_builder.impl.dart';
 
 final class NavigationCustomRouteOptions {
+  /// Enabling this option will reduce the total route mileage but will
+  /// include more u-turns along the route
+  ///
   final core.bool? allowMoreUturns;
 
   const NavigationCustomRouteOptions({

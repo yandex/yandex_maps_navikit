@@ -35,6 +35,7 @@ class NavigationJamStyleImpl implements NavigationJamStyle, ffi.Finalizable {
     return (obj as NavigationJamStyleImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _NavigationJamStyle_check(ptr);
   }
@@ -87,6 +88,15 @@ final void Function(
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float)>>(
         'yandex_flutter_navigation_automotive_layer_styling_NavigationJamStyle_setGradientLength')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _NavigationJamStyle_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_styling_NavigationJamStyle_set_')
+    .asFunction(isLeaf: true);
 
 @bindings_annotations
     .WeakInterface('navigation.automotive.layer.styling.RouteStyle')
@@ -124,6 +134,7 @@ class NavigationRouteStyleImpl
     return (obj as NavigationRouteStyleImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _NavigationRouteStyle_check(ptr);
   }
@@ -277,6 +288,15 @@ final void Function(
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
         'yandex_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setShowManoeuvres')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _NavigationRouteStyle_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_set_')
+    .asFunction(isLeaf: true);
 
 extension NavigationRouteViewStyleProviderImpl
     on NavigationRouteViewStyleProvider {

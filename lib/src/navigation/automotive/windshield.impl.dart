@@ -73,6 +73,16 @@ final ffi.Pointer<ffi.Void> Function(
         'yandex_flutter_navigation_automotive_NavigationUpcomingManoeuvre_get_position')
     .asFunction();
 
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _NavigationUpcomingManoeuvre_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_NavigationUpcomingManoeuvre_set_')
+    .asFunction(isLeaf: true);
+
 @bindings_annotations.ContainerData(
     toNative: 'NavigationUpcomingRoadEventImpl.getNativePtr',
     toPlatform:
@@ -179,6 +189,16 @@ final ffi.Pointer<ffi.Void> Function(
         'yandex_flutter_navigation_automotive_NavigationUpcomingRoadEvent_get_position')
     .asFunction();
 
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _NavigationUpcomingRoadEvent_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_NavigationUpcomingRoadEvent_set_')
+    .asFunction(isLeaf: true);
+
 @bindings_annotations.ContainerData(
     toNative: 'NavigationUpcomingLaneSignImpl.getNativePtr',
     toPlatform:
@@ -251,6 +271,16 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_NavigationUpcomingLaneSign_get_position')
     .asFunction();
+
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _NavigationUpcomingLaneSign_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_NavigationUpcomingLaneSign_set_')
+    .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
     toNative: 'NavigationUpcomingDirectionSignImpl.getNativePtr',
@@ -326,6 +356,16 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_NavigationUpcomingDirectionSign_get_position')
     .asFunction();
+
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _NavigationUpcomingDirectionSign_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_NavigationUpcomingDirectionSign_set_')
+    .asFunction(isLeaf: true);
 
 final class _NavigationWindshieldListenerWrapper implements ffi.Finalizable {
   _NavigationWindshieldListenerWrapper(this.ptr) {
@@ -404,8 +444,7 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<
-                        ffi
-                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_NavigationWindshieldListener_new')
@@ -513,6 +552,7 @@ class NavigationWindshieldImpl
     return (obj as NavigationWindshieldImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _NavigationWindshield_check(ptr);
   }
@@ -625,3 +665,12 @@ final void Function(
                     ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_NavigationWindshield_removeListener')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _NavigationWindshield_set =
+    lib
+        .library
+        .lookup<
+                ffi
+                .NativeFunction<
+                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+            'yandex_flutter_navigation_automotive_NavigationWindshield_set_')
+        .asFunction(isLeaf: true);

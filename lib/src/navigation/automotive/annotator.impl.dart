@@ -153,8 +153,7 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<
-                        ffi
-                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_AnnotatorListener_new')
@@ -252,6 +251,7 @@ class AnnotatorImpl implements Annotator, ffi.Finalizable {
     return (obj as AnnotatorImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _Annotator_check(ptr);
   }
@@ -381,3 +381,10 @@ final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
                         ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_navigation_automotive_Annotator_removeListener')
         .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _Annotator_set = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_Annotator_set_')
+    .asFunction(isLeaf: true);

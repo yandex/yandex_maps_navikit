@@ -15,7 +15,7 @@ extension StylingConstantFunctionPointsContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, StylingConstantFunctionPointsImpl.toPointer);
+        obj, StylingConstantFunctionPointsImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -45,7 +45,7 @@ extension StylingConstantFunctionPointsContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, StylingConstantFunctionPointsImpl.toPointer);
+        obj, StylingConstantFunctionPointsImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -129,7 +129,7 @@ extension StylingLinearZoomFunctionPointsContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, StylingLinearZoomFunctionPointsImpl.toPointer);
+        obj, StylingLinearZoomFunctionPointsImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -160,7 +160,7 @@ extension StylingLinearZoomFunctionPointsContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, StylingLinearZoomFunctionPointsImpl.toPointer);
+        obj, StylingLinearZoomFunctionPointsImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -245,7 +245,7 @@ extension StylingLinearTiltFunctionPointsContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, StylingLinearTiltFunctionPointsImpl.toPointer);
+        obj, StylingLinearTiltFunctionPointsImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -276,7 +276,7 @@ extension StylingLinearTiltFunctionPointsContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, StylingLinearTiltFunctionPointsImpl.toPointer);
+        obj, StylingLinearTiltFunctionPointsImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -361,7 +361,7 @@ extension StylingBilinearFunctionMatrixContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, StylingBilinearFunctionMatrixImpl.toPointer);
+        obj, StylingBilinearFunctionMatrixImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -391,7 +391,7 @@ extension StylingBilinearFunctionMatrixContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, StylingBilinearFunctionMatrixImpl.toPointer);
+        obj, StylingBilinearFunctionMatrixImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(

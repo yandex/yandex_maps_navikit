@@ -33,6 +33,7 @@ class BalloonViewImpl implements BalloonView, ffi.Finalizable {
     return (obj as BalloonViewImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _BalloonView_check(ptr);
   }
@@ -136,3 +137,11 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_BalloonView_get_hostRoute')
     .asFunction();
+
+final void Function(ffi.Pointer<ffi.Void>, core.int) _BalloonView_set = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_BalloonView_set_')
+    .asFunction(isLeaf: true);

@@ -9,7 +9,7 @@ import 'package:yandex_maps_navikit/src/bindings/common/to_native.dart'
 
 part 'logger.impl.dart';
 
-///
+/// @nodoc
 class Logger {
   Logger._();
 

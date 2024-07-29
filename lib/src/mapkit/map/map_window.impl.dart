@@ -33,6 +33,7 @@ class MapWindowImpl implements MapWindow, ffi.Finalizable {
     return (obj as MapWindowImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _MapWindow_check(ptr);
   }
@@ -182,7 +183,8 @@ final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>) _MapWindow_get_map =
     lib
         .library
         .lookup<
-                ffi.NativeFunction<
+                ffi
+                .NativeFunction<
                     ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_mapkit_map_MapWindow_get_map')
         .asFunction();
@@ -326,3 +328,10 @@ final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
                         ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_mapkit_map_MapWindow_removeSizeChangedListener')
         .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _MapWindow_set = lib
+    .library
+    .lookup<
+        ffi.NativeFunction<
+            ffi.Void Function(ffi.Pointer<ffi.Void>,
+                ffi.Int64)>>('yandex_flutter_mapkit_map_MapWindow_set_')
+    .asFunction(isLeaf: true);

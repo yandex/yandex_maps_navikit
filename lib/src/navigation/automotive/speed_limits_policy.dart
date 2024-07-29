@@ -6,9 +6,17 @@ import 'package:ffi/ffi.dart';
 import 'package:meta/meta.dart';
 import 'package:yandex_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
+import 'package:yandex_maps_navikit/src/bindings/common/dispatcher.dart'
+    as nativeBinding;
+import 'package:yandex_maps_navikit/src/bindings/common/exception.dart'
+    as exception;
 import 'package:yandex_maps_navikit/src/bindings/common/string_map.dart'
     as string_map;
 import 'package:yandex_maps_navikit/src/bindings/common/vector.dart' as vector;
+import 'package:yandex_maps_navikit/src/bindings/weak_map/weak_map.dart'
+    as weak_map;
+import 'package:yandex_maps_navikit/src/mapkit/geometry/point.dart'
+    as mapkit_geometry_point;
 import 'package:yandex_maps_navikit/src/mapkit/localized_value.dart'
     as mapkit_localized_value;
 
@@ -85,4 +93,39 @@ abstract class SpeedLimitsPolicy implements ffi.Finalizable {
   /// limit => we should start warning the user when current speed > 60 +
   /// 60 * 0.1 * 0.8 = 64.8 km/h
   SpeedLimits customSpeedLimits(core.double toleranceRatio);
+}
+
+abstract class SpeedPolicyListener {
+  void onSpeedPolicyChanged();
+}
+
+abstract class SpeedPolicyProvider implements ffi.Finalizable {
+  /// Returns the speed policy corresponding to the last position that was
+  /// set. If no position has been previously set, the function returns the
+  /// standard speed policy.
+  SpeedLimitsPolicy get speedLimitsPolicy;
+
+  /// The class does not retain the object in the 'speedLimitsListener' parameter.
+  /// It is your responsibility to maintain a strong reference to
+  /// the target object while it is attached to a class.
+  void addListener(SpeedPolicyListener speedLimitsListener);
+
+  /// The class does not retain the object in the 'speedLimitsListener' parameter.
+  /// It is your responsibility to maintain a strong reference to
+  /// the target object while it is attached to a class.
+  void removeListener(SpeedPolicyListener speedLimitsListener);
+
+  /// Call this method, then wait for
+  /// [SpeedPolicyListener.onSpeedPolicyChanged] to read speed policy due
+  /// to asynchronous updates. [SpeedPolicyListener.onSpeedPolicyChanged]
+  /// will be called only if `speedLimitsPolicy` changed
+  void updateSpeedLimitsPolicy(mapkit_geometry_point.Point position);
+}
+
+class SpeedPolicyProviderFactory {
+  SpeedPolicyProviderFactory._();
+
+  static SpeedPolicyProvider getSpeedPolicyProvider() {
+    return _getSpeedPolicyProvider();
+  }
 }

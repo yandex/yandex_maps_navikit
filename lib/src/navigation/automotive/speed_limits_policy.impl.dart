@@ -253,3 +253,220 @@ final SpeedLimitsNative Function(
                 SpeedLimitsNative Function(ffi.Pointer<ffi.Void>, ffi.Double)>>(
         'yandex_flutter_navigation_automotive_SpeedLimitsPolicy_customSpeedLimits')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _SpeedLimitsPolicy_set =
+    lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+            'yandex_flutter_navigation_automotive_SpeedLimitsPolicy_set_')
+        .asFunction(isLeaf: true);
+
+final class _SpeedPolicyListenerWrapper implements ffi.Finalizable {
+  _SpeedPolicyListenerWrapper(this.ptr) {
+    _finalizer.attach(this, ptr);
+  }
+
+  static final _finalizer =
+      ffi.NativeFinalizer(_SpeedPolicyListener_free.cast());
+  final ffi.Pointer<ffi.Void> ptr;
+}
+
+extension SpeedPolicyListenerImpl on SpeedPolicyListener {
+  static final _pointerToListener =
+      <ffi.Pointer<ffi.Void>, core.WeakReference<SpeedPolicyListener>>{};
+  static final _listenerToPointer =
+      weak_map.WeakMap<SpeedPolicyListener, _SpeedPolicyListenerWrapper?>();
+
+  static void _destructor(core.dynamic data) {
+    final core.int address = data;
+    final ptr = ffi.Pointer<ffi.Void>.fromAddress(address);
+    _pointerToListener.remove(ptr);
+  }
+
+  static ffi.Pointer<ffi.Void> _newNativeObject(SpeedPolicyListener obj) {
+    final ptr = _SpeedPolicyListener_new(
+        ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
+            _SpeedPolicyListener_onSpeedPolicyChanged));
+    _pointerToListener[ptr] = core.WeakReference(obj);
+    _listenerToPointer[obj] = _SpeedPolicyListenerWrapper(ptr);
+    _SpeedPolicyListenersetSendPort(
+        ptr,
+        nativeBinding.createPortWithCallback(_destructor),
+        nativeBinding.createExecutePort());
+
+    return ptr;
+  }
+
+  static ffi.Pointer<ffi.Void> getNativePtr(SpeedPolicyListener? obj) {
+    if (obj == null) return ffi.nullptr;
+
+    final foundPointer = _listenerToPointer[obj];
+    if (foundPointer == null) {
+      return _newNativeObject(obj);
+    }
+
+    return foundPointer.ptr;
+  }
+}
+
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core.int,
+    core
+        .int) _SpeedPolicyListenersetSendPort = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, ffi.Int64, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_SpeedPolicyListener_setSendPort')
+    .asFunction(isLeaf: true);
+
+final ffi.Pointer<ffi.Void> Function(
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)
+    _SpeedPolicyListener_new = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Pointer<ffi.Void> Function(
+                        ffi.Pointer<
+                            ffi
+                            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>(
+            'yandex_flutter_navigation_automotive_SpeedPolicyListener_new')
+        .asFunction(isLeaf: true);
+
+final _SpeedPolicyListener_free = lib.library
+    .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_SpeedPolicyListener_free');
+void _SpeedPolicyListener_onSpeedPolicyChanged(ffi.Pointer<ffi.Void> _ptr) {
+  final listener = SpeedPolicyListenerImpl._pointerToListener[_ptr]?.target;
+  if (listener == null) {
+    throw core.Exception();
+  }
+  try {
+    listener.onSpeedPolicyChanged();
+  } catch (e, stack) {
+    exception.nativeAssert(
+        'Unhandled exception $e from native call listener\n$stack');
+    rethrow;
+  }
+}
+
+@bindings_annotations.ContainerData(
+    toNative: 'SpeedPolicyProviderImpl.getNativePtr',
+    toPlatform:
+        '(val) => SpeedPolicyProviderImpl.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value)',
+    platformType: 'SpeedPolicyProvider')
+class SpeedPolicyProviderImpl implements SpeedPolicyProvider, ffi.Finalizable {
+  @protected
+  final ffi.Pointer<ffi.Void> ptr;
+  static final _finalizer =
+      ffi.NativeFinalizer(_SpeedPolicyProvider_free.cast());
+
+  /// @nodoc
+  SpeedPolicyProviderImpl.fromExternalPtr(this.ptr);
+
+  /// @nodoc
+  @internal
+  SpeedPolicyProviderImpl.fromNativePtr(this.ptr) {
+    _finalizer.attach(this, ptr);
+  }
+
+  @internal
+
+  /// @nodoc
+  static ffi.Pointer<ffi.Void> getNativePtr(SpeedPolicyProvider? obj) {
+    if (obj == null) return ffi.nullptr;
+    return (obj as SpeedPolicyProviderImpl).ptr;
+  }
+
+  @internal
+
+  /// @nodoc
+  static SpeedPolicyProvider? fromOptionalPtr(ffi.Pointer<ffi.Void> ptr) {
+    if (ptr == ffi.nullptr) return null;
+    return SpeedPolicyProviderImpl.fromNativePtr(ptr);
+  }
+
+  @core.override
+  SpeedLimitsPolicy get speedLimitsPolicy {
+    return SpeedLimitsPolicyImpl.fromNativePtr(
+        _SpeedPolicyProvider_get_speedLimitsPolicy(ptr));
+  }
+
+  void addListener(SpeedPolicyListener speedLimitsListener) {
+    _SpeedPolicyProvider_addListener(
+        ptr, SpeedPolicyListenerImpl.getNativePtr(speedLimitsListener));
+  }
+
+  void removeListener(SpeedPolicyListener speedLimitsListener) {
+    _SpeedPolicyProvider_removeListener(
+        ptr, SpeedPolicyListenerImpl.getNativePtr(speedLimitsListener));
+  }
+
+  void updateSpeedLimitsPolicy(mapkit_geometry_point.Point position) {
+    _SpeedPolicyProvider_updateSpeedLimitsPolicy(
+        ptr, mapkit_geometry_point.PointImpl.toNative(position));
+  }
+}
+
+final _SpeedPolicyProvider_free = lib.library
+    .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_SpeedPolicyProvider_free');
+
+final ffi.Pointer<ffi.Void> Function(
+    ffi
+        .Pointer<ffi.Void>) _SpeedPolicyProvider_get_speedLimitsPolicy = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_SpeedPolicyProvider_get_speedLimitsPolicy')
+    .asFunction();
+
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    ffi
+        .Pointer<ffi.Void>) _SpeedPolicyProvider_addListener = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_SpeedPolicyProvider_addListener')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    ffi
+        .Pointer<ffi.Void>) _SpeedPolicyProvider_removeListener = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_SpeedPolicyProvider_removeListener')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    mapkit_geometry_point
+        .PointNative) _SpeedPolicyProvider_updateSpeedLimitsPolicy = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, mapkit_geometry_point.PointNative)>>(
+        'yandex_flutter_navigation_automotive_SpeedPolicyProvider_updateSpeedLimitsPolicy')
+    .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _SpeedPolicyProvider_set =
+    lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+            'yandex_flutter_navigation_automotive_SpeedPolicyProvider_set_')
+        .asFunction(isLeaf: true);
+
+SpeedPolicyProvider _getSpeedPolicyProvider() {
+  return SpeedPolicyProviderImpl.fromNativePtr(
+      _SpeedPolicyProviderFactory_getSpeedPolicyProvider());
+}
+
+final ffi.Pointer<ffi.Void> Function()
+    _SpeedPolicyProviderFactory_getSpeedPolicyProvider = lib.library
+        .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
+            'yandex_flutter_navigation_automotive_SpeedPolicyProviderFactory_getSpeedPolicyProvider')
+        .asFunction();

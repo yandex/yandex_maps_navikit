@@ -64,7 +64,7 @@ extension ManoeuvreImpl on Manoeuvre {
 }
 
 @bindings_annotations.ContainerData(
-    toNative: 'ManoeuvreBalloonImpl.toPointer',
+    toNative: 'ManoeuvreBalloonImpl.getNativePtr',
     toPlatform:
         '(val) => ManoeuvreBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'ManoeuvreBalloon')
@@ -113,26 +113,7 @@ final class ManoeuvreBalloonImpl implements ManoeuvreBalloon {
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(ManoeuvreBalloon? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _ManoeuvreBalloon_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)
-    _ManoeuvreBalloon_clone = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_navigation_automotive_layer_ManoeuvreBalloon_clone')
-        .asFunction(isLeaf: true);
 
 final _ManoeuvreBalloon_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
@@ -165,7 +146,7 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
-    toNative: 'ManoeuvreWithLaneSignBalloonImpl.toPointer',
+    toNative: 'ManoeuvreWithLaneSignBalloonImpl.getNativePtr',
     toPlatform:
         '(val) => ManoeuvreWithLaneSignBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'ManoeuvreWithLaneSignBalloon')
@@ -226,27 +207,7 @@ final class ManoeuvreWithLaneSignBalloonImpl
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(ManoeuvreWithLaneSignBalloon? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _ManoeuvreWithLaneSignBalloon_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(
-    ffi
-        .Pointer<ffi.Void>) _ManoeuvreWithLaneSignBalloon_clone = lib.library
-    .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_layer_ManoeuvreWithLaneSignBalloon_clone')
-    .asFunction(isLeaf: true);
 
 final _ManoeuvreWithLaneSignBalloon_free = lib.library.lookup<
         ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
@@ -292,7 +253,7 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
-    toNative: 'LaneSignBalloonImpl.toPointer',
+    toNative: 'LaneSignBalloonImpl.getNativePtr',
     toPlatform:
         '(val) => LaneSignBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'LaneSignBalloon')
@@ -342,26 +303,7 @@ final class LaneSignBalloonImpl implements LaneSignBalloon {
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(LaneSignBalloon? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _LaneSignBalloon_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)
-    _LaneSignBalloon_clone = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_navigation_automotive_layer_LaneSignBalloon_clone')
-        .asFunction(isLeaf: true);
 
 final _LaneSignBalloon_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
@@ -395,7 +337,7 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
-    toNative: 'RouteSummaryBalloonImpl.toPointer',
+    toNative: 'RouteSummaryBalloonImpl.getNativePtr',
     toPlatform:
         '(val) => RouteSummaryBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'RouteSummaryBalloon')
@@ -453,27 +395,7 @@ final class RouteSummaryBalloonImpl implements RouteSummaryBalloon {
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(RouteSummaryBalloon? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _RouteSummaryBalloon_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(
-    ffi
-        .Pointer<ffi.Void>) _RouteSummaryBalloon_clone = lib.library
-    .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_layer_RouteSummaryBalloon_clone')
-    .asFunction(isLeaf: true);
 
 final _RouteSummaryBalloon_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
@@ -521,7 +443,7 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
-    toNative: 'AlternativeBalloonImpl.toPointer',
+    toNative: 'AlternativeBalloonImpl.getNativePtr',
     toPlatform:
         '(val) => AlternativeBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'AlternativeBalloon')
@@ -573,27 +495,7 @@ final class AlternativeBalloonImpl implements AlternativeBalloon {
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(AlternativeBalloon? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _AlternativeBalloon_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(
-    ffi
-        .Pointer<ffi.Void>) _AlternativeBalloon_clone = lib.library
-    .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_layer_AlternativeBalloon_clone')
-    .asFunction(isLeaf: true);
 
 final _AlternativeBalloon_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(

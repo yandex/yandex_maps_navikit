@@ -1,5 +1,7 @@
 export 'package:yandex_maps_navikit/src/search/suggest_response.dart'
     hide
+        SuggestItemBusinessContextImpl,
+        SuggestItemBusinessContextContainerExtension,
         SuggestItemActionImpl,
         SuggestItemTypeContainerExtension,
         SuggestResponseImpl,

@@ -1,7 +1,7 @@
 part of 'proportion_function.dart';
 
 @bindings_annotations.ContainerData(
-    toNative: 'StylingConstantFunctionPointsImpl.toPointer',
+    toNative: 'StylingConstantFunctionPointsImpl.getNativePtr',
     toPlatform:
         '(val) => StylingConstantFunctionPointsImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingConstantFunctionPoints')
@@ -47,26 +47,7 @@ final class StylingConstantFunctionPointsImpl
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(StylingConstantFunctionPoints? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _StylingConstantFunctionPoints_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)
-    _StylingConstantFunctionPoints_clone = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_mapkit_styling_StylingConstantFunctionPoints_clone')
-        .asFunction(isLeaf: true);
 
 final _StylingConstantFunctionPoints_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
@@ -87,7 +68,7 @@ final core.double Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
-    toNative: 'StylingLinearZoomFunctionPointsImpl.toPointer',
+    toNative: 'StylingLinearZoomFunctionPointsImpl.getNativePtr',
     toPlatform:
         '(val) => StylingLinearZoomFunctionPointsImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingLinearZoomFunctionPoints')
@@ -135,27 +116,7 @@ final class StylingLinearZoomFunctionPointsImpl
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(StylingLinearZoomFunctionPoints? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _StylingLinearZoomFunctionPoints_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(
-    ffi
-        .Pointer<ffi.Void>) _StylingLinearZoomFunctionPoints_clone = lib.library
-    .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_mapkit_styling_StylingLinearZoomFunctionPoints_clone')
-    .asFunction(isLeaf: true);
 
 final _StylingLinearZoomFunctionPoints_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
@@ -181,7 +142,7 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
-    toNative: 'StylingLinearTiltFunctionPointsImpl.toPointer',
+    toNative: 'StylingLinearTiltFunctionPointsImpl.getNativePtr',
     toPlatform:
         '(val) => StylingLinearTiltFunctionPointsImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingLinearTiltFunctionPoints')
@@ -229,27 +190,7 @@ final class StylingLinearTiltFunctionPointsImpl
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(StylingLinearTiltFunctionPoints? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _StylingLinearTiltFunctionPoints_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(
-    ffi
-        .Pointer<ffi.Void>) _StylingLinearTiltFunctionPoints_clone = lib.library
-    .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_mapkit_styling_StylingLinearTiltFunctionPoints_clone')
-    .asFunction(isLeaf: true);
 
 final _StylingLinearTiltFunctionPoints_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
@@ -275,7 +216,7 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
-    toNative: 'StylingBilinearFunctionMatrixImpl.toPointer',
+    toNative: 'StylingBilinearFunctionMatrixImpl.getNativePtr',
     toPlatform:
         '(val) => StylingBilinearFunctionMatrixImpl.fromPointer(val, needFree: false)',
     platformType: 'StylingBilinearFunctionMatrix')
@@ -332,26 +273,7 @@ final class StylingBilinearFunctionMatrixImpl
 
     return result;
   }
-
-  static ffi.Pointer<ffi.Void> toPointer(StylingBilinearFunctionMatrix? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Pointer<ffi.Void>>();
-    result.value = _StylingBilinearFunctionMatrix_clone(getNativePtr(val));
-
-    return result.cast<ffi.Void>();
-  }
 }
-
-final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)
-    _StylingBilinearFunctionMatrix_clone = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_mapkit_styling_StylingBilinearFunctionMatrix_clone')
-        .asFunction(isLeaf: true);
 
 final _StylingBilinearFunctionMatrix_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(

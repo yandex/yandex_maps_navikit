@@ -104,6 +104,13 @@ final ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<ffi.Void>, ffi.Bool, ffi.Int64)>>(
         'yandex_flutter_mapkit_internal_InternalDefaultStyleProvider_provideHighlightCircleStyle')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int)
+    _InternalDefaultStyleProvider_set = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+            'yandex_flutter_mapkit_internal_InternalDefaultStyleProvider_set_')
+        .asFunction(isLeaf: true);
 
 InternalDefaultStyleProvider _createDefaultStyleProvider() {
   return InternalDefaultStyleProviderImpl.fromNativePtr(

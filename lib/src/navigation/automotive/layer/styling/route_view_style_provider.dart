@@ -32,6 +32,8 @@ abstract class NavigationJamStyle implements ffi.Finalizable {
   void setColors(core.List<mapkit_navigation_jam_style.JamTypeColor> colors);
 
   void setGradientLength(core.double gradientLength);
+
+  core.bool isValid();
 }
 
 abstract class NavigationRouteStyle implements ffi.Finalizable {
@@ -69,6 +71,8 @@ abstract class NavigationRouteStyle implements ffi.Finalizable {
 
   /// Show manoeuvre arrows along the route. Disabled by default.
   void setShowManoeuvres(core.bool showManoeuvres);
+
+  core.bool isValid();
 }
 
 abstract class NavigationRouteViewStyleProvider {

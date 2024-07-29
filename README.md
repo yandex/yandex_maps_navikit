@@ -14,20 +14,6 @@ The map that you create using MapKit will stay current to show new construction,
 - Show traffic on the map.
 - Get information about locations and organizations.
 
-## NaviKit features
-
-You can use NaviKit to add real-time navigation with voice guidance to your app.
-
-NaviKit has all the features of the MapKit as well as additional navigation functionality.
-
-- Route guidance scenario with voice instructions.
-- Warnings about upcoming maneuvers on the route.
-- Support for various camera scenarios, for example, route overview and following the user placemark.
-- Screen and voice notifications about speed cameras.
-- Route display on the map with information about traffic jams, road events, and restrictions.
-- Routes built around the features and restrictions for the appropriate vehicle: cars, trucks, motorcycles, and taxis.
-- Alternate route display.
-
 ## Documentation
 
 You can find more information about MapKit and NaviKit in our documentation: https://yandex.ru/dev/mapkit/doc/en/ 

@@ -61,6 +61,13 @@ final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
                         ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_transport_masstransit_MasstransitSession_retry')
         .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _MasstransitSession_set =
+    lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+            'yandex_flutter_transport_masstransit_MasstransitSession_set_')
+        .asFunction(isLeaf: true);
 
 final class RouteHandlerImpl implements RouteHandler {
   static final _pointerToListener = <ffi.Pointer<ffi.Void>, RouteHandler>{};
@@ -129,9 +136,11 @@ final void Function(
     .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<
-            ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+        ffi
+            .Pointer<
+                ffi.NativeFunction<
+                    ffi.Void Function(
+                        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
         ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
     _RouteHandler_new = lib.library
         .lookup<
@@ -232,6 +241,15 @@ final void Function(
                     ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_transport_masstransit_MasstransitSummarySession_retry')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _MasstransitSummarySession_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_transport_masstransit_MasstransitSummarySession_set_')
+    .asFunction(isLeaf: true);
 
 final class SummaryHandlerImpl implements SummaryHandler {
   static final _pointerToListener = <ffi.Pointer<ffi.Void>, SummaryHandler>{};
@@ -309,10 +327,10 @@ final ffi.Pointer<ffi.Void> Function(
         ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
     _SummaryHandler_new = lib.library
         .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(
-                        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
-            'yandex_flutter_transport_masstransit_SummarySession_SummaryHandler_new')
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_transport_masstransit_SummarySession_SummaryHandler_new')
         .asFunction(isLeaf: true);
 
 void _SummaryHandler_onMasstransitSummaries(

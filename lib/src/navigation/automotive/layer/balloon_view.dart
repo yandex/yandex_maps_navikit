@@ -38,4 +38,5 @@ abstract class BalloonView implements ffi.Finalizable {
 
   /// The route to which this balloon belongs.
   directions_driving_route.DrivingRoute get hostRoute;
+  core.bool isValid();
 }

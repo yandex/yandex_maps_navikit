@@ -41,4 +41,6 @@ abstract class PlacemarkStyle implements ffi.Finalizable {
 
   /// Minimal zoom for placemark to be visible.
   void setMinZoomVisible(core.double? minZoom);
+
+  core.bool isValid();
 }

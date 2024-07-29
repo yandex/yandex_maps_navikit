@@ -33,6 +33,7 @@ class RouteViewImpl implements RouteView, ffi.Finalizable {
     return (obj as RouteViewImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _RouteView_check(ptr);
   }
@@ -84,6 +85,14 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_RouteView_get_balloonViews')
     .asFunction();
+
+final void Function(ffi.Pointer<ffi.Void>, core.int) _RouteView_set = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_RouteView_set_')
+    .asFunction(isLeaf: true);
 
 final class _RouteViewListenerWrapper implements ffi.Finalizable {
   _RouteViewListenerWrapper(this.ptr) {
@@ -155,8 +164,7 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<
-                        ffi
-                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_layer_RouteViewListener_new')
         .asFunction(isLeaf: true);
 

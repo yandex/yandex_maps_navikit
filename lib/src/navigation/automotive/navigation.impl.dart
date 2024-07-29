@@ -82,8 +82,7 @@ final ffi.Pointer<ffi.Void> Function(
                         ffi.NativeFunction<
                             ffi.Void Function(
                                 ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<
-                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
@@ -548,6 +547,13 @@ final void Function(ffi.Pointer<ffi.Void>) _Navigation_resume = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_Navigation_resume')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _Navigation_set = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_Navigation_set_')
+    .asFunction(isLeaf: true);
 
 Navigation _createNavigation(
     directions_driving_driving_router.DrivingRouterType type) {

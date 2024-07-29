@@ -114,4 +114,6 @@ abstract class Guidance implements ffi.Finalizable {
   void addListener(GuidanceListener guidanceListener);
 
   void removeListener(GuidanceListener guidanceListener);
+
+  core.bool isValid();
 }

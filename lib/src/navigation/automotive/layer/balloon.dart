@@ -154,6 +154,11 @@ abstract final class RouteSummaryBalloon implements ffi.Finalizable {
 
   directions_driving_route.DrivingSummary get summary;
   core.List<core.String> get tags;
+
+  /// presented only if any another route selected in navigation layer
+  /// contains (weight(alternative) - weight(selectedRoute)) automatically
+  /// updated on selected route changing
+  ///
   directions_driving_weight.DrivingWeight? get relativeWeight;
 
   @core.override
@@ -181,6 +186,9 @@ abstract final class AlternativeBalloon implements ffi.Finalizable {
       AlternativeBalloonImpl(summary, relativeWeight);
 
   directions_driving_route.DrivingSummary get summary;
+
+  /// contains (weight(alternative) - weight(selectedRoute)) automatically
+  /// updated on selected route changing
   directions_driving_weight.DrivingWeight get relativeWeight;
 
   @core.override

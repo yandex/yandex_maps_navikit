@@ -89,6 +89,15 @@ final void Function(
                     ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_custom_route_navigation_CustomRouteNavigation_startGuidance')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _CustomRouteNavigation_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_custom_route_navigation_CustomRouteNavigation_set_')
+    .asFunction(isLeaf: true);
 
 CustomRouteNavigation _createNavigation() {
   return CustomRouteNavigationImpl.fromNativePtr(

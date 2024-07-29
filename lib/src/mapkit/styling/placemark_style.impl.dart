@@ -33,6 +33,7 @@ class PlacemarkStyleImpl implements PlacemarkStyle, ffi.Finalizable {
     return (obj as PlacemarkStyleImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _PlacemarkStyle_check(ptr);
   }
@@ -127,3 +128,10 @@ final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
                         ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_mapkit_styling_PlacemarkStyle_setMinZoomVisible')
         .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _PlacemarkStyle_set = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_mapkit_styling_PlacemarkStyle_set_')
+    .asFunction(isLeaf: true);

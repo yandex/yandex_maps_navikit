@@ -108,4 +108,6 @@ abstract class Camera implements ffi.Finalizable {
     CameraMode mode, {
     mapkit_animation.Animation? animation,
   });
+
+  core.bool isValid();
 }

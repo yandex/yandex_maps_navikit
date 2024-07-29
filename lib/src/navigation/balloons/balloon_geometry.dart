@@ -25,10 +25,19 @@ part 'balloon_geometry.impl.dart';
 
 final class BalloonGeometry {
   final navigation_balloons_balloon_anchor.BalloonAnchor anchor;
+
+  /// Total balloon image size
   final core.double width;
   final core.double height;
+
+  /// Anchor inside image rect. Coordinates from 0 to 1 are inside the
+  /// image.
   final math.Point<core.double> imageAnchor;
+
+  /// area with main information, except leg/borders
   final mapkit_map_rect.Rect contentRect;
+
+  /// area with balloon, except leg, shadows, etc.
   final mapkit_map_rect.Rect balloonRect;
 
   const BalloonGeometry(

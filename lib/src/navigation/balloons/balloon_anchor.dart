@@ -26,6 +26,8 @@ enum HorizontalPosition {
   ;
 }
 
+/// BalloonAnchor represents where balloon image has a leg
+
 final class BalloonAnchor {
   final VerticalPosition vertical;
   final HorizontalPosition horizontal;

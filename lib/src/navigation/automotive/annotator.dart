@@ -172,4 +172,6 @@ abstract class Annotator implements ffi.Finalizable {
   void addListener(AnnotatorListener annotatorListener);
 
   void removeListener(AnnotatorListener annotatorListener);
+
+  core.bool isValid();
 }

@@ -151,6 +151,8 @@ abstract class NavigationLayer implements ffi.Finalizable {
   core.bool is2DMode();
 
   void set2DMode(core.bool enabled);
+
+  core.bool isValid();
 }
 
 class NavigationLayerFactory {

@@ -33,6 +33,7 @@ class ArrowStyleImpl implements ArrowStyle, ffi.Finalizable {
     return (obj as ArrowStyleImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _ArrowStyle_check(ptr);
   }
@@ -149,3 +150,10 @@ final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
                         ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_mapkit_styling_ArrowStyle_setMinZoomVisible')
         .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _ArrowStyle_set = lib
+    .library
+    .lookup<
+        ffi.NativeFunction<
+            ffi.Void Function(ffi.Pointer<ffi.Void>,
+                ffi.Int64)>>('yandex_flutter_mapkit_styling_ArrowStyle_set_')
+    .asFunction(isLeaf: true);

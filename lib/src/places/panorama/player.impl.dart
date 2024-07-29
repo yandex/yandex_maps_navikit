@@ -158,8 +158,7 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.NativeFunction<
                     ffi.Pointer<ffi.Void> Function(
                         ffi.Pointer<
-                            ffi
-                            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
+                            ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
             'yandex_flutter_places_panorama_PanoramaDirectionChangeListener_new')
         .asFunction(isLeaf: true);
 
@@ -337,16 +336,14 @@ final void Function(
     .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
-    _PanoramaCompanyTapListener_new = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(
-                        ffi.Pointer<
-                            ffi
-                            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
-            'yandex_flutter_places_panorama_PanoramaCompanyTapListener_new')
-        .asFunction(isLeaf: true);
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+                ffi.Pointer<ffi.Void>)>>) _PanoramaCompanyTapListener_new = lib
+    .library
+    .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
+        'yandex_flutter_places_panorama_PanoramaCompanyTapListener_new')
+    .asFunction(isLeaf: true);
 
 final _PanoramaCompanyTapListener_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
@@ -429,16 +426,14 @@ final void Function(ffi.Pointer<ffi.Void>, core.int, core.int)
         .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
-    _PanoramaErrorListener_new = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Pointer<ffi.Void> Function(
-                        ffi.Pointer<
-                            ffi
-                            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
-            'yandex_flutter_places_panorama_PanoramaErrorListener_new')
-        .asFunction(isLeaf: true);
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+                ffi.Pointer<ffi.Void>)>>) _PanoramaErrorListener_new = lib
+    .library
+    .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
+        'yandex_flutter_places_panorama_PanoramaErrorListener_new')
+    .asFunction(isLeaf: true);
 
 final _PanoramaErrorListener_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
@@ -492,6 +487,7 @@ class PanoramaPlayerImpl implements PanoramaPlayer, ffi.Finalizable {
     return (obj as PanoramaPlayerImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _PanoramaPlayer_check(ptr);
   }
@@ -1042,3 +1038,10 @@ final void Function(ffi.Pointer<ffi.Void>) _Player_onMemoryWarning = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_places_panorama_PanoramaPlayer_onMemoryWarning')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _PanoramaPlayer_set = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_places_panorama_PanoramaPlayer_set_')
+    .asFunction(isLeaf: true);

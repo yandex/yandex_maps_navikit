@@ -95,4 +95,6 @@ abstract class NavigationWindshield implements ffi.Finalizable {
   void addListener(NavigationWindshieldListener windshieldListener);
 
   void removeListener(NavigationWindshieldListener windshieldListener);
+
+  core.bool isValid();
 }

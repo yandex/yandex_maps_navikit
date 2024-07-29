@@ -13,7 +13,7 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, ManoeuvreBalloonImpl.toPointer);
+    return string_map.toNativeMap(obj, ManoeuvreBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -40,7 +40,7 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, ManoeuvreBalloonImpl.toPointer);
+    return vector.toNativeVector(obj, ManoeuvreBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -119,7 +119,7 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
     }
 
     return string_map.toNativeMap(
-        obj, ManoeuvreWithLaneSignBalloonImpl.toPointer);
+        obj, ManoeuvreWithLaneSignBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -149,7 +149,7 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
     }
 
     return vector.toNativeVector(
-        obj, ManoeuvreWithLaneSignBalloonImpl.toPointer);
+        obj, ManoeuvreWithLaneSignBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -231,7 +231,7 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, LaneSignBalloonImpl.toPointer);
+    return string_map.toNativeMap(obj, LaneSignBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -258,7 +258,7 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, LaneSignBalloonImpl.toPointer);
+    return vector.toNativeVector(obj, LaneSignBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -335,7 +335,7 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, RouteSummaryBalloonImpl.toPointer);
+    return string_map.toNativeMap(obj, RouteSummaryBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -363,7 +363,7 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, RouteSummaryBalloonImpl.toPointer);
+    return vector.toNativeVector(obj, RouteSummaryBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(
@@ -440,7 +440,7 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
       return ffi.nullptr;
     }
 
-    return string_map.toNativeMap(obj, AlternativeBalloonImpl.toPointer);
+    return string_map.toNativeMap(obj, AlternativeBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeMapVector(
@@ -467,7 +467,7 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
       return ffi.nullptr;
     }
 
-    return vector.toNativeVector(obj, AlternativeBalloonImpl.toPointer);
+    return vector.toNativeVector(obj, AlternativeBalloonImpl.getNativePtr);
   }
 
   static ffi.Pointer<ffi.Void> toNativeVectorVector(

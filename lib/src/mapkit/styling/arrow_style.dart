@@ -45,4 +45,6 @@ abstract class ArrowStyle implements ffi.Finalizable {
 
   /// Minimal zoom for maneuvers to be visible. Default: null
   void setMinZoomVisible(core.double? minZoom);
+
+  core.bool isValid();
 }

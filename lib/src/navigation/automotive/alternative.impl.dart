@@ -89,3 +89,11 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_NavigationAlternative_get_forkPositionOnCurrentRoute')
     .asFunction();
+
+final void Function(ffi.Pointer<ffi.Void>, core.int)
+    _NavigationAlternative_set = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+            'yandex_flutter_navigation_automotive_NavigationAlternative_set_')
+        .asFunction(isLeaf: true);

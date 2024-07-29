@@ -90,6 +90,9 @@ abstract final class StylingLinearTiltFunctionPoints
   }
 }
 
+/// defines function `func(zoom, tilt)` as `func(zooms\[x\], tilts\[y\])
+/// == points\[x\]\[y\]` for all x in \[0, zooms.size()), y in \[0,
+/// tilts.size()) https://en.wikipedia.org/wiki/Bilinear_interpolation
 abstract final class StylingBilinearFunctionMatrix implements ffi.Finalizable {
   factory StylingBilinearFunctionMatrix(
           core.List<core.double> zooms,
@@ -99,6 +102,9 @@ abstract final class StylingBilinearFunctionMatrix implements ffi.Finalizable {
 
   core.List<core.double> get zooms;
   core.List<core.double> get tilts;
+
+  /// requires: points.size() == zooms.size() subpoints.size() ==
+  /// tilts.size() for all subpoints in points
   core.List<core.List<core.double>> get points;
 
   @core.override

@@ -1,6 +1,5 @@
 export 'package:yandex_maps_navikit/src/navigation/balloons/balloon_geometry_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/balloons/balloon_anchor_export.dart';
-export 'package:yandex_maps_navikit/src/navigation/transport/annotator_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/annotator_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/windshield_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/route_change_reason_export.dart';

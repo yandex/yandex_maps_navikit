@@ -33,6 +33,7 @@ class PolylineStyleImpl implements PolylineStyle, ffi.Finalizable {
     return (obj as PolylineStyleImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _PolylineStyle_check(ptr);
   }
@@ -189,3 +190,10 @@ final void Function(ffi.Pointer<ffi.Void>, core.double)
                     ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float)>>(
             'yandex_flutter_mapkit_styling_PolylineStyle_setDashOffset')
         .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _PolylineStyle_set = lib
+    .library
+    .lookup<
+        ffi.NativeFunction<
+            ffi.Void Function(ffi.Pointer<ffi.Void>,
+                ffi.Int64)>>('yandex_flutter_mapkit_styling_PolylineStyle_set_')
+    .asFunction(isLeaf: true);

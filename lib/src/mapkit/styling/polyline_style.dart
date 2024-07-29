@@ -64,4 +64,6 @@ abstract class PolylineStyle implements ffi.Finalizable {
   /// Offset from the start of the polyline to the reference dash in units.
   /// Default: 0.
   void setDashOffset(core.double dashOffset);
+
+  core.bool isValid();
 }

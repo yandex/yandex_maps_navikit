@@ -180,6 +180,7 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
     return (obj as NavigationLayerImpl).ptr;
   }
 
+  @core.override
   core.bool isValid() {
     return _NavigationLayer_check(ptr);
   }
@@ -583,6 +584,13 @@ final void Function(
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
         'yandex_flutter_navigation_automotive_layer_NavigationLayer_set2DMode')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.int) _NavigationLayer_set = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_NavigationLayer_set_')
+    .asFunction(isLeaf: true);
 
 NavigationLayer _createNavigationLayer(
     mapkit_map_map_window.MapWindow mapWindow,
