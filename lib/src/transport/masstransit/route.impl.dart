@@ -2244,10 +2244,10 @@ final ffi.Pointer<ffi.Void> Function(
         ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
     _MasstransitRouteJamsListener_new = lib.library
         .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_transport_masstransit_MasstransitRouteJamsListener_new')
+                ffi.NativeFunction<
+                    ffi.Pointer<ffi.Void> Function(
+                        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
+            'yandex_flutter_transport_masstransit_MasstransitRouteJamsListener_new')
         .asFunction(isLeaf: true);
 
 final _MasstransitRouteJamsListener_free = lib.library.lookup<

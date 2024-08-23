@@ -349,8 +349,7 @@ final void Function(ffi.Pointer<ffi.Void>, core.int) _OfflineCacheManager_drop =
     lib
         .library
         .lookup<
-                ffi
-                .NativeFunction<
+                ffi.NativeFunction<
                     ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Uint32)>>(
             'yandex_flutter_mapkit_offline_cache_OfflineCacheManager_drop')
         .asFunction();
@@ -574,7 +573,8 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.NativeFunction<
                     ffi.Pointer<ffi.Void> Function(
                         ffi.Pointer<
-                            ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
+                            ffi
+                            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
             'yandex_flutter_mapkit_offline_cache_OfflineCacheManager_OfflineCacheManagerSizeListener_new')
         .asFunction(isLeaf: true);
 
@@ -739,7 +739,8 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<
-                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                        ffi
+                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_mapkit_offline_cache_OfflineCacheManager_OfflineCacheManagerPathSetterListener_new')
         .asFunction(isLeaf: true);
 
@@ -840,17 +841,16 @@ final void Function(
     .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<
-            ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Uint32)>>)
-    _OfflineCacheManagerErrorListener_new = lib.library
-        .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Uint32)>>)>>('yandex_flutter_mapkit_offline_cache_OfflineCacheManager_OfflineCacheManagerErrorListener_new')
-        .asFunction(isLeaf: true);
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+                ffi.Uint32)>>) _OfflineCacheManagerErrorListener_new = lib.library
+    .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Uint32)>>)>>(
+        'yandex_flutter_mapkit_offline_cache_OfflineCacheManager_OfflineCacheManagerErrorListener_new')
+    .asFunction(isLeaf: true);
 
 final _OfflineCacheManagerErrorListener_free = lib.library.lookup<
         ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(

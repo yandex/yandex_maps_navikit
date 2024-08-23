@@ -1207,8 +1207,7 @@ final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>) _Route_get_ferries =
     lib
         .library
         .lookup<
-                ffi
-                .NativeFunction<
+                ffi.NativeFunction<
                     ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_directions_driving_DrivingRoute_get_ferries')
         .asFunction();

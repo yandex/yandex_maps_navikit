@@ -144,22 +144,30 @@ final _InternalDefaultRequestPointStyleProvider_free = lib.library.lookup<
         ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
     'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_free');
 
-final void Function(ffi.Pointer<ffi.Void>, core.int, core.int, core.int,
-        core.double, core.bool, core.bool, ffi.Pointer<ffi.Void>)
-    _DefaultRequestPointStyleProvider_provideStyle = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Void Function(
-                        ffi.Pointer<ffi.Void>,
-                        ffi.Int,
-                        ffi.Int,
-                        ffi.Int64,
-                        ffi.Float,
-                        ffi.Bool,
-                        ffi.Bool,
-                        ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_provideStyle')
-        .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core.int,
+    core.int,
+    core.int,
+    core.double,
+    core.bool,
+    core.bool,
+    ffi
+        .Pointer<ffi.Void>) _DefaultRequestPointStyleProvider_provideStyle = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>,
+                    ffi.Int,
+                    ffi.Int,
+                    ffi.Int64,
+                    ffi.Float,
+                    ffi.Bool,
+                    ffi.Bool,
+                    ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_provideStyle')
+    .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
     core

@@ -197,8 +197,7 @@ final void Function(ffi.Pointer<ffi.Void>, core.bool) _MapObject_set_draggable =
     lib
         .library
         .lookup<
-                ffi
-                .NativeFunction<
+                ffi.NativeFunction<
                     ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
             'yandex_flutter_mapkit_map_MapObject_set_draggable')
         .asFunction();

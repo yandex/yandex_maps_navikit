@@ -79,22 +79,23 @@ final void Function(
     .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(
-                    ffi.Pointer<ffi.Void>,
-                    navigation_automotive_layer_balloon.BalloonNative,
-                    ffi.Float,
-                    ffi.Bool)>>,
-        ffi.Pointer<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(
-                    ffi.Pointer<ffi.Void>,
-                    navigation_automotive_layer_balloon.BalloonNative,
-                    navigation_balloons_balloon_anchor.BalloonAnchorNative,
-                    ffi.Float,
-                    ffi.Bool)>>) _NavigationBalloonImageProvider_new =
-    lib.library.lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, navigation_automotive_layer_balloon.BalloonNative, ffi.Float, ffi.Bool)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, navigation_automotive_layer_balloon.BalloonNative, navigation_balloons_balloon_anchor.BalloonAnchorNative, ffi.Float, ffi.Bool)>>)>>('yandex_flutter_navigation_automotive_layer_styling_NavigationBalloonImageProvider_new').asFunction(isLeaf: true);
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Pointer<ffi.Void> Function(
+                ffi.Pointer<ffi.Void>,
+                navigation_automotive_layer_balloon.BalloonNative,
+                ffi.Float,
+                ffi.Bool)>>,
+    ffi.Pointer<
+        ffi.NativeFunction<
+            ffi.Pointer<ffi.Void> Function(
+                ffi.Pointer<ffi.Void>,
+                navigation_automotive_layer_balloon.BalloonNative,
+                navigation_balloons_balloon_anchor.BalloonAnchorNative,
+                ffi.Float,
+                ffi.Bool)>>) _NavigationBalloonImageProvider_new = lib.library
+    .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, navigation_automotive_layer_balloon.BalloonNative, ffi.Float, ffi.Bool)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>, navigation_automotive_layer_balloon.BalloonNative, navigation_balloons_balloon_anchor.BalloonAnchorNative, ffi.Float, ffi.Bool)>>)>>('yandex_flutter_navigation_automotive_layer_styling_NavigationBalloonImageProvider_new')
+    .asFunction(isLeaf: true);
 
 final void Function(
     ffi
