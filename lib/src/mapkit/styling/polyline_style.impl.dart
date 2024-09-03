@@ -53,6 +53,7 @@ class PolylineStyleImpl implements PolylineStyle, ffi.Finalizable {
         ptr,
         mapkit_styling_proportion_function.StylingProportionFunctionImpl
             .toNative(strokeWidth));
+    exception.checkCallResult();
   }
 
   void setOutlineWidth(
@@ -62,38 +63,47 @@ class PolylineStyleImpl implements PolylineStyle, ffi.Finalizable {
         ptr,
         mapkit_styling_proportion_function.StylingProportionFunctionImpl
             .toNative(outlineWidth));
+    exception.checkCallResult();
   }
 
   void setStrokeColor(ui.Color strokeColor) {
     _PolylineStyle_setStrokeColor(ptr, to_native.toNativeColor(strokeColor));
+    exception.checkCallResult();
   }
 
   void setOutlineColor(ui.Color outlineColor) {
     _PolylineStyle_setOutlineColor(ptr, to_native.toNativeColor(outlineColor));
+    exception.checkCallResult();
   }
 
   void setInnerOutlineEnabled(core.bool innerOutlineEnabled) {
     _PolylineStyle_setInnerOutlineEnabled(ptr, innerOutlineEnabled);
+    exception.checkCallResult();
   }
 
   void setTurnRadius(core.double turnRadius) {
     _PolylineStyle_setTurnRadius(ptr, turnRadius);
+    exception.checkCallResult();
   }
 
   void setArcApproximationStep(core.double arcApproximationStep) {
     _PolylineStyle_setArcApproximationStep(ptr, arcApproximationStep);
+    exception.checkCallResult();
   }
 
   void setDashLength(core.double dashLength) {
     _PolylineStyle_setDashLength(ptr, dashLength);
+    exception.checkCallResult();
   }
 
   void setGapLength(core.double gapLength) {
     _PolylineStyle_setGapLength(ptr, gapLength);
+    exception.checkCallResult();
   }
 
   void setDashOffset(core.double dashOffset) {
     _PolylineStyle_setDashOffset(ptr, dashOffset);
+    exception.checkCallResult();
   }
 }
 

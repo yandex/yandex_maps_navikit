@@ -53,6 +53,7 @@ class ArrowStyleImpl implements ArrowStyle, ffi.Finalizable {
         ptr,
         mapkit_styling_proportion_function.StylingProportionFunctionImpl
             .toNative(outlineWidth));
+    exception.checkCallResult();
   }
 
   void setLength(
@@ -61,6 +62,7 @@ class ArrowStyleImpl implements ArrowStyle, ffi.Finalizable {
         ptr,
         mapkit_styling_proportion_function.StylingProportionFunctionImpl
             .toNative(length));
+    exception.checkCallResult();
   }
 
   void setTriangleHeight(
@@ -70,18 +72,22 @@ class ArrowStyleImpl implements ArrowStyle, ffi.Finalizable {
         ptr,
         mapkit_styling_proportion_function.StylingProportionFunctionImpl
             .toNative(triangleHeight));
+    exception.checkCallResult();
   }
 
   void setFillColor(ui.Color fillColor) {
     _ArrowStyle_setFillColor(ptr, to_native.toNativeColor(fillColor));
+    exception.checkCallResult();
   }
 
   void setOutlineColor(ui.Color outlineColor) {
     _ArrowStyle_setOutlineColor(ptr, to_native.toNativeColor(outlineColor));
+    exception.checkCallResult();
   }
 
   void setMinZoomVisible(core.double? minZoom) {
     _ArrowStyle_setMinZoomVisible(ptr, to_native.toNativePtrFloat(minZoom));
+    exception.checkCallResult();
   }
 }
 

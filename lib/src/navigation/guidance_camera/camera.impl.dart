@@ -174,21 +174,26 @@ class CameraImpl implements Camera, ffi.Finalizable {
 
   @core.override
   core.bool get switchModesAutomatically {
-    return _Camera_get_switchModesAutomatically(ptr);
+    final result = _Camera_get_switchModesAutomatically(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set switchModesAutomatically(core.bool val) {
     _Camera_set_switchModesAutomatically(ptr, val);
+    exception.checkCallResult();
   }
 
   void addListener(CameraListener cameraListener) {
     _Camera_addListener(ptr, CameraListenerImpl.getNativePtr(cameraListener));
+    exception.checkCallResult();
   }
 
   void removeListener(CameraListener cameraListener) {
     _Camera_removeListener(
         ptr, CameraListenerImpl.getNativePtr(cameraListener));
+    exception.checkCallResult();
   }
 
   void setAutoZoom({
@@ -197,6 +202,7 @@ class CameraImpl implements Camera, ffi.Finalizable {
   }) {
     _Camera_setAutoZoom(
         ptr, enabled, mapkit_animation.AnimationImpl.toPointer(animation));
+    exception.checkCallResult();
   }
 
   void setAutoRotation({
@@ -205,6 +211,7 @@ class CameraImpl implements Camera, ffi.Finalizable {
   }) {
     _Camera_setAutoRotation(
         ptr, enabled, mapkit_animation.AnimationImpl.toPointer(animation));
+    exception.checkCallResult();
   }
 
   void setFollowingModeZoomOffset({
@@ -213,6 +220,7 @@ class CameraImpl implements Camera, ffi.Finalizable {
   }) {
     _Camera_setFollowingModeZoomOffset(
         ptr, offset, mapkit_animation.AnimationImpl.toPointer(animation));
+    exception.checkCallResult();
   }
 
   void setOverviewRect({
@@ -223,15 +231,19 @@ class CameraImpl implements Camera, ffi.Finalizable {
         ptr,
         mapkit_screen_types.ScreenRectImpl.toPointer(rect),
         mapkit_animation.AnimationImpl.toPointer(animation));
+    exception.checkCallResult();
   }
 
   void setExtraOverviewPoints(core.List<mapkit_geometry_point.Point>? points) {
     _Camera_setExtraOverviewPoints(ptr,
         mapkit_geometry_point.PointContainerExtension.toNativeVector(points));
+    exception.checkCallResult();
   }
 
   CameraMode cameraMode() {
-    return CameraModeImpl.fromInt(_Camera_cameraMode(ptr));
+    final result = CameraModeImpl.fromInt(_Camera_cameraMode(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   void setCameraMode(
@@ -240,6 +252,7 @@ class CameraImpl implements Camera, ffi.Finalizable {
   }) {
     _Camera_setCameraMode(ptr, CameraModeImpl.toInt(mode),
         mapkit_animation.AnimationImpl.toPointer(animation));
+    exception.checkCallResult();
   }
 }
 

@@ -14,7 +14,8 @@ navigation_automotive_layer_navigation_layer.NavigationLayer
         mapkit_road_events_layer_road_events_layer.RoadEventsLayer
             roadEventsLayer,
         navigation_automotive_navigation.Navigation navigation) {
-  return navigation_automotive_layer_navigation_layer.NavigationLayerImpl
+  final result = navigation_automotive_layer_navigation_layer
+          .NavigationLayerImpl
       .fromNativePtr(
           _FlutterNavigationLayerFactory_createNavigationLayerWithPresetStyleProvider(
               mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
@@ -22,6 +23,7 @@ navigation_automotive_layer_navigation_layer.NavigationLayer
                   .getNativePtr(roadEventsLayer),
               navigation_automotive_navigation.NavigationImpl.getNativePtr(
                   navigation)));
+  return result;
 }
 
 final void Function(

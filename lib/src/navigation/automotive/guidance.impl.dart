@@ -329,113 +329,151 @@ class GuidanceImpl implements Guidance, ffi.Finalizable {
 
   @core.override
   core.bool get enableAlternatives {
-    return _Guidance_get_enableAlternatives(ptr);
+    final result = _Guidance_get_enableAlternatives(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set enableAlternatives(core.bool val) {
     _Guidance_set_enableAlternatives(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   navigation_automotive_windshield.NavigationWindshield get windshield {
-    return navigation_automotive_windshield.NavigationWindshieldImpl
-        .fromNativePtr(_Guidance_get_windshield(ptr));
+    final result =
+        navigation_automotive_windshield.NavigationWindshieldImpl.fromNativePtr(
+            _Guidance_get_windshield(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   navigation_automotive_annotator.Annotator get annotator {
-    return navigation_automotive_annotator.AnnotatorImpl.fromNativePtr(
+    final result = navigation_automotive_annotator.AnnotatorImpl.fromNativePtr(
         _Guidance_get_annotator(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   directions_driving_route.DrivingRoute? get currentRoute {
-    return directions_driving_route.DrivingRouteImpl.fromOptionalPtr(
+    final result = directions_driving_route.DrivingRouteImpl.fromOptionalPtr(
         _Guidance_get_currentRoute(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   core.List<navigation_automotive_alternative.NavigationAlternative>
       get alternatives {
-    return navigation_automotive_alternative
+    final result = navigation_automotive_alternative
             .NavigationAlternativeContainerExtension
         .toPlatformVector(_Guidance_get_alternatives(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   navigation_automotive_alternative.NavigationAlternative?
       get fastestAlternative {
-    return navigation_automotive_alternative.NavigationAlternativeImpl
+    final result = navigation_automotive_alternative.NavigationAlternativeImpl
         .fromOptionalPtr(_Guidance_get_fastestAlternative(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   mapkit_location_location.Location? get location {
-    return mapkit_location_location.LocationImpl.fromPointer(
+    final result = mapkit_location_location.LocationImpl.fromPointer(
         _Guidance_get_location(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   navigation_automotive_location_class.LocationClass? get locationClass {
-    return navigation_automotive_location_class.LocationClassImpl.fromPointer(
-        _Guidance_get_locationClass(ptr));
+    final result =
+        navigation_automotive_location_class.LocationClassImpl.fromPointer(
+            _Guidance_get_locationClass(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   core.String? get roadName {
-    return to_platform.toPlatformFromPointerString(_Guidance_get_roadName(ptr));
+    final result =
+        to_platform.toPlatformFromPointerString(_Guidance_get_roadName(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   navigation_automotive_route_status.RouteStatus get routeStatus {
-    return navigation_automotive_route_status.RouteStatusImpl.fromInt(
+    final result = navigation_automotive_route_status.RouteStatusImpl.fromInt(
         _Guidance_get_routeStatus(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   navigation_automotive_speed_limits_policy.SpeedLimitsPolicy
       get speedLimitsPolicy {
-    return navigation_automotive_speed_limits_policy.SpeedLimitsPolicyImpl
-        .fromNativePtr(_Guidance_get_speedLimitsPolicy(ptr));
+    final result =
+        navigation_automotive_speed_limits_policy.SpeedLimitsPolicyImpl
+            .fromNativePtr(_Guidance_get_speedLimitsPolicy(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   core.double get speedLimitTolerance {
-    return _Guidance_get_speedLimitTolerance(ptr);
+    final result = _Guidance_get_speedLimitTolerance(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set speedLimitTolerance(core.double val) {
     _Guidance_set_speedLimitTolerance(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   mapkit_localized_value.LocalizedValue? get speedLimit {
-    return mapkit_localized_value.LocalizedValueImpl.fromPointer(
+    final result = mapkit_localized_value.LocalizedValueImpl.fromPointer(
         _Guidance_get_speedLimit(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   navigation_automotive_speed_limit_status.SpeedLimitStatus
       get speedLimitStatus {
-    return navigation_automotive_speed_limit_status.SpeedLimitStatusImpl
-        .fromInt(_Guidance_get_speedLimitStatus(ptr));
+    final result =
+        navigation_automotive_speed_limit_status.SpeedLimitStatusImpl.fromInt(
+            _Guidance_get_speedLimitStatus(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   void switchToRoute(directions_driving_route.DrivingRoute route) {
     _Guidance_switchToRoute(
         ptr, directions_driving_route.DrivingRouteImpl.getNativePtr(route));
+    exception.checkCallResult();
   }
 
   void addListener(GuidanceListener guidanceListener) {
     _Guidance_addListener(
         ptr, GuidanceListenerImpl.getNativePtr(guidanceListener));
+    exception.checkCallResult();
   }
 
   void removeListener(GuidanceListener guidanceListener) {
     _Guidance_removeListener(
         ptr, GuidanceListenerImpl.getNativePtr(guidanceListener));
+    exception.checkCallResult();
   }
 }
 

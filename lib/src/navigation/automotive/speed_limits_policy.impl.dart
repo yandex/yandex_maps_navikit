@@ -204,19 +204,22 @@ class SpeedLimitsPolicyImpl implements SpeedLimitsPolicy, ffi.Finalizable {
 
   @core.override
   SpeedLimits get legalSpeedLimits {
-    return SpeedLimitsImpl.fromNative(
+    final result = SpeedLimitsImpl.fromNative(
         _SpeedLimitsPolicy_get_legalSpeedLimits(ptr));
+    return result;
   }
 
   @core.override
   SpeedLimitsRules get speedLimitsRules {
-    return SpeedLimitsRulesImpl.fromNative(
+    final result = SpeedLimitsRulesImpl.fromNative(
         _SpeedLimitsPolicy_get_speedLimitsRules(ptr));
+    return result;
   }
 
   SpeedLimits customSpeedLimits(core.double toleranceRatio) {
-    return SpeedLimitsImpl.fromNative(
+    final result = SpeedLimitsImpl.fromNative(
         _SpeedLimitsPolicy_customSpeedLimits(ptr, toleranceRatio));
+    return result;
   }
 }
 
@@ -388,8 +391,9 @@ class SpeedPolicyProviderImpl implements SpeedPolicyProvider, ffi.Finalizable {
 
   @core.override
   SpeedLimitsPolicy get speedLimitsPolicy {
-    return SpeedLimitsPolicyImpl.fromNativePtr(
+    final result = SpeedLimitsPolicyImpl.fromNativePtr(
         _SpeedPolicyProvider_get_speedLimitsPolicy(ptr));
+    return result;
   }
 
   void addListener(SpeedPolicyListener speedLimitsListener) {
@@ -461,8 +465,9 @@ final void Function(ffi.Pointer<ffi.Void>, core.int) _SpeedPolicyProvider_set =
         .asFunction(isLeaf: true);
 
 SpeedPolicyProvider _getSpeedPolicyProvider() {
-  return SpeedPolicyProviderImpl.fromNativePtr(
+  final result = SpeedPolicyProviderImpl.fromNativePtr(
       _SpeedPolicyProviderFactory_getSpeedPolicyProvider());
+  return result;
 }
 
 final ffi.Pointer<ffi.Void> Function()

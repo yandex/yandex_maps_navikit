@@ -48,29 +48,35 @@ class PlacemarkStyleImpl implements PlacemarkStyle, ffi.Finalizable {
 
   void setArrowModel() {
     _PlacemarkStyle_setArrowModel(ptr);
+    exception.checkCallResult();
   }
 
   void setImage(image_provider.ImageProvider image) {
     _PlacemarkStyle_setImage(ptr, to_native.toNativeImageProvider(image));
+    exception.checkCallResult();
   }
 
   void setAnimatedImage(
       animated_image_provider.AnimatedImageProvider iconImage) {
     _PlacemarkStyle_setAnimatedImage(
         ptr, to_native.toNativeAnimatedImageProvider(iconImage));
+    exception.checkCallResult();
   }
 
   void setIconAnchor(math.Point<core.double> iconAnchor) {
     _PlacemarkStyle_setIconAnchor(ptr, to_native.toNativePoint(iconAnchor));
+    exception.checkCallResult();
   }
 
   void setScaleFunction(core.List<math.Point<core.double>> points) {
     _PlacemarkStyle_setScaleFunction(
         ptr, to_native.toNativeVectorPoint(points));
+    exception.checkCallResult();
   }
 
   void setMinZoomVisible(core.double? minZoom) {
     _PlacemarkStyle_setMinZoomVisible(ptr, to_native.toNativePtrFloat(minZoom));
+    exception.checkCallResult();
   }
 }
 

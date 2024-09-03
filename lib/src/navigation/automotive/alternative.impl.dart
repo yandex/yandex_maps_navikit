@@ -39,21 +39,26 @@ class NavigationAlternativeImpl
 
   @core.override
   directions_driving_route.DrivingRoute get alternative {
-    return directions_driving_route.DrivingRouteImpl.fromNativePtr(
+    final result = directions_driving_route.DrivingRouteImpl.fromNativePtr(
         _Alternative_get_alternative(ptr));
+    return result;
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get forkPositionOnAlternative {
-    return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-        _Alternative_get_forkPositionOnAlternative(ptr));
+    final result =
+        mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
+            _Alternative_get_forkPositionOnAlternative(ptr));
+    return result;
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition
       get forkPositionOnCurrentRoute {
-    return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-        _Alternative_get_forkPositionOnCurrentRoute(ptr));
+    final result =
+        mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
+            _Alternative_get_forkPositionOnCurrentRoute(ptr));
+    return result;
   }
 }
 

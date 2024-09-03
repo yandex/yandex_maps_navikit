@@ -48,35 +48,47 @@ class BalloonViewImpl implements BalloonView, ffi.Finalizable {
 
   @core.override
   navigation_balloons_balloon_anchor.BalloonAnchor get anchor {
-    return navigation_balloons_balloon_anchor.BalloonAnchorImpl.fromNative(
-        _BalloonView_get_anchor(ptr));
+    final result =
+        navigation_balloons_balloon_anchor.BalloonAnchorImpl.fromNative(
+            _BalloonView_get_anchor(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   navigation_automotive_layer_balloon.Balloon get balloon {
-    return navigation_automotive_layer_balloon.BalloonImpl.toPlatform(
+    final result = navigation_automotive_layer_balloon.BalloonImpl.toPlatform(
         _BalloonView_get_balloon(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   core.bool get isVisible {
-    return _BalloonView_get_isVisible(ptr);
+    final result = _BalloonView_get_isVisible(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   core.bool get isEnabled {
-    return _BalloonView_get_isEnabled(ptr);
+    final result = _BalloonView_get_isEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set isEnabled(core.bool val) {
     _BalloonView_set_isEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   directions_driving_route.DrivingRoute get hostRoute {
-    return directions_driving_route.DrivingRouteImpl.fromNativePtr(
+    final result = directions_driving_route.DrivingRouteImpl.fromNativePtr(
         _BalloonView_get_hostRoute(ptr));
+    exception.checkCallResult();
+    return result;
   }
 }
 

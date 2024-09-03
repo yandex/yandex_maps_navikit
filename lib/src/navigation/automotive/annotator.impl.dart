@@ -267,46 +267,58 @@ class AnnotatorImpl implements Annotator, ffi.Finalizable {
 
   @core.override
   AnnotatedEvents get annotatedEvents {
-    return AnnotatedEventsImpl.fromInt(_Annotator_get_annotatedEvents(ptr));
+    final result =
+        AnnotatedEventsImpl.fromInt(_Annotator_get_annotatedEvents(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set annotatedEvents(AnnotatedEvents val) {
     _Annotator_set_annotatedEvents(ptr, AnnotatedEventsImpl.toInt(val));
+    exception.checkCallResult();
   }
 
   @core.override
   AnnotatedRoadEvents get annotatedRoadEvents {
-    return AnnotatedRoadEventsImpl.fromInt(
+    final result = AnnotatedRoadEventsImpl.fromInt(
         _Annotator_get_annotatedRoadEvents(ptr));
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set annotatedRoadEvents(AnnotatedRoadEvents val) {
     _Annotator_set_annotatedRoadEvents(ptr, AnnotatedRoadEventsImpl.toInt(val));
+    exception.checkCallResult();
   }
 
   void setSpeaker(mapkit_annotations_speaker.Speaker? speaker) {
     _Annotator_setSpeaker(
         ptr, mapkit_annotations_speaker.SpeakerImpl.getNativePtr(speaker));
+    exception.checkCallResult();
   }
 
   void mute() {
     _Annotator_mute(ptr);
+    exception.checkCallResult();
   }
 
   void unmute() {
     _Annotator_unmute(ptr);
+    exception.checkCallResult();
   }
 
   void addListener(AnnotatorListener annotatorListener) {
     _Annotator_addListener(
         ptr, AnnotatorListenerImpl.getNativePtr(annotatorListener));
+    exception.checkCallResult();
   }
 
   void removeListener(AnnotatorListener annotatorListener) {
     _Annotator_removeListener(
         ptr, AnnotatorListenerImpl.getNativePtr(annotatorListener));
+    exception.checkCallResult();
   }
 }
 

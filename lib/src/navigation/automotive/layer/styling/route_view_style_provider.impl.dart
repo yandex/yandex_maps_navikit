@@ -53,10 +53,12 @@ class NavigationJamStyleImpl implements NavigationJamStyle, ffi.Finalizable {
         ptr,
         mapkit_navigation_jam_style.JamTypeColorContainerExtension
             .toNativeVector(colors));
+    exception.checkCallResult();
   }
 
   void setGradientLength(core.double gradientLength) {
     _JamStyle_setGradientLength(ptr, gradientLength);
+    exception.checkCallResult();
   }
 }
 
@@ -149,42 +151,52 @@ class NavigationRouteStyleImpl
 
   void setShowRoute(core.bool showRoute) {
     _RouteStyle_setShowRoute(ptr, showRoute);
+    exception.checkCallResult();
   }
 
   void setShowJams(core.bool showJams) {
     _RouteStyle_setShowJams(ptr, showJams);
+    exception.checkCallResult();
   }
 
   void setShowBalloons(core.bool showBalloons) {
     _RouteStyle_setShowBalloons(ptr, showBalloons);
+    exception.checkCallResult();
   }
 
   void setShowRoadEvents(core.bool showRoadEvents) {
     _RouteStyle_setShowRoadEvents(ptr, showRoadEvents);
+    exception.checkCallResult();
   }
 
   void setShowTrafficLights(core.bool showTrafficLights) {
     _RouteStyle_setShowTrafficLights(ptr, showTrafficLights);
+    exception.checkCallResult();
   }
 
   void setShowCheckpoints(core.bool showCheckpoints) {
     _RouteStyle_setShowCheckpoints(ptr, showCheckpoints);
+    exception.checkCallResult();
   }
 
   void setShowRailwayCrossings(core.bool showRailwayCrossings) {
     _RouteStyle_setShowRailwayCrossings(ptr, showRailwayCrossings);
+    exception.checkCallResult();
   }
 
   void setShowSpeedBumps(core.bool showSpeedBumps) {
     _RouteStyle_setShowSpeedBumps(ptr, showSpeedBumps);
+    exception.checkCallResult();
   }
 
   void setShowRoadsInPoorCondition(core.bool showRoadsInPoorCondition) {
     _RouteStyle_setShowRoadsInPoorCondition(ptr, showRoadsInPoorCondition);
+    exception.checkCallResult();
   }
 
   void setShowManoeuvres(core.bool showManoeuvres) {
     _RouteStyle_setShowManoeuvres(ptr, showManoeuvres);
+    exception.checkCallResult();
   }
 }
 

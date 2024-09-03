@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'CoreFoundation', 'Foundation', 'CoreLocation', 'UIKit', 'OpenGLES', 'SystemConfiguration', 'CoreGraphics', 'QuartzCore', 'Security', 'CoreTelephony', 'CoreMotion', 'DeviceCheck'
 
-  mapkit_version = '4.7.2-beta4-navikit-flutter'
+  mapkit_version = '4.7.2-beta5-navikit-flutter'
 
   s.libraries = 'resolv', 'c++'
   s.static_framework = true

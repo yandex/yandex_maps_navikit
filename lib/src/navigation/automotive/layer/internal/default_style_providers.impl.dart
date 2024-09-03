@@ -605,13 +605,14 @@ class InternalDefaultBalloonImageProviderImpl
     required core.double scaleFactor,
     required core.bool isNightMode,
   }) {
-    return navigation_balloons_balloon_geometry
+    final result = navigation_balloons_balloon_geometry
             .BalloonGeometryContainerExtension
         .toPlatformVector(_DefaultBalloonImageProvider_geometriesForBalloon(
             ptr,
             navigation_automotive_layer_balloon.BalloonImpl.toNative(balloon),
             scaleFactor,
             isNightMode));
+    return result;
   }
 
   image_wrapper.ImageWrapper createImage(
@@ -620,7 +621,7 @@ class InternalDefaultBalloonImageProviderImpl
     required core.double scaleFactor,
     required core.bool isNightMode,
   }) {
-    return to_platform.toPlatformBitmap(
+    final result = to_platform.toPlatformBitmap(
         _DefaultBalloonImageProvider_createImage(
             ptr,
             navigation_automotive_layer_balloon.BalloonImpl.toNative(balloon),
@@ -628,6 +629,7 @@ class InternalDefaultBalloonImageProviderImpl
                 anchor),
             scaleFactor,
             isNightMode));
+    return result;
   }
 }
 
@@ -678,28 +680,33 @@ final void Function(
     .asFunction(isLeaf: true);
 
 InternalDefaultUserPlacemarkStyleProvider _userPlacemarkStyleProvider() {
-  return InternalDefaultUserPlacemarkStyleProviderImpl.fromNativePtr(
+  final result = InternalDefaultUserPlacemarkStyleProviderImpl.fromNativePtr(
       _DefaultStyleProvidersFactory_userPlacemarkStyleProvider());
+  return result;
 }
 
 InternalDefaultRequestPointStyleProvider _requestPointStyleProvider() {
-  return InternalDefaultRequestPointStyleProviderImpl.fromNativePtr(
+  final result = InternalDefaultRequestPointStyleProviderImpl.fromNativePtr(
       _DefaultStyleProvidersFactory_requestPointStyleProvider());
+  return result;
 }
 
 InternalDefaultRoutePinsStyleProvider _routePinsStyleProvider() {
-  return InternalDefaultRoutePinsStyleProviderImpl.fromNativePtr(
+  final result = InternalDefaultRoutePinsStyleProviderImpl.fromNativePtr(
       _DefaultStyleProvidersFactory_routePinsStyleProvider());
+  return result;
 }
 
 InternalDefaultRouteViewStyleProvider _routeViewStyleProvider() {
-  return InternalDefaultRouteViewStyleProviderImpl.fromNativePtr(
+  final result = InternalDefaultRouteViewStyleProviderImpl.fromNativePtr(
       _DefaultStyleProvidersFactory_routeViewStyleProvider());
+  return result;
 }
 
 InternalDefaultBalloonImageProvider _balloonImageProvider() {
-  return InternalDefaultBalloonImageProviderImpl.fromNativePtr(
+  final result = InternalDefaultBalloonImageProviderImpl.fromNativePtr(
       _DefaultStyleProvidersFactory_balloonImageProvider());
+  return result;
 }
 
 final ffi.Pointer<ffi.Void> Function()
