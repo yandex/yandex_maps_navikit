@@ -153,8 +153,7 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<
-                        ffi
-                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_AnnotatorListener_new')
@@ -267,10 +266,9 @@ class AnnotatorImpl implements Annotator, ffi.Finalizable {
 
   @core.override
   AnnotatedEvents get annotatedEvents {
-    final result =
-        AnnotatedEventsImpl.fromInt(_Annotator_get_annotatedEvents(ptr));
+    final result = _Annotator_get_annotatedEvents(ptr);
     exception.checkCallResult();
-    return result;
+    return AnnotatedEventsImpl.fromInt(result);
   }
 
   @core.override
@@ -281,10 +279,9 @@ class AnnotatorImpl implements Annotator, ffi.Finalizable {
 
   @core.override
   AnnotatedRoadEvents get annotatedRoadEvents {
-    final result = AnnotatedRoadEventsImpl.fromInt(
-        _Annotator_get_annotatedRoadEvents(ptr));
+    final result = _Annotator_get_annotatedRoadEvents(ptr);
     exception.checkCallResult();
-    return result;
+    return AnnotatedRoadEventsImpl.fromInt(result);
   }
 
   @core.override

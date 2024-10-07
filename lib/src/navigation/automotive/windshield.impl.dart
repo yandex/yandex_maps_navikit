@@ -40,18 +40,16 @@ class NavigationUpcomingManoeuvreImpl
 
   @core.override
   directions_driving_annotation.DrivingAnnotation get annotation {
-    final result =
-        directions_driving_annotation.DrivingAnnotationImpl.fromNativePtr(
-            _UpcomingManoeuvre_get_annotation(ptr));
-    return result;
+    final result = _UpcomingManoeuvre_get_annotation(ptr);
+    return directions_driving_annotation.DrivingAnnotationImpl.fromNativePtr(
+        result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
-    final result =
-        mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-            _UpcomingManoeuvre_get_position(ptr));
-    return result;
+    final result = _UpcomingManoeuvre_get_position(ptr);
+    return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
+        result);
   }
 }
 
@@ -127,32 +125,29 @@ class NavigationUpcomingRoadEventImpl
 
   @core.override
   directions_driving_route.DrivingEvent get event {
-    final result = directions_driving_route.DrivingEventImpl.fromNativePtr(
-        _UpcomingRoadEvent_get_event(ptr));
-    return result;
+    final result = _UpcomingRoadEvent_get_event(ptr);
+    return directions_driving_route.DrivingEventImpl.fromNativePtr(result);
   }
 
   @core.override
   navigation_automotive_speed_limit_status.SpeedLimitStatus?
       get speedLimitStatus {
-    final result = navigation_automotive_speed_limit_status.SpeedLimitStatusImpl
-        .fromPointer(_UpcomingRoadEvent_get_speedLimitStatus(ptr));
-    return result;
+    final result = _UpcomingRoadEvent_get_speedLimitStatus(ptr);
+    return navigation_automotive_speed_limit_status.SpeedLimitStatusImpl
+        .fromPointer(result);
   }
 
   @core.override
   core.double? get effectiveSpeedLimit {
-    final result = to_platform.toPlatformFromPointerDouble(
-        _UpcomingRoadEvent_get_effectiveSpeedLimit(ptr));
-    return result;
+    final result = _UpcomingRoadEvent_get_effectiveSpeedLimit(ptr);
+    return to_platform.toPlatformFromPointerDouble(result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
-    final result =
-        mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-            _UpcomingRoadEvent_get_position(ptr));
-    return result;
+    final result = _UpcomingRoadEvent_get_position(ptr);
+    return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
+        result);
   }
 }
 
@@ -248,17 +243,15 @@ class NavigationUpcomingLaneSignImpl
 
   @core.override
   directions_driving_lane.DrivingLaneSign get laneSign {
-    final result = directions_driving_lane.DrivingLaneSignImpl.fromNativePtr(
-        _UpcomingLaneSign_get_laneSign(ptr));
-    return result;
+    final result = _UpcomingLaneSign_get_laneSign(ptr);
+    return directions_driving_lane.DrivingLaneSignImpl.fromNativePtr(result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
-    final result =
-        mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-            _UpcomingLaneSign_get_position(ptr));
-    return result;
+    final result = _UpcomingLaneSign_get_position(ptr);
+    return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
+        result);
   }
 }
 
@@ -335,17 +328,16 @@ class NavigationUpcomingDirectionSignImpl
 
   @core.override
   directions_driving_direction_signs.DrivingDirectionSign get directionSign {
-    final result = directions_driving_direction_signs.DrivingDirectionSignImpl
-        .fromNativePtr(_UpcomingDirectionSign_get_directionSign(ptr));
-    return result;
+    final result = _UpcomingDirectionSign_get_directionSign(ptr);
+    return directions_driving_direction_signs.DrivingDirectionSignImpl
+        .fromNativePtr(result);
   }
 
   @core.override
   mapkit_navigation_route_position.RoutePosition get position {
-    final result =
-        mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
-            _UpcomingDirectionSign_get_position(ptr));
-    return result;
+    final result = _UpcomingDirectionSign_get_position(ptr);
+    return mapkit_navigation_route_position.RoutePositionImpl.fromNativePtr(
+        result);
   }
 }
 
@@ -459,8 +451,7 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<
-                        ffi
-                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_NavigationWindshieldListener_new')
@@ -583,38 +574,34 @@ class NavigationWindshieldImpl
 
   @core.override
   core.List<NavigationUpcomingManoeuvre> get manoeuvres {
-    final result =
-        NavigationUpcomingManoeuvreContainerExtension.toPlatformVector(
-            _Windshield_get_manoeuvres(ptr));
+    final result = _Windshield_get_manoeuvres(ptr);
     exception.checkCallResult();
-    return result;
+    return NavigationUpcomingManoeuvreContainerExtension.toPlatformVector(
+        result);
   }
 
   @core.override
   core.List<NavigationUpcomingRoadEvent> get roadEvents {
-    final result =
-        NavigationUpcomingRoadEventContainerExtension.toPlatformVector(
-            _Windshield_get_roadEvents(ptr));
+    final result = _Windshield_get_roadEvents(ptr);
     exception.checkCallResult();
-    return result;
+    return NavigationUpcomingRoadEventContainerExtension.toPlatformVector(
+        result);
   }
 
   @core.override
   core.List<NavigationUpcomingLaneSign> get laneSigns {
-    final result =
-        NavigationUpcomingLaneSignContainerExtension.toPlatformVector(
-            _Windshield_get_laneSigns(ptr));
+    final result = _Windshield_get_laneSigns(ptr);
     exception.checkCallResult();
-    return result;
+    return NavigationUpcomingLaneSignContainerExtension.toPlatformVector(
+        result);
   }
 
   @core.override
   core.List<NavigationUpcomingDirectionSign> get directionSigns {
-    final result =
-        NavigationUpcomingDirectionSignContainerExtension.toPlatformVector(
-            _Windshield_get_directionSigns(ptr));
+    final result = _Windshield_get_directionSigns(ptr);
     exception.checkCallResult();
-    return result;
+    return NavigationUpcomingDirectionSignContainerExtension.toPlatformVector(
+        result);
   }
 
   void addListener(NavigationWindshieldListener windshieldListener) {
@@ -699,7 +686,8 @@ final void Function(ffi.Pointer<ffi.Void>, core.int) _NavigationWindshield_set =
     lib
         .library
         .lookup<
-                ffi.NativeFunction<
+                ffi
+                .NativeFunction<
                     ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
             'yandex_flutter_navigation_automotive_NavigationWindshield_set_')
         .asFunction(isLeaf: true);

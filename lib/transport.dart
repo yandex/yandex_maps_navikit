@@ -15,7 +15,6 @@ export 'package:yandex_maps_navikit/src/transport/masstransit/flags_export.dart'
 export 'package:yandex_maps_navikit/src/transport/masstransit/pedestrian_router_export.dart';
 export 'package:yandex_maps_navikit/src/transport/masstransit/masstransit_router_export.dart';
 export 'package:yandex_maps_navikit/src/transport/masstransit/transit_options_export.dart';
-export 'package:yandex_maps_navikit/src/transport/masstransit/construction_export.dart';
 export 'package:yandex_maps_navikit/src/transport/masstransit/weight_export.dart';
 export 'package:yandex_maps_navikit/src/transport/masstransit/route_painter_export.dart';
 export 'package:yandex_maps_navikit/src/transport/masstransit/transport_export.dart';

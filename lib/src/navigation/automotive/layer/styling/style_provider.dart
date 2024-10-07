@@ -63,6 +63,19 @@ abstract class NavigationRoutePinsStyleProvider {
     mapkit_styling_placemark_style.PlacemarkStyle roadInPoorConditionEndStyle,
   );
 
+  void provideTollRoadStyle(
+    core.double scaleFactor,
+    core.bool isNightMode,
+    mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartStyle,
+    mapkit_styling_placemark_style.PlacemarkStyle tollRoadEndStyle,
+  );
+
+  void provideRestrictedEntryStyle(
+    core.double scaleFactor,
+    core.bool isNightMode,
+    mapkit_styling_placemark_style.PlacemarkStyle style,
+  );
+
   void provideSpeedBumpStyle(
     core.double scaleFactor,
     core.bool isNightMode,

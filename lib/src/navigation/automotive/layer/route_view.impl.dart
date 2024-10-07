@@ -48,20 +48,18 @@ class RouteViewImpl implements RouteView, ffi.Finalizable {
 
   @core.override
   directions_driving_route.DrivingRoute get route {
-    final result = directions_driving_route.DrivingRouteImpl.fromNativePtr(
-        _RouteView_get_route(ptr));
+    final result = _RouteView_get_route(ptr);
     exception.checkCallResult();
-    return result;
+    return directions_driving_route.DrivingRouteImpl.fromNativePtr(result);
   }
 
   @core.override
   core.List<navigation_automotive_layer_balloon_view.BalloonView>
       get balloonViews {
-    final result =
-        navigation_automotive_layer_balloon_view.BalloonViewContainerExtension
-            .toPlatformVector(_RouteView_get_balloonViews(ptr));
+    final result = _RouteView_get_balloonViews(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_layer_balloon_view
+        .BalloonViewContainerExtension.toPlatformVector(result);
   }
 }
 
@@ -168,8 +166,7 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<
-                        ffi
-                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_layer_RouteViewListener_new')
         .asFunction(isLeaf: true);
 

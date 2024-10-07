@@ -75,37 +75,37 @@ final void Function(ffi.Pointer<ffi.Void>, core.int, core.int)
         .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<
-        ffi
-        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-    ffi
-        .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>) _GuidanceListener_new = lib.library
-    .lookup<
-        ffi.NativeFunction<
-            ffi.Pointer<ffi.Void> Function(
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_GuidanceListener_new')
-    .asFunction(isLeaf: true);
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<
+            ffi
+            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)
+    _GuidanceListener_new = lib.library
+        .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_GuidanceListener_new')
+        .asFunction(isLeaf: true);
 
 final _GuidanceListener_free = lib.library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
@@ -342,89 +342,80 @@ class GuidanceImpl implements Guidance, ffi.Finalizable {
 
   @core.override
   navigation_automotive_windshield.NavigationWindshield get windshield {
-    final result =
-        navigation_automotive_windshield.NavigationWindshieldImpl.fromNativePtr(
-            _Guidance_get_windshield(ptr));
+    final result = _Guidance_get_windshield(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_windshield.NavigationWindshieldImpl
+        .fromNativePtr(result);
   }
 
   @core.override
   navigation_automotive_annotator.Annotator get annotator {
-    final result = navigation_automotive_annotator.AnnotatorImpl.fromNativePtr(
-        _Guidance_get_annotator(ptr));
+    final result = _Guidance_get_annotator(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_annotator.AnnotatorImpl.fromNativePtr(result);
   }
 
   @core.override
   directions_driving_route.DrivingRoute? get currentRoute {
-    final result = directions_driving_route.DrivingRouteImpl.fromOptionalPtr(
-        _Guidance_get_currentRoute(ptr));
+    final result = _Guidance_get_currentRoute(ptr);
     exception.checkCallResult();
-    return result;
+    return directions_driving_route.DrivingRouteImpl.fromOptionalPtr(result);
   }
 
   @core.override
   core.List<navigation_automotive_alternative.NavigationAlternative>
       get alternatives {
-    final result = navigation_automotive_alternative
-            .NavigationAlternativeContainerExtension
-        .toPlatformVector(_Guidance_get_alternatives(ptr));
+    final result = _Guidance_get_alternatives(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_alternative
+        .NavigationAlternativeContainerExtension.toPlatformVector(result);
   }
 
   @core.override
   navigation_automotive_alternative.NavigationAlternative?
       get fastestAlternative {
-    final result = navigation_automotive_alternative.NavigationAlternativeImpl
-        .fromOptionalPtr(_Guidance_get_fastestAlternative(ptr));
+    final result = _Guidance_get_fastestAlternative(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_alternative.NavigationAlternativeImpl
+        .fromOptionalPtr(result);
   }
 
   @core.override
   mapkit_location_location.Location? get location {
-    final result = mapkit_location_location.LocationImpl.fromPointer(
-        _Guidance_get_location(ptr));
+    final result = _Guidance_get_location(ptr);
     exception.checkCallResult();
-    return result;
+    return mapkit_location_location.LocationImpl.fromPointer(result);
   }
 
   @core.override
   navigation_automotive_location_class.LocationClass? get locationClass {
-    final result =
-        navigation_automotive_location_class.LocationClassImpl.fromPointer(
-            _Guidance_get_locationClass(ptr));
+    final result = _Guidance_get_locationClass(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_location_class.LocationClassImpl.fromPointer(
+        result);
   }
 
   @core.override
   core.String? get roadName {
-    final result =
-        to_platform.toPlatformFromPointerString(_Guidance_get_roadName(ptr));
+    final result = _Guidance_get_roadName(ptr);
     exception.checkCallResult();
-    return result;
+    return to_platform.toPlatformFromPointerString(result);
   }
 
   @core.override
   navigation_automotive_route_status.RouteStatus get routeStatus {
-    final result = navigation_automotive_route_status.RouteStatusImpl.fromInt(
-        _Guidance_get_routeStatus(ptr));
+    final result = _Guidance_get_routeStatus(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_route_status.RouteStatusImpl.fromInt(result);
   }
 
   @core.override
   navigation_automotive_speed_limits_policy.SpeedLimitsPolicy
       get speedLimitsPolicy {
-    final result =
-        navigation_automotive_speed_limits_policy.SpeedLimitsPolicyImpl
-            .fromNativePtr(_Guidance_get_speedLimitsPolicy(ptr));
+    final result = _Guidance_get_speedLimitsPolicy(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_speed_limits_policy.SpeedLimitsPolicyImpl
+        .fromNativePtr(result);
   }
 
   @core.override
@@ -442,20 +433,18 @@ class GuidanceImpl implements Guidance, ffi.Finalizable {
 
   @core.override
   mapkit_localized_value.LocalizedValue? get speedLimit {
-    final result = mapkit_localized_value.LocalizedValueImpl.fromPointer(
-        _Guidance_get_speedLimit(ptr));
+    final result = _Guidance_get_speedLimit(ptr);
     exception.checkCallResult();
-    return result;
+    return mapkit_localized_value.LocalizedValueImpl.fromPointer(result);
   }
 
   @core.override
   navigation_automotive_speed_limit_status.SpeedLimitStatus
       get speedLimitStatus {
-    final result =
-        navigation_automotive_speed_limit_status.SpeedLimitStatusImpl.fromInt(
-            _Guidance_get_speedLimitStatus(ptr));
+    final result = _Guidance_get_speedLimitStatus(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_speed_limit_status.SpeedLimitStatusImpl
+        .fromInt(result);
   }
 
   void switchToRoute(directions_driving_route.DrivingRoute route) {

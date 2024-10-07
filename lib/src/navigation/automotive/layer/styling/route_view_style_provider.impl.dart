@@ -198,6 +198,16 @@ class NavigationRouteStyleImpl
     _RouteStyle_setShowManoeuvres(ptr, showManoeuvres);
     exception.checkCallResult();
   }
+
+  void setShowTollRoads(core.bool showTollRoads) {
+    _RouteStyle_setShowTollRoads(ptr, showTollRoads);
+    exception.checkCallResult();
+  }
+
+  void setShowRestrictedEntries(core.bool showRestrictedEntries) {
+    _RouteStyle_setShowRestrictedEntries(ptr, showRestrictedEntries);
+    exception.checkCallResult();
+  }
 }
 
 final _NavigationRouteStyle_free = lib.library.lookup<
@@ -299,6 +309,24 @@ final void Function(
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
         'yandex_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setShowManoeuvres')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .bool) _RouteStyle_setShowTollRoads = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
+        'yandex_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setShowTollRoads')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .bool) _RouteStyle_setShowRestrictedEntries = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
+        'yandex_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setShowRestrictedEntries')
     .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,

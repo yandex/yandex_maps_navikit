@@ -120,6 +120,18 @@ class DefaultRoutePinsStyleProvider
           double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
       _routePinsStyleProvider.provideTrafficLightStyle(style,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
+
+  @override
+  void provideTollRoadStyle(double scaleFactor, bool isNightMode,
+          PlacemarkStyle startStyle, PlacemarkStyle endStyle) =>
+      _routePinsStyleProvider.provideTollRoadStyle(startStyle, endStyle,
+          scaleFactor: scaleFactor, isNightMode: isNightMode);
+
+  @override
+  void provideRestrictedEntryStyle(
+          double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
+      _routePinsStyleProvider.provideRestrictedEntryStyle(style,
+          scaleFactor: scaleFactor, isNightMode: isNightMode);
 }
 
 class DefaultRouteStyleProvider implements NavigationRouteViewStyleProvider {

@@ -82,8 +82,7 @@ final ffi.Pointer<ffi.Void> Function(
                         ffi.NativeFunction<
                             ffi.Void Function(
                                 ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<
-                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
@@ -221,10 +220,9 @@ class NavigationImpl implements Navigation, ffi.Finalizable {
 
   @core.override
   directions_driving_vehicle_options.DrivingVehicleOptions get vehicleOptions {
-    final result =
-        directions_driving_vehicle_options.DrivingVehicleOptionsImpl.fromNative(
-            _Navigation_get_vehicleOptions(ptr));
-    return result;
+    final result = _Navigation_get_vehicleOptions(ptr);
+    return directions_driving_vehicle_options.DrivingVehicleOptionsImpl
+        .fromNative(result);
   }
 
   @core.override
@@ -271,10 +269,9 @@ class NavigationImpl implements Navigation, ffi.Finalizable {
 
   @core.override
   core.List<mapkit_geometry_geometry.LinearRing> get avoidedZones {
-    final result =
-        mapkit_geometry_geometry.LinearRingContainerExtension.toPlatformVector(
-            _Navigation_get_avoidedZones(ptr));
-    return result;
+    final result = _Navigation_get_avoidedZones(ptr);
+    return mapkit_geometry_geometry.LinearRingContainerExtension
+        .toPlatformVector(result);
   }
 
   @core.override
@@ -287,10 +284,9 @@ class NavigationImpl implements Navigation, ffi.Finalizable {
 
   @core.override
   mapkit_annotations_annotation_lang.AnnotationLanguage get annotationLanguage {
-    final result =
-        mapkit_annotations_annotation_lang.AnnotationLanguageImpl.fromInt(
-            _Navigation_get_annotationLanguage(ptr));
-    return result;
+    final result = _Navigation_get_annotationLanguage(ptr);
+    return mapkit_annotations_annotation_lang.AnnotationLanguageImpl.fromInt(
+        result);
   }
 
   @core.override
@@ -302,16 +298,15 @@ class NavigationImpl implements Navigation, ffi.Finalizable {
 
   @core.override
   core.List<directions_driving_route.DrivingRoute> get routes {
-    final result = directions_driving_route.DrivingRouteContainerExtension
-        .toPlatformVector(_Navigation_get_routes(ptr));
-    return result;
+    final result = _Navigation_get_routes(ptr);
+    return directions_driving_route.DrivingRouteContainerExtension
+        .toPlatformVector(result);
   }
 
   @core.override
   navigation_automotive_guidance.Guidance get guidance {
-    final result = navigation_automotive_guidance.GuidanceImpl.fromNativePtr(
-        _Navigation_get_guidance(ptr));
-    return result;
+    final result = _Navigation_get_guidance(ptr);
+    return navigation_automotive_guidance.GuidanceImpl.fromNativePtr(result);
   }
 
   void requestRoutes({
@@ -569,10 +564,9 @@ final void Function(ffi.Pointer<ffi.Void>, core.int) _Navigation_set = lib
 
 Navigation _createNavigation(
     directions_driving_driving_router.DrivingRouterType type) {
-  final result = NavigationImpl.fromNativePtr(
-      _NavigationFactory_createNavigation(
-          directions_driving_driving_router.DrivingRouterTypeImpl.toInt(type)));
-  return result;
+  final result = _NavigationFactory_createNavigation(
+      directions_driving_driving_router.DrivingRouterTypeImpl.toInt(type));
+  return NavigationImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function(
@@ -583,16 +577,15 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction();
 
 typed_data.ByteBuffer _serialize(Navigation navigation) {
-  final result = to_platform.toPlatformBytes(_NavigationSerialization_serialize(
-      NavigationImpl.getNativePtr(navigation)));
-  return result;
+  final result = _NavigationSerialization_serialize(
+      NavigationImpl.getNativePtr(navigation));
+  return to_platform.toPlatformBytes(result);
 }
 
 Navigation? _deserialize(typed_data.ByteBuffer serializedNavigation) {
-  final result = NavigationImpl.fromOptionalPtr(
-      _NavigationSerialization_deserialize(
-          to_native.toNativeBytes(serializedNavigation)));
-  return result;
+  final result = _NavigationSerialization_deserialize(
+      to_native.toNativeBytes(serializedNavigation));
+  return NavigationImpl.fromOptionalPtr(result);
 }
 
 final native_types.NativeBytes Function(

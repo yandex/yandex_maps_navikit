@@ -75,6 +75,12 @@ abstract class NavigationRouteStyle implements ffi.Finalizable {
   /// Show manoeuvre arrows along the route. Disabled by default.
   void setShowManoeuvres(core.bool showManoeuvres);
 
+  /// Show toll roads along the route. Disabled by default.
+  void setShowTollRoads(core.bool showTollRoads);
+
+  /// Show restricted entries along the route. Disabled by default.
+  void setShowRestrictedEntries(core.bool showRestrictedEntries);
+
   /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }

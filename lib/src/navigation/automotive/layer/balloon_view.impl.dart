@@ -48,19 +48,17 @@ class BalloonViewImpl implements BalloonView, ffi.Finalizable {
 
   @core.override
   navigation_balloons_balloon_anchor.BalloonAnchor get anchor {
-    final result =
-        navigation_balloons_balloon_anchor.BalloonAnchorImpl.fromNative(
-            _BalloonView_get_anchor(ptr));
+    final result = _BalloonView_get_anchor(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_balloons_balloon_anchor.BalloonAnchorImpl.fromNative(
+        result);
   }
 
   @core.override
   navigation_automotive_layer_balloon.Balloon get balloon {
-    final result = navigation_automotive_layer_balloon.BalloonImpl.toPlatform(
-        _BalloonView_get_balloon(ptr));
+    final result = _BalloonView_get_balloon(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_layer_balloon.BalloonImpl.toPlatform(result);
   }
 
   @core.override
@@ -85,10 +83,9 @@ class BalloonViewImpl implements BalloonView, ffi.Finalizable {
 
   @core.override
   directions_driving_route.DrivingRoute get hostRoute {
-    final result = directions_driving_route.DrivingRouteImpl.fromNativePtr(
-        _BalloonView_get_hostRoute(ptr));
+    final result = _BalloonView_get_hostRoute(ptr);
     exception.checkCallResult();
-    return result;
+    return directions_driving_route.DrivingRouteImpl.fromNativePtr(result);
   }
 }
 

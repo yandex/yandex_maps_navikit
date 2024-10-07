@@ -88,6 +88,19 @@ abstract class InternalDefaultRoutePinsStyleProvider
     required core.double scaleFactor,
     required core.bool isNightMode,
   });
+
+  void provideTollRoadStyle(
+    mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartStyle,
+    mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartEnd, {
+    required core.double scaleFactor,
+    required core.bool isNightMode,
+  });
+
+  void provideRestrictedEntryStyle(
+    mapkit_styling_placemark_style.PlacemarkStyle style, {
+    required core.double scaleFactor,
+    required core.bool isNightMode,
+  });
 }
 
 abstract class InternalDefaultRouteViewStyleProvider

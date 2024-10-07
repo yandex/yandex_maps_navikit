@@ -195,36 +195,32 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
 
   @core.override
   navigation_automotive_navigation.Navigation get navigation {
-    final result =
-        navigation_automotive_navigation.NavigationImpl.fromNativePtr(
-            _NavigationLayer_get_navigation(ptr));
+    final result = _NavigationLayer_get_navigation(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_navigation.NavigationImpl.fromNativePtr(
+        result);
   }
 
   @core.override
   navigation_guidance_camera_camera.Camera get camera {
-    final result = navigation_guidance_camera_camera.CameraImpl.fromNativePtr(
-        _NavigationLayer_get_camera(ptr));
+    final result = _NavigationLayer_get_camera(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_guidance_camera_camera.CameraImpl.fromNativePtr(result);
   }
 
   @core.override
   RoutesSource get routesSource {
-    final result =
-        RoutesSourceImpl.fromInt(_NavigationLayer_get_routesSource(ptr));
+    final result = _NavigationLayer_get_routesSource(ptr);
     exception.checkCallResult();
-    return result;
+    return RoutesSourceImpl.fromInt(result);
   }
 
   @core.override
   core.List<navigation_automotive_layer_route_view.RouteView> get routes {
-    final result =
-        navigation_automotive_layer_route_view.RouteViewContainerExtension
-            .toPlatformVector(_NavigationLayer_get_routes(ptr));
+    final result = _NavigationLayer_get_routes(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_layer_route_view.RouteViewContainerExtension
+        .toPlatformVector(result);
   }
 
   @core.override
@@ -255,12 +251,11 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
 
   navigation_automotive_layer_route_view.RouteView? getView(
       directions_driving_route.DrivingRoute route) {
-    final result =
-        navigation_automotive_layer_route_view.RouteViewImpl.fromOptionalPtr(
-            _NavigationLayer_getView(ptr,
-                directions_driving_route.DrivingRouteImpl.getNativePtr(route)));
+    final result = _NavigationLayer_getView(
+        ptr, directions_driving_route.DrivingRouteImpl.getNativePtr(route));
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_layer_route_view.RouteViewImpl.fromOptionalPtr(
+        result);
   }
 
   void selectRoute(navigation_automotive_layer_route_view.RouteView? route) {
@@ -272,11 +267,10 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
   }
 
   navigation_automotive_layer_route_view.RouteView? selectedRoute() {
-    final result =
-        navigation_automotive_layer_route_view.RouteViewImpl.fromOptionalPtr(
-            _NavigationLayer_selectedRoute(ptr));
+    final result = _NavigationLayer_selectedRoute(ptr);
     exception.checkCallResult();
-    return result;
+    return navigation_automotive_layer_route_view.RouteViewImpl.fromOptionalPtr(
+        result);
   }
 
   void addRouteViewListener(
@@ -638,16 +632,14 @@ NavigationLayer _createNavigationLayer(
     navigation_automotive_layer_styling_style_provider.NavigationStyleProvider
         styleProvider,
     navigation_automotive_navigation.Navigation navigation) {
-  final result = NavigationLayerImpl.fromNativePtr(
-      _NavigationLayerFactory_createNavigationLayer(
-          mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
-          mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
-              .getNativePtr(roadEventsLayer),
-          navigation_automotive_layer_styling_style_provider
-              .NavigationStyleProviderImpl.getNativePtr(styleProvider),
-          navigation_automotive_navigation.NavigationImpl.getNativePtr(
-              navigation)));
-  return result;
+  final result = _NavigationLayerFactory_createNavigationLayer(
+      mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
+      mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
+          .getNativePtr(roadEventsLayer),
+      navigation_automotive_layer_styling_style_provider
+          .NavigationStyleProviderImpl.getNativePtr(styleProvider),
+      navigation_automotive_navigation.NavigationImpl.getNativePtr(navigation));
+  return NavigationLayerImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function(

@@ -104,8 +104,8 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.NativeFunction<
                     ffi.Pointer<ffi.Void> Function(
                         ffi.Pointer<
-                            ffi.NativeFunction<
-                                ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>(
+                            ffi
+                            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>(
             'yandex_flutter_navigation_guidance_camera_CameraListener_new')
         .asFunction(isLeaf: true);
 
@@ -241,9 +241,9 @@ class CameraImpl implements Camera, ffi.Finalizable {
   }
 
   CameraMode cameraMode() {
-    final result = CameraModeImpl.fromInt(_Camera_cameraMode(ptr));
+    final result = _Camera_cameraMode(ptr);
     exception.checkCallResult();
-    return result;
+    return CameraModeImpl.fromInt(result);
   }
 
   void setCameraMode(

@@ -14,16 +14,15 @@ navigation_automotive_layer_navigation_layer.NavigationLayer
         mapkit_road_events_layer_road_events_layer.RoadEventsLayer
             roadEventsLayer,
         navigation_automotive_navigation.Navigation navigation) {
-  final result = navigation_automotive_layer_navigation_layer
-          .NavigationLayerImpl
-      .fromNativePtr(
-          _FlutterNavigationLayerFactory_createNavigationLayerWithPresetStyleProvider(
-              mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
-              mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
-                  .getNativePtr(roadEventsLayer),
-              navigation_automotive_navigation.NavigationImpl.getNativePtr(
-                  navigation)));
-  return result;
+  final result =
+      _FlutterNavigationLayerFactory_createNavigationLayerWithPresetStyleProvider(
+          mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
+          mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
+              .getNativePtr(roadEventsLayer),
+          navigation_automotive_navigation.NavigationImpl.getNativePtr(
+              navigation));
+  return navigation_automotive_layer_navigation_layer.NavigationLayerImpl
+      .fromNativePtr(result);
 }
 
 final void Function(

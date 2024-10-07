@@ -204,22 +204,19 @@ class SpeedLimitsPolicyImpl implements SpeedLimitsPolicy, ffi.Finalizable {
 
   @core.override
   SpeedLimits get legalSpeedLimits {
-    final result = SpeedLimitsImpl.fromNative(
-        _SpeedLimitsPolicy_get_legalSpeedLimits(ptr));
-    return result;
+    final result = _SpeedLimitsPolicy_get_legalSpeedLimits(ptr);
+    return SpeedLimitsImpl.fromNative(result);
   }
 
   @core.override
   SpeedLimitsRules get speedLimitsRules {
-    final result = SpeedLimitsRulesImpl.fromNative(
-        _SpeedLimitsPolicy_get_speedLimitsRules(ptr));
-    return result;
+    final result = _SpeedLimitsPolicy_get_speedLimitsRules(ptr);
+    return SpeedLimitsRulesImpl.fromNative(result);
   }
 
   SpeedLimits customSpeedLimits(core.double toleranceRatio) {
-    final result = SpeedLimitsImpl.fromNative(
-        _SpeedLimitsPolicy_customSpeedLimits(ptr, toleranceRatio));
-    return result;
+    final result = _SpeedLimitsPolicy_customSpeedLimits(ptr, toleranceRatio);
+    return SpeedLimitsImpl.fromNative(result);
   }
 }
 
@@ -391,9 +388,8 @@ class SpeedPolicyProviderImpl implements SpeedPolicyProvider, ffi.Finalizable {
 
   @core.override
   SpeedLimitsPolicy get speedLimitsPolicy {
-    final result = SpeedLimitsPolicyImpl.fromNativePtr(
-        _SpeedPolicyProvider_get_speedLimitsPolicy(ptr));
-    return result;
+    final result = _SpeedPolicyProvider_get_speedLimitsPolicy(ptr);
+    return SpeedLimitsPolicyImpl.fromNativePtr(result);
   }
 
   void addListener(SpeedPolicyListener speedLimitsListener) {
@@ -465,9 +461,8 @@ final void Function(ffi.Pointer<ffi.Void>, core.int) _SpeedPolicyProvider_set =
         .asFunction(isLeaf: true);
 
 SpeedPolicyProvider _getSpeedPolicyProvider() {
-  final result = SpeedPolicyProviderImpl.fromNativePtr(
-      _SpeedPolicyProviderFactory_getSpeedPolicyProvider());
-  return result;
+  final result = _SpeedPolicyProviderFactory_getSpeedPolicyProvider();
+  return SpeedPolicyProviderImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function()
