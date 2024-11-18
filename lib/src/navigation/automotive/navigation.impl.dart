@@ -309,17 +309,17 @@ class NavigationImpl implements Navigation, ffi.Finalizable {
     return navigation_automotive_guidance.GuidanceImpl.fromNativePtr(result);
   }
 
-  void requestRoutes({
+  void requestRoutes(
+    navigation_automotive_route_options.AutomotiveRouteOptions routeOptions, {
     required core.List<mapkit_request_point.RequestPoint> points,
-    core.double? initialAzimuth,
-    core.int? routesCount,
   }) {
     _Navigation_requestRoutes(
-        ptr,
-        mapkit_request_point.RequestPointContainerExtension.toNativeVector(
-            points),
-        to_native.toNativePtrDouble(initialAzimuth),
-        to_native.toNativePtrInt(routesCount));
+      ptr,
+      mapkit_request_point.RequestPointContainerExtension.toNativeVector(
+          points),
+      navigation_automotive_route_options.AutomotiveRouteOptionsImpl.toNative(
+          routeOptions),
+    );
   }
 
   void requestAlternatives() {
@@ -484,15 +484,15 @@ final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)
         .asFunction();
 
 final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
-        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
+        navigation_automotive_route_options.AutomotiveRouteOptionsNative)
     _Navigation_requestRoutes = lib.library
         .lookup<
                 ffi.NativeFunction<
                     ffi.Void Function(
                         ffi.Pointer<ffi.Void>,
                         ffi.Pointer<ffi.Void>,
-                        ffi.Pointer<ffi.Void>,
-                        ffi.Pointer<ffi.Void>)>>(
+                        navigation_automotive_route_options
+                            .AutomotiveRouteOptionsNative)>>(
             'yandex_flutter_navigation_automotive_Navigation_requestRoutes')
         .asFunction();
 final void Function(ffi.Pointer<ffi.Void>) _Navigation_requestAlternatives = lib

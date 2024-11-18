@@ -3,6 +3,7 @@ export 'package:yandex_maps_navikit/src/navigation/balloons/balloon_anchor_expor
 export 'package:yandex_maps_navikit/src/navigation/automotive/annotator_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/windshield_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/route_change_reason_export.dart';
+export 'package:yandex_maps_navikit/src/navigation/automotive/route_options_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/speed_limits_policy_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/route_status_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/guidance_export.dart';
@@ -16,11 +17,13 @@ export 'package:yandex_maps_navikit/src/navigation/automotive/layer/balloon_expo
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/navigation_layer_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/request_point_listener_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/route_view_export.dart';
+export 'package:yandex_maps_navikit/src/navigation/automotive/layer/navigation_layer_mode_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/balloon_view_listener_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/balloon_view_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/internal/default_style_providers_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/style_provider_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/balloon_image_provider_export.dart';
+export 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/highlight_style_provider_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/route_view_style_provider_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/custom_route_navigation/custom_route_builder_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/custom_route_navigation/custom_route_navigation_export.dart';

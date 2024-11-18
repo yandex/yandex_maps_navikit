@@ -11,14 +11,15 @@ void _setStyleProvider(
 navigation_automotive_layer_navigation_layer.NavigationLayer
     _createNavigationLayerWithPresetStyleProvider(
         mapkit_map_map_window.MapWindow mapWindow,
-        mapkit_road_events_layer_road_events_layer.RoadEventsLayer
-            roadEventsLayer,
+        mapkit_road_events_layer_style_provider.RoadEventsLayerStyleProvider
+            roadEventsLayerStyleProvider,
         navigation_automotive_navigation.Navigation navigation) {
   final result =
       _FlutterNavigationLayerFactory_createNavigationLayerWithPresetStyleProvider(
           mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
-          mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
-              .getNativePtr(roadEventsLayer),
+          mapkit_road_events_layer_style_provider
+                  .RoadEventsLayerStyleProviderImpl
+              .getNativePtr(roadEventsLayerStyleProvider),
           navigation_automotive_navigation.NavigationImpl.getNativePtr(
               navigation));
   return navigation_automotive_layer_navigation_layer.NavigationLayerImpl

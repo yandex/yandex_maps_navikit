@@ -7,7 +7,9 @@ import 'package:yandex_maps_navikit/src/mapkit/styling/placemark_style.dart';
 import 'package:yandex_maps_navikit/src/mapkit/styling/polyline_style.dart';
 import 'package:yandex_maps_navikit/src/navigation/automotive/layer/balloon.dart';
 import 'package:yandex_maps_navikit/src/navigation/automotive/layer/internal/default_style_providers.dart';
+import 'package:yandex_maps_navikit/src/navigation/automotive/layer/navigation_layer_mode.dart';
 import 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/balloon_image_provider.dart';
+import 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/highlight_style_provider.dart';
 import 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/route_view_style_provider.dart';
 import 'package:yandex_maps_navikit/src/navigation/automotive/layer/styling/style_provider.dart';
 import 'package:yandex_maps_navikit/src/navigation/balloons/balloon_anchor.dart';
@@ -19,6 +21,7 @@ class AutomotiveNavigationStyleProvider implements NavigationStyleProvider {
   final _routePinsStyleProvider = DefaultRoutePinsStyleProvider();
   final _routeViewStyleProvider = DefaultRouteStyleProvider();
   final _userPlacemarkStyleProvider = DefaultUserPlacemarkStyleProvider();
+  final _highlightStyleProvider = DefaultHighlightStyleProvider();
 
   @override
   NavigationBalloonImageProvider balloonImageProvider() =>
@@ -39,6 +42,9 @@ class AutomotiveNavigationStyleProvider implements NavigationStyleProvider {
   @override
   NavigationUserPlacemarkStyleProvider userPlacemarkStyleProvider() =>
       _userPlacemarkStyleProvider;
+
+  @override
+  HighlightStyleProvider highlightStyleProvider() => _highlightStyleProvider;
 }
 
 class DefaultBallonImageProvider implements NavigationBalloonImageProvider {
@@ -73,8 +79,10 @@ class DefaultRequestPointStyleProvider
           double scaleFactor,
           bool isSelected,
           bool isNightMode,
+          NavigationLayerMode navigationLayerMode,
           PlacemarkStyle style) =>
-      _requestPointStyleProvider.provideStyle(requestPointType, style,
+      _requestPointStyleProvider.provideStyle(
+          requestPointType, navigationLayerMode, style,
           requestPointIndex: requestPointIndex,
           requestPointsNumber: requestPointsNumber,
           scaleFactor: scaleFactor,
@@ -88,49 +96,61 @@ class DefaultRoutePinsStyleProvider
       InternalDefaultStyleProvidersFactory.routePinsStyleProvider();
 
   @override
-  void provideCheckpointStyle(
-          double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
-      _routePinsStyleProvider.provideCheckpointStyle(style,
+  void provideCheckpointStyle(double scaleFactor, bool isNightMode,
+          NavigationLayerMode navigationLayerMode, PlacemarkStyle style) =>
+      _routePinsStyleProvider.provideCheckpointStyle(navigationLayerMode, style,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
 
   @override
-  void provideRailwayCrossingStyle(
-          double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
-      _routePinsStyleProvider.provideRailwayCrossingStyle(style,
+  void provideRailwayCrossingStyle(double scaleFactor, bool isNightMode,
+          NavigationLayerMode navigationLayerMode, PlacemarkStyle style) =>
+      _routePinsStyleProvider.provideRailwayCrossingStyle(
+          navigationLayerMode, style,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
 
   @override
   void provideRoadInPoorConditionStyle(
           double scaleFactor,
           bool isNightMode,
+          NavigationLayerMode navigationLayerMode,
           PlacemarkStyle roadInPoorConditionStartStyle,
           PlacemarkStyle roadInPoorConditionEndStyle) =>
       _routePinsStyleProvider.provideRoadInPoorConditionStyle(
-          roadInPoorConditionStartStyle, roadInPoorConditionEndStyle,
+          navigationLayerMode,
+          roadInPoorConditionStartStyle,
+          roadInPoorConditionEndStyle,
+          scaleFactor: scaleFactor,
+          isNightMode: isNightMode);
+
+  @override
+  void provideSpeedBumpStyle(double scaleFactor, bool isNightMode,
+          NavigationLayerMode navigationLayerMode, PlacemarkStyle style) =>
+      _routePinsStyleProvider.provideSpeedBumpStyle(navigationLayerMode, style,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
 
   @override
-  void provideSpeedBumpStyle(
-          double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
-      _routePinsStyleProvider.provideSpeedBumpStyle(style,
+  void provideTrafficLightStyle(double scaleFactor, bool isNightMode,
+          NavigationLayerMode navigationLayerMode, PlacemarkStyle style) =>
+      _routePinsStyleProvider.provideTrafficLightStyle(
+          navigationLayerMode, style,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
 
   @override
-  void provideTrafficLightStyle(
-          double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
-      _routePinsStyleProvider.provideTrafficLightStyle(style,
+  void provideTollRoadStyle(
+          double scaleFactor,
+          bool isNightMode,
+          NavigationLayerMode navigationLayerMode,
+          PlacemarkStyle startStyle,
+          PlacemarkStyle endStyle) =>
+      _routePinsStyleProvider.provideTollRoadStyle(
+          navigationLayerMode, startStyle, endStyle,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
 
   @override
-  void provideTollRoadStyle(double scaleFactor, bool isNightMode,
-          PlacemarkStyle startStyle, PlacemarkStyle endStyle) =>
-      _routePinsStyleProvider.provideTollRoadStyle(startStyle, endStyle,
-          scaleFactor: scaleFactor, isNightMode: isNightMode);
-
-  @override
-  void provideRestrictedEntryStyle(
-          double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
-      _routePinsStyleProvider.provideRestrictedEntryStyle(style,
+  void provideRestrictedEntryStyle(double scaleFactor, bool isNightMode,
+          NavigationLayerMode navigationLayerMode, PlacemarkStyle style) =>
+      _routePinsStyleProvider.provideRestrictedEntryStyle(
+          navigationLayerMode, style,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
 }
 
@@ -139,27 +159,47 @@ class DefaultRouteStyleProvider implements NavigationRouteViewStyleProvider {
       InternalDefaultStyleProvidersFactory.routeViewStyleProvider();
 
   @override
-  void provideJamStyle(DrivingFlags flags, bool isSelected, bool isNightMode,
+  void provideJamStyle(
+          DrivingFlags flags,
+          bool isSelected,
+          bool isNightMode,
+          NavigationLayerMode navigationLayerMode,
           NavigationJamStyle jamStyle) =>
-      _routeViewStyleProvider.provideJamStyle(flags, jamStyle,
+      _routeViewStyleProvider.provideJamStyle(
+          flags, navigationLayerMode, jamStyle,
           isSelected: isSelected, isNightMode: isNightMode);
 
   @override
-  void provideManoeuvreStyle(DrivingFlags flags, bool isSelected,
-          bool isNightMode, ArrowStyle arrowStyle) =>
-      _routeViewStyleProvider.provideManoeuvreStyle(flags, arrowStyle,
+  void provideManoeuvreStyle(
+          DrivingFlags flags,
+          bool isSelected,
+          bool isNightMode,
+          NavigationLayerMode navigationLayerMode,
+          ArrowStyle arrowStyle) =>
+      _routeViewStyleProvider.provideManoeuvreStyle(
+          flags, navigationLayerMode, arrowStyle,
           isSelected: isSelected, isNightMode: isNightMode);
 
   @override
-  void providePolylineStyle(DrivingFlags flags, bool isSelected,
-          bool isNightMode, PolylineStyle polylineStyle) =>
-      _routeViewStyleProvider.providePolylineStyle(flags, polylineStyle,
+  void providePolylineStyle(
+          DrivingFlags flags,
+          bool isSelected,
+          bool isNightMode,
+          NavigationLayerMode navigationLayerMode,
+          PolylineStyle polylineStyle) =>
+      _routeViewStyleProvider.providePolylineStyle(
+          flags, navigationLayerMode, polylineStyle,
           isSelected: isSelected, isNightMode: isNightMode);
 
   @override
-  void provideRouteStyle(DrivingFlags flags, bool isSelected, bool isNightMode,
+  void provideRouteStyle(
+          DrivingFlags flags,
+          bool isSelected,
+          bool isNightMode,
+          NavigationLayerMode navigationLayerMode,
           NavigationRouteStyle routeStyle) =>
-      _routeViewStyleProvider.provideRouteStyle(flags, routeStyle,
+      _routeViewStyleProvider.provideRouteStyle(
+          flags, navigationLayerMode, routeStyle,
           isSelected: isSelected, isNightMode: isNightMode);
 }
 
@@ -169,8 +209,18 @@ class DefaultUserPlacemarkStyleProvider
       InternalDefaultStyleProvidersFactory.userPlacemarkStyleProvider();
 
   @override
-  void provideStyle(
-          double scaleFactor, bool isNightMode, PlacemarkStyle style) =>
-      _userPlacemarkStyleProvider.provideStyle(style,
+  void provideStyle(double scaleFactor, bool isNightMode,
+          NavigationLayerMode navigationLayerMode, PlacemarkStyle style) =>
+      _userPlacemarkStyleProvider.provideStyle(navigationLayerMode, style,
           scaleFactor: scaleFactor, isNightMode: isNightMode);
+}
+
+class DefaultHighlightStyleProvider implements HighlightStyleProvider {
+  final InternalDefaultHighlightStyleProvider _style =
+      InternalDefaultStyleProvidersFactory.highlightStyleProvider();
+
+  @override
+  SpeedControlHighlightStyle? provideSpeedControlStyle(
+          bool isNightMode, HighlightMode highlightMode) =>
+      _style.provideSpeedControlStyle(highlightMode, isNightMode: isNightMode);
 }

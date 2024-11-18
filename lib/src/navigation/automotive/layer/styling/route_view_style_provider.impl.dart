@@ -208,6 +208,11 @@ class NavigationRouteStyleImpl
     _RouteStyle_setShowRestrictedEntries(ptr, showRestrictedEntries);
     exception.checkCallResult();
   }
+
+  void setMinZoomForTransparentRoutes(core.double zoom) {
+    _RouteStyle_setMinZoomForTransparentRoutes(ptr, zoom);
+    exception.checkCallResult();
+  }
 }
 
 final _NavigationRouteStyle_free = lib.library.lookup<
@@ -331,6 +336,15 @@ final void Function(
 final void Function(
     ffi.Pointer<ffi.Void>,
     core
+        .double) _RouteStyle_setMinZoomForTransparentRoutes = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float)>>(
+        'yandex_flutter_navigation_automotive_layer_styling_NavigationRouteStyle_setMinZoomForTransparentRoutes')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
         .int) _NavigationRouteStyle_set = lib.library
     .lookup<
             ffi.NativeFunction<
@@ -374,6 +388,7 @@ extension NavigationRouteViewStyleProviderImpl
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRouteViewStyleProvider_provideJamStyle),
         ffi.Pointer.fromFunction<
@@ -382,6 +397,7 @@ extension NavigationRouteViewStyleProviderImpl
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRouteViewStyleProvider_providePolylineStyle),
         ffi.Pointer.fromFunction<
@@ -390,6 +406,7 @@ extension NavigationRouteViewStyleProviderImpl
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRouteViewStyleProvider_provideManoeuvreStyle),
         ffi.Pointer.fromFunction<
@@ -398,6 +415,7 @@ extension NavigationRouteViewStyleProviderImpl
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRouteViewStyleProvider_provideRouteStyle));
     _pointerToListener[ptr] = obj;
@@ -443,6 +461,7 @@ final ffi.Pointer<ffi.Void> Function(
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>,
     ffi.Pointer<
@@ -452,6 +471,7 @@ final ffi.Pointer<ffi.Void> Function(
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>,
     ffi.Pointer<
@@ -461,6 +481,7 @@ final ffi.Pointer<ffi.Void> Function(
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>,
     ffi.Pointer<
@@ -470,6 +491,7 @@ final ffi.Pointer<ffi.Void> Function(
               directions_driving_flags.DrivingFlagsNative,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>) _NavigationRouteViewStyleProvider_new = lib.library
     .lookup<
@@ -482,6 +504,7 @@ final ffi.Pointer<ffi.Void> Function(
                               directions_driving_flags.DrivingFlagsNative,
                               ffi.Bool,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -491,6 +514,7 @@ final ffi.Pointer<ffi.Void> Function(
                               directions_driving_flags.DrivingFlagsNative,
                               ffi.Bool,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -500,6 +524,7 @@ final ffi.Pointer<ffi.Void> Function(
                               directions_driving_flags.DrivingFlagsNative,
                               ffi.Bool,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -509,6 +534,7 @@ final ffi.Pointer<ffi.Void> Function(
                               directions_driving_flags.DrivingFlagsNative,
                               ffi.Bool,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>)>>(
         'yandex_flutter_navigation_automotive_layer_styling_NavigationRouteViewStyleProvider_new')
@@ -533,6 +559,7 @@ void _NavigationRouteViewStyleProvider_provideJamStyle(
   directions_driving_flags.DrivingFlagsNative flags,
   core.bool isSelected,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> jamStyle,
 ) {
   final listener =
@@ -545,6 +572,8 @@ void _NavigationRouteViewStyleProvider_provideJamStyle(
       directions_driving_flags.DrivingFlagsImpl.fromNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       NavigationJamStyleImpl.fromNativePtr(jamStyle),
     );
   } catch (e, stack) {
@@ -559,6 +588,7 @@ void _NavigationRouteViewStyleProvider_providePolylineStyle(
   directions_driving_flags.DrivingFlagsNative flags,
   core.bool isSelected,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> polylineStyle,
 ) {
   final listener =
@@ -571,6 +601,8 @@ void _NavigationRouteViewStyleProvider_providePolylineStyle(
       directions_driving_flags.DrivingFlagsImpl.fromNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_polyline_style.PolylineStyleImpl.fromNativePtr(
           polylineStyle),
     );
@@ -586,6 +618,7 @@ void _NavigationRouteViewStyleProvider_provideManoeuvreStyle(
   directions_driving_flags.DrivingFlagsNative flags,
   core.bool isSelected,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> arrowStyle,
 ) {
   final listener =
@@ -598,6 +631,8 @@ void _NavigationRouteViewStyleProvider_provideManoeuvreStyle(
       directions_driving_flags.DrivingFlagsImpl.fromNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_arrow_style.ArrowStyleImpl.fromNativePtr(arrowStyle),
     );
   } catch (e, stack) {
@@ -612,6 +647,7 @@ void _NavigationRouteViewStyleProvider_provideRouteStyle(
   directions_driving_flags.DrivingFlagsNative flags,
   core.bool isSelected,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> routeStyle,
 ) {
   final listener =
@@ -624,6 +660,8 @@ void _NavigationRouteViewStyleProvider_provideRouteStyle(
       directions_driving_flags.DrivingFlagsImpl.fromNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       NavigationRouteStyleImpl.fromNativePtr(routeStyle),
     );
   } catch (e, stack) {

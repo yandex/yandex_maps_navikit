@@ -40,6 +40,8 @@ class InternalDefaultUserPlacemarkStyleProviderImpl
   }
 
   void provideStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -48,6 +50,8 @@ class InternalDefaultUserPlacemarkStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
@@ -61,12 +65,13 @@ final void Function(
     ffi.Pointer<ffi.Void>,
     core.double,
     core.bool,
+    core.int,
     ffi.Pointer<
         ffi.Void>) _DefaultUserPlacemarkStyleProvider_provideStyle = lib.library
     .lookup<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
-                    ffi.Pointer<ffi.Void>)>>(
+                    ffi.Int64, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultUserPlacemarkStyleProvider_provideStyle')
     .asFunction();
 final void Function(
@@ -120,6 +125,8 @@ class InternalDefaultRequestPointStyleProviderImpl
 
   void provideStyle(
     mapkit_request_point.RequestPointType requestPointType,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.int requestPointIndex,
     required core.int requestPointsNumber,
@@ -135,6 +142,8 @@ class InternalDefaultRequestPointStyleProviderImpl
       scaleFactor,
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
@@ -145,7 +154,7 @@ final _InternalDefaultRequestPointStyleProvider_free = lib.library.lookup<
     'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_free');
 
 final void Function(ffi.Pointer<ffi.Void>, core.int, core.int, core.int,
-        core.double, core.bool, core.bool, ffi.Pointer<ffi.Void>)
+        core.double, core.bool, core.bool, core.int, ffi.Pointer<ffi.Void>)
     _DefaultRequestPointStyleProvider_provideStyle = lib.library
         .lookup<
                 ffi.NativeFunction<
@@ -157,6 +166,7 @@ final void Function(ffi.Pointer<ffi.Void>, core.int, core.int, core.int,
                         ffi.Float,
                         ffi.Bool,
                         ffi.Bool,
+                        ffi.Int64,
                         ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRequestPointStyleProvider_provideStyle')
         .asFunction();
@@ -210,6 +220,8 @@ class InternalDefaultRoutePinsStyleProviderImpl
   }
 
   void provideTrafficLightStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -218,11 +230,15 @@ class InternalDefaultRoutePinsStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
 
   void provideCheckpointStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -231,11 +247,15 @@ class InternalDefaultRoutePinsStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
 
   void provideRailwayCrossingStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -244,11 +264,15 @@ class InternalDefaultRoutePinsStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
 
   void provideRoadInPoorConditionStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle roadInPoorConditionStartStyle,
     mapkit_styling_placemark_style.PlacemarkStyle roadInPoorConditionEndStyle, {
     required core.double scaleFactor,
@@ -258,6 +282,8 @@ class InternalDefaultRoutePinsStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(
           roadInPoorConditionStartStyle),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(
@@ -266,6 +292,8 @@ class InternalDefaultRoutePinsStyleProviderImpl
   }
 
   void provideSpeedBumpStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -274,11 +302,15 @@ class InternalDefaultRoutePinsStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
 
   void provideTollRoadStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartStyle,
     mapkit_styling_placemark_style.PlacemarkStyle tollRoadStartEnd, {
     required core.double scaleFactor,
@@ -288,6 +320,8 @@ class InternalDefaultRoutePinsStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(
           tollRoadStartStyle),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(
@@ -296,6 +330,8 @@ class InternalDefaultRoutePinsStyleProviderImpl
   }
 
   void provideRestrictedEntryStyle(
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_placemark_style.PlacemarkStyle style, {
     required core.double scaleFactor,
     required core.bool isNightMode,
@@ -304,6 +340,8 @@ class InternalDefaultRoutePinsStyleProviderImpl
       ptr,
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.getNativePtr(style),
     );
   }
@@ -317,43 +355,45 @@ final void Function(
     ffi.Pointer<ffi.Void>,
     core.double,
     core.bool,
+    core.int,
     ffi.Pointer<
         ffi.Void>) _DefaultRoutePinsStyleProvider_provideTrafficLightStyle = lib
     .library
     .lookup<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
-                    ffi.Pointer<ffi.Void>)>>(
+                    ffi.Int64, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideTrafficLightStyle')
     .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
     core.double,
     core.bool,
+    core.int,
     ffi.Pointer<
         ffi.Void>) _DefaultRoutePinsStyleProvider_provideCheckpointStyle = lib
     .library
     .lookup<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
-                    ffi.Pointer<ffi.Void>)>>(
+                    ffi.Int64, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideCheckpointStyle')
     .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
     core.double,
     core.bool,
+    core.int,
     ffi.Pointer<
-        ffi
-        .Void>) _DefaultRoutePinsStyleProvider_provideRailwayCrossingStyle = lib
+        ffi.Void>) _DefaultRoutePinsStyleProvider_provideRailwayCrossingStyle = lib
     .library
     .lookup<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
-                    ffi.Pointer<ffi.Void>)>>(
+                    ffi.Int64, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideRailwayCrossingStyle')
     .asFunction();
-final void Function(ffi.Pointer<ffi.Void>, core.double, core.bool,
+final void Function(ffi.Pointer<ffi.Void>, core.double, core.bool, core.int,
         ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
     _DefaultRoutePinsStyleProvider_provideRoadInPoorConditionStyle = lib.library
         .lookup<
@@ -362,6 +402,7 @@ final void Function(ffi.Pointer<ffi.Void>, core.double, core.bool,
                         ffi.Pointer<ffi.Void>,
                         ffi.Float,
                         ffi.Bool,
+                        ffi.Int64,
                         ffi.Pointer<ffi.Void>,
                         ffi.Pointer<ffi.Void>)>>(
             'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideRoadInPoorConditionStyle')
@@ -370,41 +411,42 @@ final void Function(
     ffi.Pointer<ffi.Void>,
     core.double,
     core.bool,
+    core.int,
     ffi.Pointer<
         ffi.Void>) _DefaultRoutePinsStyleProvider_provideSpeedBumpStyle = lib
     .library
     .lookup<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
-                    ffi.Pointer<ffi.Void>)>>(
+                    ffi.Int64, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideSpeedBumpStyle')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, core.double, core.bool, core.int,
+        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
+    _DefaultRoutePinsStyleProvider_provideTollRoadStyle = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(
+                        ffi.Pointer<ffi.Void>,
+                        ffi.Float,
+                        ffi.Bool,
+                        ffi.Int64,
+                        ffi.Pointer<ffi.Void>,
+                        ffi.Pointer<ffi.Void>)>>(
+            'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideTollRoadStyle')
+        .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
     core.double,
     core.bool,
-    ffi.Pointer<ffi.Void>,
+    core.int,
     ffi.Pointer<
-        ffi.Void>) _DefaultRoutePinsStyleProvider_provideTollRoadStyle = lib
+        ffi.Void>) _DefaultRoutePinsStyleProvider_provideRestrictedEntryStyle = lib
     .library
     .lookup<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
-                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideTollRoadStyle')
-    .asFunction();
-final void Function(
-    ffi.Pointer<ffi.Void>,
-    core.double,
-    core.bool,
-    ffi.Pointer<
-        ffi
-        .Void>) _DefaultRoutePinsStyleProvider_provideRestrictedEntryStyle = lib
-    .library
-    .lookup<
-            ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Float, ffi.Bool,
-                    ffi.Pointer<ffi.Void>)>>(
+                    ffi.Int64, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRoutePinsStyleProvider_provideRestrictedEntryStyle')
     .asFunction();
 final void Function(
@@ -458,6 +500,8 @@ class InternalDefaultRouteViewStyleProviderImpl
 
   void provideJamStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     navigation_automotive_layer_styling_route_view_style_provider
         .NavigationJamStyle
         jamStyle, {
@@ -469,6 +513,8 @@ class InternalDefaultRouteViewStyleProviderImpl
       directions_driving_flags.DrivingFlagsImpl.toNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       navigation_automotive_layer_styling_route_view_style_provider
           .NavigationJamStyleImpl.getNativePtr(jamStyle),
     );
@@ -476,6 +522,8 @@ class InternalDefaultRouteViewStyleProviderImpl
 
   void providePolylineStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_polyline_style.PolylineStyle polylineStyle, {
     required core.bool isSelected,
     required core.bool isNightMode,
@@ -485,6 +533,8 @@ class InternalDefaultRouteViewStyleProviderImpl
       directions_driving_flags.DrivingFlagsImpl.toNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_polyline_style.PolylineStyleImpl.getNativePtr(
           polylineStyle),
     );
@@ -492,6 +542,8 @@ class InternalDefaultRouteViewStyleProviderImpl
 
   void provideManoeuvreStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     mapkit_styling_arrow_style.ArrowStyle arrowStyle, {
     required core.bool isSelected,
     required core.bool isNightMode,
@@ -501,12 +553,16 @@ class InternalDefaultRouteViewStyleProviderImpl
       directions_driving_flags.DrivingFlagsImpl.toNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       mapkit_styling_arrow_style.ArrowStyleImpl.getNativePtr(arrowStyle),
     );
   }
 
   void provideRouteStyle(
     directions_driving_flags.DrivingFlags flags,
+    navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+        navigationLayerMode,
     navigation_automotive_layer_styling_route_view_style_provider
         .NavigationRouteStyle
         routeStyle, {
@@ -518,6 +574,8 @@ class InternalDefaultRouteViewStyleProviderImpl
       directions_driving_flags.DrivingFlagsImpl.toNative(flags),
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .toInt(navigationLayerMode),
       navigation_automotive_layer_styling_route_view_style_provider
           .NavigationRouteStyleImpl.getNativePtr(routeStyle),
     );
@@ -533,6 +591,7 @@ final void Function(
     directions_driving_flags.DrivingFlagsNative,
     core.bool,
     core.bool,
+    core.int,
     ffi
         .Pointer<ffi.Void>) _DefaultRouteViewStyleProvider_provideJamStyle = lib
     .library
@@ -543,6 +602,7 @@ final void Function(
                     directions_driving_flags.DrivingFlagsNative,
                     ffi.Bool,
                     ffi.Bool,
+                    ffi.Int64,
                     ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRouteViewStyleProvider_provideJamStyle')
     .asFunction();
@@ -551,6 +611,7 @@ final void Function(
     directions_driving_flags.DrivingFlagsNative,
     core.bool,
     core.bool,
+    core.int,
     ffi.Pointer<
         ffi.Void>) _DefaultRouteViewStyleProvider_providePolylineStyle = lib
     .library
@@ -561,6 +622,7 @@ final void Function(
                     directions_driving_flags.DrivingFlagsNative,
                     ffi.Bool,
                     ffi.Bool,
+                    ffi.Int64,
                     ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRouteViewStyleProvider_providePolylineStyle')
     .asFunction();
@@ -569,6 +631,7 @@ final void Function(
     directions_driving_flags.DrivingFlagsNative,
     core.bool,
     core.bool,
+    core.int,
     ffi.Pointer<
         ffi.Void>) _DefaultRouteViewStyleProvider_provideManoeuvreStyle = lib
     .library
@@ -579,6 +642,7 @@ final void Function(
                     directions_driving_flags.DrivingFlagsNative,
                     ffi.Bool,
                     ffi.Bool,
+                    ffi.Int64,
                     ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRouteViewStyleProvider_provideManoeuvreStyle')
     .asFunction();
@@ -587,6 +651,7 @@ final void Function(
     directions_driving_flags.DrivingFlagsNative,
     core.bool,
     core.bool,
+    core.int,
     ffi.Pointer<
         ffi.Void>) _DefaultRouteViewStyleProvider_provideRouteStyle = lib
     .library
@@ -597,6 +662,7 @@ final void Function(
                     directions_driving_flags.DrivingFlagsNative,
                     ffi.Bool,
                     ffi.Bool,
+                    ffi.Int64,
                     ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultRouteViewStyleProvider_provideRouteStyle')
     .asFunction();
@@ -726,6 +792,88 @@ final void Function(
         'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultBalloonImageProvider_set_')
     .asFunction(isLeaf: true);
 
+@bindings_annotations.ContainerData(
+    toNative: 'InternalDefaultHighlightStyleProviderImpl.getNativePtr',
+    toPlatform:
+        '(val) => InternalDefaultHighlightStyleProviderImpl.fromOptionalPtr(val.cast<ffi.Pointer<ffi.Void>>().value)',
+    platformType: 'InternalDefaultHighlightStyleProvider')
+class InternalDefaultHighlightStyleProviderImpl
+    implements InternalDefaultHighlightStyleProvider, ffi.Finalizable {
+  @protected
+  final ffi.Pointer<ffi.Void> ptr;
+  static final _finalizer =
+      ffi.NativeFinalizer(_InternalDefaultHighlightStyleProvider_free.cast());
+
+  /// @nodoc
+  InternalDefaultHighlightStyleProviderImpl.fromExternalPtr(this.ptr);
+
+  /// @nodoc
+  @internal
+  InternalDefaultHighlightStyleProviderImpl.fromNativePtr(this.ptr) {
+    _finalizer.attach(this, ptr);
+  }
+
+  @internal
+
+  /// @nodoc
+  static ffi.Pointer<ffi.Void> getNativePtr(
+      InternalDefaultHighlightStyleProvider? obj) {
+    if (obj == null) return ffi.nullptr;
+    return (obj as InternalDefaultHighlightStyleProviderImpl).ptr;
+  }
+
+  @internal
+
+  /// @nodoc
+  static InternalDefaultHighlightStyleProvider? fromOptionalPtr(
+      ffi.Pointer<ffi.Void> ptr) {
+    if (ptr == ffi.nullptr) return null;
+    return InternalDefaultHighlightStyleProviderImpl.fromNativePtr(ptr);
+  }
+
+  navigation_automotive_layer_styling_highlight_style_provider
+      .SpeedControlHighlightStyle? provideSpeedControlStyle(
+    navigation_automotive_layer_styling_highlight_style_provider.HighlightMode
+        highlightMode, {
+    required core.bool isNightMode,
+  }) {
+    final result = _DefaultHighlightStyleProvider_provideSpeedControlStyle(
+      ptr,
+      isNightMode,
+      navigation_automotive_layer_styling_highlight_style_provider
+          .HighlightModeImpl.toInt(highlightMode),
+    );
+    return navigation_automotive_layer_styling_highlight_style_provider
+        .SpeedControlHighlightStyleImpl.fromPointer(result);
+  }
+}
+
+final _InternalDefaultHighlightStyleProvider_free = lib.library.lookup<
+        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+    'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultHighlightStyleProvider_free');
+
+final ffi.Pointer<ffi.Void> Function(
+    ffi.Pointer<ffi.Void>,
+    core.bool,
+    core
+        .int) _DefaultHighlightStyleProvider_provideSpeedControlStyle = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(
+                    ffi.Pointer<ffi.Void>, ffi.Bool, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultHighlightStyleProvider_provideSpeedControlStyle')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core
+        .int) _InternalDefaultHighlightStyleProvider_set = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultHighlightStyleProvider_set_')
+    .asFunction(isLeaf: true);
+
 InternalDefaultUserPlacemarkStyleProvider _userPlacemarkStyleProvider() {
   final result = _DefaultStyleProvidersFactory_userPlacemarkStyleProvider();
   return InternalDefaultUserPlacemarkStyleProviderImpl.fromNativePtr(result);
@@ -749,6 +897,11 @@ InternalDefaultRouteViewStyleProvider _routeViewStyleProvider() {
 InternalDefaultBalloonImageProvider _balloonImageProvider() {
   final result = _DefaultStyleProvidersFactory_balloonImageProvider();
   return InternalDefaultBalloonImageProviderImpl.fromNativePtr(result);
+}
+
+InternalDefaultHighlightStyleProvider _highlightStyleProvider() {
+  final result = _DefaultStyleProvidersFactory_highlightStyleProvider();
+  return InternalDefaultHighlightStyleProviderImpl.fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function()
@@ -775,4 +928,9 @@ final ffi.Pointer<ffi.Void> Function()
     _DefaultStyleProvidersFactory_balloonImageProvider = lib.library
         .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
             'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultStyleProvidersFactory_balloonImageProvider')
+        .asFunction();
+final ffi.Pointer<ffi.Void> Function()
+    _DefaultStyleProvidersFactory_highlightStyleProvider = lib.library
+        .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function()>>(
+            'yandex_flutter_navigation_automotive_layer_internal_InternalDefaultStyleProvidersFactory_highlightStyleProvider')
         .asFunction();

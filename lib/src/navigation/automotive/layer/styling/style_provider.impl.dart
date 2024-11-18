@@ -35,6 +35,7 @@ extension NavigationUserPlacemarkStyleProviderImpl
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationUserPlacemarkStyleProvider_provideStyle));
     _pointerToListener[ptr] = obj;
@@ -79,6 +80,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>) _NavigationUserPlacemarkStyleProvider_new = lib.library
     .lookup<
@@ -90,6 +92,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>)>>(
         'yandex_flutter_navigation_automotive_layer_styling_NavigationUserPlacemarkStyleProvider_new')
@@ -114,6 +117,7 @@ void _NavigationUserPlacemarkStyleProvider_provideStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> style,
 ) {
   final listener =
@@ -125,6 +129,8 @@ void _NavigationUserPlacemarkStyleProvider_provideStyle(
     listener.provideStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
@@ -173,6 +179,7 @@ extension NavigationRequestPointStyleProviderImpl
               ffi.Float,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRequestPointStyleProvider_provideStyle));
     _pointerToListener[ptr] = obj;
@@ -221,6 +228,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Float,
               ffi.Bool,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>) _NavigationRequestPointStyleProvider_new = lib.library
     .lookup<
@@ -236,6 +244,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Float,
                               ffi.Bool,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>)>>(
         'yandex_flutter_navigation_automotive_layer_styling_NavigationRequestPointStyleProvider_new')
@@ -264,6 +273,7 @@ void _NavigationRequestPointStyleProvider_provideStyle(
   core.double scaleFactor,
   core.bool isSelected,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> style,
 ) {
   final listener =
@@ -279,6 +289,8 @@ void _NavigationRequestPointStyleProvider_provideStyle(
       scaleFactor,
       isSelected,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
@@ -323,6 +335,7 @@ extension NavigationRoutePinsStyleProviderImpl
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRoutePinsStyleProvider_provideTrafficLightStyle),
         ffi.Pointer.fromFunction<
@@ -330,6 +343,7 @@ extension NavigationRoutePinsStyleProviderImpl
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRoutePinsStyleProvider_provideCheckpointStyle),
         ffi.Pointer.fromFunction<
@@ -337,6 +351,7 @@ extension NavigationRoutePinsStyleProviderImpl
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRoutePinsStyleProvider_provideRailwayCrossingStyle),
         ffi.Pointer.fromFunction<
@@ -344,6 +359,7 @@ extension NavigationRoutePinsStyleProviderImpl
                   ffi.Pointer<ffi.Void>,
                   ffi.Float,
                   ffi.Bool,
+                  ffi.Int64,
                   ffi.Pointer<ffi.Void>,
                   ffi.Pointer<ffi.Void>,
                 )>(
@@ -353,6 +369,7 @@ extension NavigationRoutePinsStyleProviderImpl
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRoutePinsStyleProvider_provideTollRoadStyle),
@@ -361,6 +378,7 @@ extension NavigationRoutePinsStyleProviderImpl
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRoutePinsStyleProvider_provideRestrictedEntryStyle),
         ffi.Pointer.fromFunction<
@@ -368,6 +386,7 @@ extension NavigationRoutePinsStyleProviderImpl
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>(_NavigationRoutePinsStyleProvider_provideSpeedBumpStyle));
     _pointerToListener[ptr] = obj;
@@ -412,6 +431,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>,
     ffi.Pointer<
@@ -420,6 +440,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>,
     ffi.Pointer<
@@ -428,6 +449,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>,
     ffi.Pointer<
@@ -436,6 +458,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>,
             )>>,
@@ -445,6 +468,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>,
             )>>,
@@ -454,6 +478,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>,
     ffi.Pointer<
@@ -462,6 +487,7 @@ final ffi.Pointer<ffi.Void> Function(
               ffi.Pointer<ffi.Void>,
               ffi.Float,
               ffi.Bool,
+              ffi.Int64,
               ffi.Pointer<ffi.Void>,
             )>>) _NavigationRoutePinsStyleProvider_new = lib.library
     .lookup<
@@ -473,6 +499,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -481,6 +508,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -489,6 +517,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -497,6 +526,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                               ffi.Pointer<ffi.Void>,
                             )>>,
@@ -506,6 +536,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                               ffi.Pointer<ffi.Void>,
                             )>>,
@@ -515,6 +546,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>,
                     ffi.Pointer<
@@ -523,6 +555,7 @@ final ffi.Pointer<ffi.Void> Function(
                               ffi.Pointer<ffi.Void>,
                               ffi.Float,
                               ffi.Bool,
+                              ffi.Int64,
                               ffi.Pointer<ffi.Void>,
                             )>>)>>(
         'yandex_flutter_navigation_automotive_layer_styling_NavigationRoutePinsStyleProvider_new')
@@ -546,6 +579,7 @@ void _NavigationRoutePinsStyleProvider_provideTrafficLightStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> style,
 ) {
   final listener =
@@ -557,6 +591,8 @@ void _NavigationRoutePinsStyleProvider_provideTrafficLightStyle(
     listener.provideTrafficLightStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
@@ -570,6 +606,7 @@ void _NavigationRoutePinsStyleProvider_provideCheckpointStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> style,
 ) {
   final listener =
@@ -581,6 +618,8 @@ void _NavigationRoutePinsStyleProvider_provideCheckpointStyle(
     listener.provideCheckpointStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
@@ -594,6 +633,7 @@ void _NavigationRoutePinsStyleProvider_provideRailwayCrossingStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> style,
 ) {
   final listener =
@@ -605,6 +645,8 @@ void _NavigationRoutePinsStyleProvider_provideRailwayCrossingStyle(
     listener.provideRailwayCrossingStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
@@ -618,6 +660,7 @@ void _NavigationRoutePinsStyleProvider_provideRoadInPoorConditionStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> roadInPoorConditionStartStyle,
   ffi.Pointer<ffi.Void> roadInPoorConditionEndStyle,
 ) {
@@ -630,6 +673,8 @@ void _NavigationRoutePinsStyleProvider_provideRoadInPoorConditionStyle(
     listener.provideRoadInPoorConditionStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(
           roadInPoorConditionStartStyle),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(
@@ -646,6 +691,7 @@ void _NavigationRoutePinsStyleProvider_provideTollRoadStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> tollRoadStartStyle,
   ffi.Pointer<ffi.Void> tollRoadEndStyle,
 ) {
@@ -658,6 +704,8 @@ void _NavigationRoutePinsStyleProvider_provideTollRoadStyle(
     listener.provideTollRoadStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(
           tollRoadStartStyle),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(
@@ -674,6 +722,7 @@ void _NavigationRoutePinsStyleProvider_provideRestrictedEntryStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> style,
 ) {
   final listener =
@@ -685,6 +734,8 @@ void _NavigationRoutePinsStyleProvider_provideRestrictedEntryStyle(
     listener.provideRestrictedEntryStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
@@ -698,6 +749,7 @@ void _NavigationRoutePinsStyleProvider_provideSpeedBumpStyle(
   ffi.Pointer<ffi.Void> _ptr,
   core.double scaleFactor,
   core.bool isNightMode,
+  core.int navigationLayerMode,
   ffi.Pointer<ffi.Void> style,
 ) {
   final listener =
@@ -709,6 +761,8 @@ void _NavigationRoutePinsStyleProvider_provideSpeedBumpStyle(
     listener.provideSpeedBumpStyle(
       scaleFactor,
       isNightMode,
+      navigation_automotive_layer_navigation_layer_mode.NavigationLayerModeImpl
+          .fromInt(navigationLayerMode),
       mapkit_styling_placemark_style.PlacemarkStyleImpl.fromNativePtr(style),
     );
   } catch (e, stack) {
@@ -752,12 +806,13 @@ extension NavigationStyleProviderImpl on NavigationStyleProvider {
             _NavigationStyleProvider_balloonImageProvider),
         ffi.Pointer.fromFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>(
             _NavigationStyleProvider_requestPointStyleProvider),
-        ffi.Pointer.fromFunction<
-                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>(
+        ffi.Pointer.fromFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>(
             _NavigationStyleProvider_userPlacemarkStyleProvider),
+        ffi.Pointer.fromFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>(
+            _NavigationStyleProvider_routePinsStyleProvider),
         ffi.Pointer.fromFunction<
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>(
-            _NavigationStyleProvider_routePinsStyleProvider));
+            _NavigationStyleProvider_highlightStyleProvider));
     _pointerToListener[ptr] = obj;
     _listenerToPointer[obj] = ptr;
     _NavigationStyleProvidersetSendPort(
@@ -793,21 +848,21 @@ final void Function(
     .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<
-            ffi
-            .NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<
-            ffi
-            .NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<
-            ffi
-            .NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<
-            ffi
-            .NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>)
+        ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>)
     _NavigationStyleProvider_new = lib.library
-        .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_layer_styling_NavigationStyleProvider_new')
+        .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(
+                    ffi.Pointer<
+                        ffi.NativeFunction<
+                            ffi.Pointer<ffi.Void> Function(
+                                ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<
+                        ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_layer_styling_NavigationStyleProvider_new')
         .asFunction(isLeaf: true);
 
 final void Function(ffi.Pointer<ffi.Void>) _NavigationStyleProvider_free = lib
@@ -897,6 +952,23 @@ ffi.Pointer<ffi.Void> _NavigationStyleProvider_routePinsStyleProvider(
   try {
     return NavigationRoutePinsStyleProviderImpl.getNativePtr(
         listener.routePinsStyleProvider());
+  } catch (e, stack) {
+    exception.nativeAssert(
+        'Unhandled exception $e from native call listener\n$stack');
+    rethrow;
+  }
+}
+
+ffi.Pointer<ffi.Void> _NavigationStyleProvider_highlightStyleProvider(
+    ffi.Pointer<ffi.Void> _ptr) {
+  final listener = NavigationStyleProviderImpl._pointerToListener[_ptr];
+  if (listener == null) {
+    throw core.Exception();
+  }
+  try {
+    return navigation_automotive_layer_styling_highlight_style_provider
+            .HighlightStyleProviderImpl
+        .getNativePtr(listener.highlightStyleProvider());
   } catch (e, stack) {
     exception.nativeAssert(
         'Unhandled exception $e from native call listener\n$stack');

@@ -35,6 +35,8 @@ import 'package:yandex_maps_navikit/src/mapkit/request_point.dart'
     as mapkit_request_point;
 import 'package:yandex_maps_navikit/src/navigation/automotive/guidance.dart'
     as navigation_automotive_guidance;
+import 'package:yandex_maps_navikit/src/navigation/automotive/route_options.dart'
+    as navigation_automotive_route_options;
 import 'package:yandex_maps_navikit/src/runtime/error.dart' as runtime_error;
 
 part 'navigation.containers.dart';
@@ -107,10 +109,9 @@ abstract class Navigation implements ffi.Finalizable {
 
   /// Request routes for further guidance. If there was a pending routing
   /// request, it will be canceled.
-  void requestRoutes({
+  void requestRoutes(
+    navigation_automotive_route_options.AutomotiveRouteOptions routeOptions, {
     required core.List<mapkit_request_point.RequestPoint> points,
-    core.double? initialAzimuth,
-    core.int? routesCount,
   });
 
   /// Request global alternatives for the current route. If there was a

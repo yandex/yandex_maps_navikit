@@ -1,43 +1,5 @@
 part of 'navigation_layer.dart';
 
-@bindings_annotations.ContainerData(
-    toNative: 'RoutesSourceImpl.toPointer',
-    toPlatform: '(val) => RoutesSourceImpl.fromPointer(val, needFree: false)',
-    platformType: 'RoutesSource')
-extension RoutesSourceImpl on RoutesSource {
-  static core.int toInt(RoutesSource e) {
-    return e.index;
-  }
-
-  static RoutesSource fromInt(core.int val) {
-    return RoutesSource.values[val];
-  }
-
-  static RoutesSource? fromPointer(ffi.Pointer<ffi.Void> ptr,
-      {core.bool needFree = true}) {
-    if (ptr == ffi.nullptr) {
-      return null;
-    }
-    final result = fromInt(ptr.cast<ffi.Int64>().value);
-
-    if (needFree) {
-      malloc.free(ptr);
-    }
-    return result;
-  }
-
-  static ffi.Pointer<ffi.Void> toPointer(RoutesSource? val) {
-    if (val == null) {
-      return ffi.nullptr;
-    }
-
-    final result = malloc.call<ffi.Int64>();
-    result.value = toInt(val);
-
-    return result.cast();
-  }
-}
-
 final class _NavigationLayerListenerWrapper implements ffi.Finalizable {
   _NavigationLayerListenerWrapper(this.ptr) {
     _finalizer.attach(this, ptr);
@@ -65,7 +27,7 @@ extension NavigationLayerListenerImpl on NavigationLayerListener {
         ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
             _NavigationLayerListener_onSelectedRouteChanged),
         ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
-            _NavigationLayerListener_onRoutesSourceChanged));
+            _NavigationLayerListener_onModeChanged));
     _pointerToListener[ptr] = core.WeakReference(obj);
     _listenerToPointer[obj] = _NavigationLayerListenerWrapper(ptr);
     _NavigationLayerListenersetSendPort(
@@ -131,14 +93,112 @@ void _NavigationLayerListener_onSelectedRouteChanged(
   }
 }
 
-void _NavigationLayerListener_onRoutesSourceChanged(
-    ffi.Pointer<ffi.Void> _ptr) {
+void _NavigationLayerListener_onModeChanged(ffi.Pointer<ffi.Void> _ptr) {
   final listener = NavigationLayerListenerImpl._pointerToListener[_ptr]?.target;
   if (listener == null) {
     throw core.Exception();
   }
   try {
-    listener.onRoutesSourceChanged();
+    listener.onModeChanged();
+  } catch (e, stack) {
+    exception.nativeAssert(
+        'Unhandled exception $e from native call listener\n$stack');
+    rethrow;
+  }
+}
+
+final class _NavigationLayerPlacemarkTapListenerWrapper
+    implements ffi.Finalizable {
+  _NavigationLayerPlacemarkTapListenerWrapper(this.ptr) {
+    _finalizer.attach(this, ptr);
+  }
+
+  static final _finalizer =
+      ffi.NativeFinalizer(_NavigationLayerPlacemarkTapListener_free.cast());
+  final ffi.Pointer<ffi.Void> ptr;
+}
+
+extension NavigationLayerPlacemarkTapListenerImpl
+    on NavigationLayerPlacemarkTapListener {
+  static final _pointerToListener = <ffi.Pointer<ffi.Void>,
+      core.WeakReference<NavigationLayerPlacemarkTapListener>>{};
+  static final _listenerToPointer = weak_map.WeakMap<
+      NavigationLayerPlacemarkTapListener,
+      _NavigationLayerPlacemarkTapListenerWrapper?>();
+
+  static void _destructor(core.dynamic data) {
+    final core.int address = data;
+    final ptr = ffi.Pointer<ffi.Void>.fromAddress(address);
+    _pointerToListener.remove(ptr);
+  }
+
+  static ffi.Pointer<ffi.Void> _newNativeObject(
+      NavigationLayerPlacemarkTapListener obj) {
+    final ptr = _NavigationLayerPlacemarkTapListener_new(
+        ffi.Pointer.fromFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>(
+            _NavigationLayerPlacemarkTapListener_onRoadEventPlacemarkTap));
+    _pointerToListener[ptr] = core.WeakReference(obj);
+    _listenerToPointer[obj] = _NavigationLayerPlacemarkTapListenerWrapper(ptr);
+    _NavigationLayerPlacemarkTapListenersetSendPort(
+        ptr,
+        nativeBinding.createPortWithCallback(_destructor),
+        nativeBinding.createExecutePort());
+
+    return ptr;
+  }
+
+  static ffi.Pointer<ffi.Void> getNativePtr(
+      NavigationLayerPlacemarkTapListener? obj) {
+    if (obj == null) return ffi.nullptr;
+
+    final foundPointer = _listenerToPointer[obj];
+    if (foundPointer == null) {
+      return _newNativeObject(obj);
+    }
+
+    return foundPointer.ptr;
+  }
+}
+
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core.int,
+    core
+        .int) _NavigationLayerPlacemarkTapListenersetSendPort = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, ffi.Int64, ffi.Int64)>>(
+        'yandex_flutter_navigation_automotive_layer_NavigationLayerPlacemarkTapListener_setSendPort')
+    .asFunction(isLeaf: true);
+
+final ffi.Pointer<ffi.Void> Function(
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
+    _NavigationLayerPlacemarkTapListener_new = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Pointer<ffi.Void> Function(
+                        ffi.Pointer<
+                            ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
+            'yandex_flutter_navigation_automotive_layer_NavigationLayerPlacemarkTapListener_new')
+        .asFunction(isLeaf: true);
+
+final _NavigationLayerPlacemarkTapListener_free = lib.library.lookup<
+        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+    'yandex_flutter_navigation_automotive_layer_NavigationLayerPlacemarkTapListener_free');
+void _NavigationLayerPlacemarkTapListener_onRoadEventPlacemarkTap(
+    ffi.Pointer<ffi.Void> _ptr, ffi.Pointer<ffi.Void> roadEvent) {
+  final listener =
+      NavigationLayerPlacemarkTapListenerImpl._pointerToListener[_ptr]?.target;
+  if (listener == null) {
+    throw core.Exception();
+  }
+  try {
+    listener.onRoadEventPlacemarkTap(
+        mapkit_road_events_layer_road_event.RoadEventImpl.fromNativePtr(
+            roadEvent));
   } catch (e, stack) {
     exception.nativeAssert(
         'Unhandled exception $e from native call listener\n$stack');
@@ -209,10 +269,12 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
   }
 
   @core.override
-  RoutesSource get routesSource {
-    final result = _NavigationLayer_get_routesSource(ptr);
+  navigation_automotive_layer_navigation_layer_mode.NavigationLayerMode
+      get mode {
+    final result = _NavigationLayer_get_mode(ptr);
     exception.checkCallResult();
-    return RoutesSourceImpl.fromInt(result);
+    return navigation_automotive_layer_navigation_layer_mode
+        .NavigationLayerModeImpl.fromInt(result);
   }
 
   @core.override
@@ -293,6 +355,16 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
     exception.checkCallResult();
   }
 
+  void selectRoadEvent(core.String eventId) {
+    _NavigationLayer_selectRoadEvent(ptr, to_native.toNativeString(eventId));
+    exception.checkCallResult();
+  }
+
+  void deselectRoadEvent() {
+    _NavigationLayer_deselectRoadEvent(ptr);
+    exception.checkCallResult();
+  }
+
   void selectRequestPoint(core.int requestPointIndex) {
     _NavigationLayer_selectRequestPoint(ptr, requestPointIndex);
     exception.checkCallResult();
@@ -355,6 +427,33 @@ class NavigationLayerImpl implements NavigationLayer, ffi.Finalizable {
     exception.checkCallResult();
   }
 
+  void addPlacemarkTapListener(
+      NavigationLayerPlacemarkTapListener roadEventsListener) {
+    _NavigationLayer_addPlacemarkTapListener(
+        ptr,
+        NavigationLayerPlacemarkTapListenerImpl.getNativePtr(
+            roadEventsListener));
+    exception.checkCallResult();
+  }
+
+  void removePlacemarkTapListener(
+      NavigationLayerPlacemarkTapListener roaadEventsListener) {
+    _NavigationLayer_removePlacemarkTapListener(
+        ptr,
+        NavigationLayerPlacemarkTapListenerImpl.getNativePtr(
+            roaadEventsListener));
+    exception.checkCallResult();
+  }
+
+  void setRoadEventVisibleOnRoute(
+    mapkit_road_events_event_tag.RoadEventsEventTag tag, {
+    required core.bool on,
+  }) {
+    _NavigationLayer_setRoadEventVisibleOnRoute(ptr,
+        mapkit_road_events_event_tag.RoadEventsEventTagImpl.toInt(tag), on);
+    exception.checkCallResult();
+  }
+
   void removeFromMap() {
     _NavigationLayer_removeFromMap(ptr);
     exception.checkCallResult();
@@ -409,11 +508,10 @@ final ffi.Pointer<ffi.Void> Function(
         'yandex_flutter_navigation_automotive_layer_NavigationLayer_get_camera')
     .asFunction();
 
-final core.int Function(
-    ffi
-        .Pointer<ffi.Void>) _NavigationLayer_get_routesSource = lib.library
+final core.int Function(ffi.Pointer<ffi.Void>) _NavigationLayer_get_mode = lib
+    .library
     .lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_layer_NavigationLayer_get_routesSource')
+        'yandex_flutter_navigation_automotive_layer_NavigationLayer_get_mode')
     .asFunction();
 
 final ffi.Pointer<ffi.Void> Function(
@@ -508,6 +606,22 @@ final void Function(
     .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
+    native_types
+        .NativeString) _NavigationLayer_selectRoadEvent = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, native_types.NativeString)>>(
+        'yandex_flutter_navigation_automotive_layer_NavigationLayer_selectRoadEvent')
+    .asFunction();
+final void Function(
+    ffi
+        .Pointer<ffi.Void>) _NavigationLayer_deselectRoadEvent = lib.library
+    .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_layer_NavigationLayer_deselectRoadEvent')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
     core
         .int) _NavigationLayer_selectRequestPoint = lib.library
     .lookup<
@@ -585,6 +699,38 @@ final void Function(
                     ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_navigation_automotive_layer_NavigationLayer_removeListener')
     .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    ffi
+        .Pointer<ffi.Void>) _NavigationLayer_addPlacemarkTapListener = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_layer_NavigationLayer_addPlacemarkTapListener')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    ffi
+        .Pointer<ffi.Void>) _NavigationLayer_removePlacemarkTapListener = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_layer_NavigationLayer_removePlacemarkTapListener')
+    .asFunction();
+final void Function(
+    ffi.Pointer<ffi.Void>,
+    core.int,
+    core
+        .bool) _NavigationLayer_setRoadEventVisibleOnRoute = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Int64, ffi.Bool)>>(
+        'yandex_flutter_navigation_automotive_layer_NavigationLayer_setRoadEventVisibleOnRoute')
+    .asFunction();
 final void Function(ffi.Pointer<ffi.Void>) _NavigationLayer_removeFromMap = lib
     .library
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
@@ -628,14 +774,15 @@ final void Function(ffi.Pointer<ffi.Void>, core.int) _NavigationLayer_set = lib
 
 NavigationLayer _createNavigationLayer(
     mapkit_map_map_window.MapWindow mapWindow,
-    mapkit_road_events_layer_road_events_layer.RoadEventsLayer roadEventsLayer,
+    mapkit_road_events_layer_style_provider.RoadEventsLayerStyleProvider
+        roadEventsLayerStyleProvider,
     navigation_automotive_layer_styling_style_provider.NavigationStyleProvider
         styleProvider,
     navigation_automotive_navigation.Navigation navigation) {
   final result = _NavigationLayerFactory_createNavigationLayer(
       mapkit_map_map_window.MapWindowImpl.getNativePtr(mapWindow),
-      mapkit_road_events_layer_road_events_layer.RoadEventsLayerImpl
-          .getNativePtr(roadEventsLayer),
+      mapkit_road_events_layer_style_provider.RoadEventsLayerStyleProviderImpl
+          .getNativePtr(roadEventsLayerStyleProvider),
       navigation_automotive_layer_styling_style_provider
           .NavigationStyleProviderImpl.getNativePtr(styleProvider),
       navigation_automotive_navigation.NavigationImpl.getNativePtr(navigation));
