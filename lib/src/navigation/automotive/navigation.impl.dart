@@ -28,10 +28,10 @@ extension NavigationListenerImpl on NavigationListener {
             _NavigationListener_onRoutesRequested),
         ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>(
             _NavigationListener_onAlternativesRequested),
-        ffi.Pointer.fromFunction<
-                ffi.Void Function(
-                    ffi.Pointer<ffi.Void>, native_types.NativeString)>(
+        ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)>(
             _NavigationListener_onUriResolvingRequested),
+        ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
+            _NavigationListener_onMatchRouteResolvingRequested),
         ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
             _NavigationListener_onRoutesBuilt),
         ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>(
@@ -73,7 +73,7 @@ final void Function(
     .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)
+        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)
     _NavigationListener_new = lib.library
         .lookup<
             ffi.NativeFunction<
@@ -84,6 +84,7 @@ final ffi.Pointer<ffi.Void> Function(
                                 ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)>>,
+                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_NavigationListener_new')
@@ -133,6 +134,21 @@ void _NavigationListener_onUriResolvingRequested(
   }
   try {
     listener.onUriResolvingRequested(to_platform.toPlatformString(uri));
+  } catch (e, stack) {
+    exception.nativeAssert(
+        'Unhandled exception $e from native call listener\n$stack');
+    rethrow;
+  }
+}
+
+void _NavigationListener_onMatchRouteResolvingRequested(
+    ffi.Pointer<ffi.Void> _ptr) {
+  final listener = NavigationListenerImpl._pointerToListener[_ptr]?.target;
+  if (listener == null) {
+    throw core.Exception();
+  }
+  try {
+    listener.onMatchRouteResolvingRequested();
   } catch (e, stack) {
     exception.nativeAssert(
         'Unhandled exception $e from native call listener\n$stack');
@@ -330,6 +346,11 @@ class NavigationImpl implements Navigation, ffi.Finalizable {
     _Navigation_resolveUri(ptr, to_native.toNativeString(uri));
   }
 
+  void matchRoute(mapkit_geometry_geometry.Polyline polyline) {
+    _Navigation_matchRoute(
+        ptr, mapkit_geometry_geometry.PolylineImpl.getNativePtr(polyline));
+  }
+
   void cancelRequest() {
     _Navigation_cancelRequest(ptr);
   }
@@ -507,6 +528,14 @@ final void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)
                     ffi.Void Function(
                         ffi.Pointer<ffi.Void>, native_types.NativeString)>>(
             'yandex_flutter_navigation_automotive_Navigation_resolveUri')
+        .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
+    _Navigation_matchRoute = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(
+                        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+            'yandex_flutter_navigation_automotive_Navigation_matchRoute')
         .asFunction();
 final void Function(ffi.Pointer<ffi.Void>) _Navigation_cancelRequest = lib
     .library

@@ -38,6 +38,9 @@ enum CameraMode {
 
   /// Camera showing all routes.
   Overview,
+
+  /// Indoor mode. It is supported only in transport navigation
+  Indoor,
   ;
 }
 
@@ -60,7 +63,9 @@ abstract class Camera implements ffi.Finalizable {
   /// 'Following' mode from 'Free' mode if requirements from (1) satisfied
   /// and there are no any camera moving activity for 10 seconds</li></ul>
   ///
-  /// Enabled by default.
+  /// <li>Camera will become into 'Indoor' mode from 'Following'/'Free'
+  /// modes during active pedestrian guidance when user enters at
+  /// indoor</li> Enabled by default.
   core.bool get switchModesAutomatically;
   set switchModesAutomatically(core.bool val);
 
@@ -79,7 +84,8 @@ abstract class Camera implements ffi.Finalizable {
     mapkit_animation.Animation? animation,
   });
 
-  /// Set autorotation in 'Following' camera mode. `animation` parameter
+  /// Set autorotation in 'Following' camera mode. If disabled, the map
+  /// will be rotated so that the north is on top. `animation` parameter
   /// ignored if camera currently not in the 'Following' mode. Enabled by
   /// default.
   void setAutoRotation({

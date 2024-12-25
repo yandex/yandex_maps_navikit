@@ -40,6 +40,7 @@ export 'package:yandex_maps_navikit/src/search/search_export.dart';
 export 'package:yandex_maps_navikit/src/search/suggest_response_export.dart';
 export 'package:yandex_maps_navikit/src/search/business_rating_1x_object_metadata_export.dart';
 export 'package:yandex_maps_navikit/src/search/filter_collection_builder_export.dart';
+export 'package:yandex_maps_navikit/src/search/personal_suggest_session_export.dart';
 export 'package:yandex_maps_navikit/src/search/sort_export.dart';
 export 'package:yandex_maps_navikit/src/search/search_layer/search_result_item_export.dart';
 export 'package:yandex_maps_navikit/src/search/search_layer/request_type_export.dart';

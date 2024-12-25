@@ -79,6 +79,10 @@ abstract class Guidance implements ffi.Finalizable {
   core.bool get enableAlternatives;
   set enableAlternatives(core.bool val);
 
+  /// Enables/Disables rerouting. Enabled by default.
+  core.bool get enableReroutes;
+  set enableReroutes(core.bool val);
+
   navigation_automotive_windshield.NavigationWindshield get windshield;
   navigation_automotive_annotator.Annotator get annotator;
   directions_driving_route.DrivingRoute? get currentRoute;
