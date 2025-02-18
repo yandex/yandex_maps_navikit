@@ -68,7 +68,7 @@ extension ManoeuvreImpl on Manoeuvre {
     toPlatform:
         '(val) => ManoeuvreBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'ManoeuvreBalloon')
-final class ManoeuvreBalloonImpl implements ManoeuvreBalloon {
+final class ManoeuvreBalloonImpl extends ManoeuvreBalloon {
   ManoeuvreBalloonImpl(Manoeuvre manoeuvre,
       directions_driving_direction_signs.DrivingDirectionSign? directionSign)
       : this.fromNativePtr(_ManoeuvreBalloon_init(
@@ -87,7 +87,7 @@ final class ManoeuvreBalloonImpl implements ManoeuvreBalloon {
   final ffi.Pointer<ffi.Void> _ptr;
   static final _finalizer = ffi.NativeFinalizer(_ManoeuvreBalloon_free.cast());
 
-  ManoeuvreBalloonImpl.fromNativePtr(this._ptr) {
+  ManoeuvreBalloonImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 
@@ -151,7 +151,7 @@ final ffi.Pointer<ffi.Void> Function(
         '(val) => ManoeuvreWithLaneSignBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'ManoeuvreWithLaneSignBalloon')
 final class ManoeuvreWithLaneSignBalloonImpl
-    implements ManoeuvreWithLaneSignBalloon {
+    extends ManoeuvreWithLaneSignBalloon {
   ManoeuvreWithLaneSignBalloonImpl(
       Manoeuvre manoeuvre,
       directions_driving_lane.DrivingLaneSign laneSign,
@@ -178,7 +178,7 @@ final class ManoeuvreWithLaneSignBalloonImpl
   static final _finalizer =
       ffi.NativeFinalizer(_ManoeuvreWithLaneSignBalloon_free.cast());
 
-  ManoeuvreWithLaneSignBalloonImpl.fromNativePtr(this._ptr) {
+  ManoeuvreWithLaneSignBalloonImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 
@@ -257,7 +257,7 @@ final ffi.Pointer<ffi.Void> Function(
     toPlatform:
         '(val) => LaneSignBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'LaneSignBalloon')
-final class LaneSignBalloonImpl implements LaneSignBalloon {
+final class LaneSignBalloonImpl extends LaneSignBalloon {
   LaneSignBalloonImpl(directions_driving_lane.DrivingLaneSign laneSign,
       directions_driving_direction_signs.DrivingDirectionSign? directionSign)
       : this.fromNativePtr(_LaneSignBalloon_init(
@@ -277,7 +277,7 @@ final class LaneSignBalloonImpl implements LaneSignBalloon {
   final ffi.Pointer<ffi.Void> _ptr;
   static final _finalizer = ffi.NativeFinalizer(_LaneSignBalloon_free.cast());
 
-  LaneSignBalloonImpl.fromNativePtr(this._ptr) {
+  LaneSignBalloonImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 
@@ -341,7 +341,7 @@ final ffi.Pointer<ffi.Void> Function(
     toPlatform:
         '(val) => RouteSummaryBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'RouteSummaryBalloon')
-final class RouteSummaryBalloonImpl implements RouteSummaryBalloon {
+final class RouteSummaryBalloonImpl extends RouteSummaryBalloon {
   RouteSummaryBalloonImpl(
       directions_driving_route.DrivingSummary summary,
       core.List<core.String> tags,
@@ -367,7 +367,7 @@ final class RouteSummaryBalloonImpl implements RouteSummaryBalloon {
   static final _finalizer =
       ffi.NativeFinalizer(_RouteSummaryBalloon_free.cast());
 
-  RouteSummaryBalloonImpl.fromNativePtr(this._ptr) {
+  RouteSummaryBalloonImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 
@@ -447,7 +447,7 @@ final ffi.Pointer<ffi.Void> Function(
     toPlatform:
         '(val) => AlternativeBalloonImpl.fromPointer(val, needFree: false)',
     platformType: 'AlternativeBalloon')
-final class AlternativeBalloonImpl implements AlternativeBalloon {
+final class AlternativeBalloonImpl extends AlternativeBalloon {
   AlternativeBalloonImpl(directions_driving_route.DrivingSummary summary,
       directions_driving_weight.DrivingWeight relativeWeight)
       : this.fromNativePtr(_AlternativeBalloon_init(
@@ -467,7 +467,7 @@ final class AlternativeBalloonImpl implements AlternativeBalloon {
   static final _finalizer =
       ffi.NativeFinalizer(_AlternativeBalloon_free.cast());
 
-  AlternativeBalloonImpl.fromNativePtr(this._ptr) {
+  AlternativeBalloonImpl.fromNativePtr(this._ptr) : super._() {
     _finalizer.attach(this, _ptr);
   }
 

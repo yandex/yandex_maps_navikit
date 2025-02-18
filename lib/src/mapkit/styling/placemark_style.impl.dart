@@ -51,6 +51,16 @@ class PlacemarkStyleImpl implements PlacemarkStyle, ffi.Finalizable {
     exception.checkCallResult();
   }
 
+  void setGltfModel(runtime_data_provider_with_id.DataProviderWithId model,
+      mapkit_map_model_style.ModelStyle modelStyle) {
+    _PlacemarkStyle_setGltfModel(
+        ptr,
+        runtime_data_provider_with_id.DataProviderWithIdImpl.getNativePtr(
+            model),
+        mapkit_map_model_style.ModelStyleImpl.toNative(modelStyle));
+    exception.checkCallResult();
+  }
+
   void setImage(image_provider.ImageProvider image) {
     _PlacemarkStyle_setImage(ptr, to_native.toNativeImageProvider(image));
     exception.checkCallResult();
@@ -94,6 +104,17 @@ final void Function(ffi.Pointer<ffi.Void>) _PlacemarkStyle_setArrowModel = lib
     .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_mapkit_styling_PlacemarkStyle_setArrowModel')
     .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
+        mapkit_map_model_style.ModelStyleNative) _PlacemarkStyle_setGltfModel =
+    lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(
+                        ffi.Pointer<ffi.Void>,
+                        ffi.Pointer<ffi.Void>,
+                        mapkit_map_model_style.ModelStyleNative)>>(
+            'yandex_flutter_mapkit_styling_PlacemarkStyle_setGltfModel')
+        .asFunction();
 final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
     _PlacemarkStyle_setImage = lib.library
         .lookup<
