@@ -5,8 +5,6 @@ import 'dart:core' as core;
 import 'package:meta/meta.dart';
 import 'package:yandex_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:yandex_maps_navikit/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:yandex_maps_navikit/src/bindings/common/dispatcher.dart'
     as nativeBinding;
 import 'package:yandex_maps_navikit/src/bindings/common/exception.dart'
@@ -37,7 +35,6 @@ abstract class NavigationJamStyle implements ffi.Finalizable {
 
   void setGradientLength(core.double gradientLength);
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 
@@ -91,7 +88,6 @@ abstract class NavigationRouteStyle implements ffi.Finalizable {
   /// Default value is 17.
   void setMinZoomForTransparentRoutes(core.double zoom);
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
 

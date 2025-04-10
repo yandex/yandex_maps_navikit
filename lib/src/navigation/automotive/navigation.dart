@@ -21,6 +21,8 @@ import 'package:yandex_maps_navikit/src/bindings/common/to_platform.dart'
 import 'package:yandex_maps_navikit/src/bindings/common/vector.dart' as vector;
 import 'package:yandex_maps_navikit/src/bindings/weak_map/weak_map.dart'
     as weak_map;
+import 'package:yandex_maps_navikit/src/directions/driving/avoidance_flags.dart'
+    as directions_driving_avoidance_flags;
 import 'package:yandex_maps_navikit/src/directions/driving/driving_router.dart'
     as directions_driving_driving_router;
 import 'package:yandex_maps_navikit/src/directions/driving/route.dart'
@@ -74,18 +76,12 @@ abstract class Navigation implements ffi.Finalizable {
   set vehicleOptions(
       directions_driving_vehicle_options.DrivingVehicleOptions val);
 
-  /// The 'avoidTolls/avoidUnpaved/avoidPoorConditions' option instructs
-  /// the router to return routes that avoid tolls/unpaved/roads in poor
-  /// condition when possible. Changing these options may trigger reroute.
-  /// All disabled by default.
-  core.bool get avoidTolls;
-  set avoidTolls(core.bool val);
-
-  core.bool get avoidUnpaved;
-  set avoidUnpaved(core.bool val);
-
-  core.bool get avoidPoorConditions;
-  set avoidPoorConditions(core.bool val);
+  /// The flags instruct the router to return routes that avoid roads with
+  /// the specified properties when possible. Changing these flags may
+  /// trigger reroute. All disabled by default.
+  directions_driving_avoidance_flags.DrivingAvoidanceFlags get avoidanceFlags;
+  set avoidanceFlags(
+      directions_driving_avoidance_flags.DrivingAvoidanceFlags val);
 
   /// avoidedZones instructs the router to return routes that avoid
   /// provided polygons. If there are too many polygons or too complex

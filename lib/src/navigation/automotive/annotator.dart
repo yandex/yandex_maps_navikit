@@ -6,8 +6,6 @@ import 'package:ffi/ffi.dart';
 import 'package:meta/meta.dart';
 import 'package:yandex_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:yandex_maps_navikit/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:yandex_maps_navikit/src/bindings/common/dispatcher.dart'
     as nativeBinding;
 import 'package:yandex_maps_navikit/src/bindings/common/exception.dart'
@@ -97,8 +95,10 @@ final class AnnotatedRoadEvents {
   static const CrossRoadControl = AnnotatedRoadEvents(1 << 9);
   static const MobileControl = AnnotatedRoadEvents(1 << 10);
   static const SpeedLimitControl = AnnotatedRoadEvents(1 << 11);
-  static const TrafficControls =
-      AnnotatedRoadEvents(1 << 7 | 1 << 8 | 1 << 9 | 1 << 10 | 1 << 11);
+  static const TrafficControl = AnnotatedRoadEvents(1 << 12);
+  static const PolicePatrol = AnnotatedRoadEvents(1 << 13);
+  static const TrafficControls = AnnotatedRoadEvents(
+      1 << 7 | 1 << 8 | 1 << 9 | 1 << 10 | 1 << 11 | 1 << 12 | 1 << 13);
   static const Everything = AnnotatedRoadEvents(1 |
       1 << 1 |
       1 << 2 |
@@ -110,7 +110,9 @@ final class AnnotatedRoadEvents {
       1 << 8 |
       1 << 9 |
       1 << 10 |
-      1 << 11);
+      1 << 11 |
+      1 << 12 |
+      1 << 13);
 
   const AnnotatedRoadEvents(this.value);
 
@@ -175,6 +177,5 @@ abstract class Annotator implements ffi.Finalizable {
 
   void removeListener(AnnotatorListener annotatorListener);
 
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }

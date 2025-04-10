@@ -82,7 +82,8 @@ final ffi.Pointer<ffi.Void> Function(
                         ffi.NativeFunction<
                             ffi.Void Function(
                                 ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+                    ffi.Pointer<
+                        ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
                     ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
@@ -251,36 +252,19 @@ class NavigationImpl implements Navigation, ffi.Finalizable {
   }
 
   @core.override
-  core.bool get avoidTolls {
-    final result = _Navigation_get_avoidTolls(ptr);
-    return result;
+  directions_driving_avoidance_flags.DrivingAvoidanceFlags get avoidanceFlags {
+    final result = _Navigation_get_avoidanceFlags(ptr);
+    return directions_driving_avoidance_flags.DrivingAvoidanceFlagsImpl
+        .fromNative(result);
   }
 
   @core.override
-  set avoidTolls(core.bool val) {
-    _Navigation_set_avoidTolls(ptr, val);
-  }
-
-  @core.override
-  core.bool get avoidUnpaved {
-    final result = _Navigation_get_avoidUnpaved(ptr);
-    return result;
-  }
-
-  @core.override
-  set avoidUnpaved(core.bool val) {
-    _Navigation_set_avoidUnpaved(ptr, val);
-  }
-
-  @core.override
-  core.bool get avoidPoorConditions {
-    final result = _Navigation_get_avoidPoorConditions(ptr);
-    return result;
-  }
-
-  @core.override
-  set avoidPoorConditions(core.bool val) {
-    _Navigation_set_avoidPoorConditions(ptr, val);
+  set avoidanceFlags(
+      directions_driving_avoidance_flags.DrivingAvoidanceFlags val) {
+    _Navigation_set_avoidanceFlags(
+        ptr,
+        directions_driving_avoidance_flags.DrivingAvoidanceFlagsImpl.toNative(
+            val));
   }
 
   @core.override
@@ -414,46 +398,27 @@ final void Function(
         'yandex_flutter_navigation_automotive_Navigation_set_vehicleOptions')
     .asFunction();
 
-final core.bool Function(ffi.Pointer<ffi.Void>) _Navigation_get_avoidTolls = lib
-    .library
-    .lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_Navigation_get_avoidTolls')
-    .asFunction();
-final void Function(ffi.Pointer<ffi.Void>, core.bool)
-    _Navigation_set_avoidTolls = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-            'yandex_flutter_navigation_automotive_Navigation_set_avoidTolls')
-        .asFunction();
-
-final core.bool Function(ffi.Pointer<ffi.Void>) _Navigation_get_avoidUnpaved =
-    lib.library
-        .lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-            'yandex_flutter_navigation_automotive_Navigation_get_avoidUnpaved')
-        .asFunction();
-final void Function(ffi.Pointer<ffi.Void>, core.bool)
-    _Navigation_set_avoidUnpaved = lib.library
-        .lookup<
-                ffi.NativeFunction<
-                    ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-            'yandex_flutter_navigation_automotive_Navigation_set_avoidUnpaved')
-        .asFunction();
-
-final core.bool Function(
+final directions_driving_avoidance_flags.DrivingAvoidanceFlagsNative Function(
     ffi
-        .Pointer<ffi.Void>) _Navigation_get_avoidPoorConditions = lib.library
-    .lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_navigation_automotive_Navigation_get_avoidPoorConditions')
+        .Pointer<ffi.Void>) _Navigation_get_avoidanceFlags = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                directions_driving_avoidance_flags.DrivingAvoidanceFlagsNative
+                    Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_navigation_automotive_Navigation_get_avoidanceFlags')
     .asFunction();
 final void Function(
     ffi.Pointer<ffi.Void>,
-    core
-        .bool) _Navigation_set_avoidPoorConditions = lib.library
+    directions_driving_avoidance_flags
+        .DrivingAvoidanceFlagsNative) _Navigation_set_avoidanceFlags = lib
+    .library
     .lookup<
             ffi.NativeFunction<
-                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Bool)>>(
-        'yandex_flutter_navigation_automotive_Navigation_set_avoidPoorConditions')
+                ffi.Void Function(
+                    ffi.Pointer<ffi.Void>,
+                    directions_driving_avoidance_flags
+                        .DrivingAvoidanceFlagsNative)>>(
+        'yandex_flutter_navigation_automotive_Navigation_set_avoidanceFlags')
     .asFunction();
 
 final ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)

@@ -5,8 +5,6 @@ import 'dart:core' as core;
 import 'package:meta/meta.dart';
 import 'package:yandex_maps_navikit/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:yandex_maps_navikit/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:yandex_maps_navikit/src/bindings/common/exception.dart'
     as exception;
 import 'package:yandex_maps_navikit/src/bindings/common/string_map.dart'
@@ -42,7 +40,5 @@ abstract class BalloonView implements ffi.Finalizable {
 
   /// The route to which this balloon belongs.
   directions_driving_route.DrivingRoute get hostRoute;
-
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }
