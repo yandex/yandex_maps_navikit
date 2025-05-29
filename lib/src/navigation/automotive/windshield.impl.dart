@@ -399,14 +399,15 @@ extension NavigationWindshieldListenerImpl on NavigationWindshieldListener {
   static ffi.Pointer<ffi.Void> _newNativeObject(
       NavigationWindshieldListener obj) {
     final ptr = _NavigationWindshieldListener_new(
-        ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
-            _NavigationWindshieldListener_onManoeuvresChanged),
-        ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
-            _NavigationWindshieldListener_onRoadEventsChanged),
-        ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
-            _NavigationWindshieldListener_onLaneSignChanged),
-        ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
-            _NavigationWindshieldListener_onDirectionSignChanged));
+      ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
+          _NavigationWindshieldListener_onManoeuvresChanged),
+      ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
+          _NavigationWindshieldListener_onRoadEventsChanged),
+      ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
+          _NavigationWindshieldListener_onLaneSignChanged),
+      ffi.Pointer.fromFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>(
+          _NavigationWindshieldListener_onDirectionSignChanged),
+    );
     _pointerToListener[ptr] = core.WeakReference(obj);
     _listenerToPointer[obj] = _NavigationWindshieldListenerWrapper(ptr);
     _NavigationWindshieldListenersetSendPort(
@@ -442,21 +443,29 @@ final void Function(
     .asFunction(isLeaf: true);
 
 final ffi.Pointer<ffi.Void> Function(
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)
-    _NavigationWindshieldListener_new = lib.library
-        .lookup<
+  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+  ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+) _NavigationWindshieldListener_new = lib.library
+    .lookup<
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(
-                    ffi.Pointer<
-                        ffi
-                        .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
-                    ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>)>>('yandex_flutter_navigation_automotive_NavigationWindshieldListener_new')
-        .asFunction(isLeaf: true);
+                  ffi.Pointer<
+                      ffi.NativeFunction<
+                          ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                  ffi.Pointer<
+                      ffi.NativeFunction<
+                          ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                  ffi.Pointer<
+                      ffi.NativeFunction<
+                          ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                  ffi.Pointer<
+                      ffi.NativeFunction<
+                          ffi.Void Function(ffi.Pointer<ffi.Void>)>>,
+                )>>(
+        'yandex_flutter_navigation_automotive_NavigationWindshieldListener_new')
+    .asFunction(isLeaf: true);
 
 final _NavigationWindshieldListener_free = lib.library.lookup<
         ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
