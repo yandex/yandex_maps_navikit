@@ -62,6 +62,7 @@ import 'package:yandex_maps_navikit/src/mapkit/styling/polyline_style.dart'
     as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/traffic/traffic_layer.dart'
     as mapkit;
+import 'package:yandex_maps_navikit/src/mapkit/ui/overlay.dart' as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/user_location/user_location.dart'
     as mapkit;
 import 'package:yandex_maps_navikit/src/navigation/automotive/annotator.dart'
@@ -149,6 +150,8 @@ const weakInterfacesMeta = {
   'mapkit.map.PolygonMapObject': mapkit.PolygonMapObjectImpl.fromNativePtrImpl,
   'mapkit.map.PolylineMapObject':
       mapkit.PolylineMapObjectImpl.fromNativePtrImpl,
+  'mapkit.map.RootMapObjectCollection':
+      mapkit.RootMapObjectCollectionImpl.fromNativePtrImpl,
   'mapkit.map.TileDataSourceBuilder':
       mapkit.TileDataSourceBuilderImpl.fromNativePtrImpl,
   'mapkit.offline_cache.CachePathUnavailable':
@@ -164,6 +167,7 @@ const weakInterfacesMeta = {
   'mapkit.styling.PlacemarkStyle': mapkit.PlacemarkStyleImpl.fromNativePtrImpl,
   'mapkit.styling.PolylineStyle': mapkit.PolylineStyleImpl.fromNativePtrImpl,
   'mapkit.traffic.TrafficLayer': mapkit.TrafficLayerImpl.fromNativePtrImpl,
+  'mapkit.ui.Overlay': mapkit.OverlayImpl.fromNativePtrImpl,
   'mapkit.user_location.UserLocationAnchorChanged':
       mapkit.UserLocationAnchorChangedImpl.fromNativePtrImpl,
   'mapkit.user_location.UserLocationIconChanged':
