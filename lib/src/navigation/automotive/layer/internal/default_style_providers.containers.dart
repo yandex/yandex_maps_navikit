@@ -107,11 +107,31 @@ extension InternalDefaultUserPlacemarkStyleProviderContainerExtension
     return vector.Vector(
         ptr,
         (val) => InternalDefaultUserPlacemarkStyleProviderImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<InternalDefaultUserPlacemarkStyleProvider?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => InternalDefaultUserPlacemarkStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<InternalDefaultUserPlacemarkStyleProvider>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector
+      .Vector<vector.Vector<InternalDefaultUserPlacemarkStyleProvider>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -122,6 +142,18 @@ extension InternalDefaultUserPlacemarkStyleProviderContainerExtension
   static vector
       .Vector<string_map.StringMap<InternalDefaultUserPlacemarkStyleProvider>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector
+      .Vector<string_map.StringMap<InternalDefaultUserPlacemarkStyleProvider>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -230,11 +262,30 @@ extension InternalDefaultRequestPointStyleProviderContainerExtension
     return vector.Vector(
         ptr,
         (val) => InternalDefaultRequestPointStyleProviderImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<InternalDefaultRequestPointStyleProvider?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => InternalDefaultRequestPointStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<InternalDefaultRequestPointStyleProvider>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<InternalDefaultRequestPointStyleProvider>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -245,6 +296,18 @@ extension InternalDefaultRequestPointStyleProviderContainerExtension
   static vector
       .Vector<string_map.StringMap<InternalDefaultRequestPointStyleProvider>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector
+      .Vector<string_map.StringMap<InternalDefaultRequestPointStyleProvider>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -348,11 +411,30 @@ extension InternalDefaultRoutePinsStyleProviderContainerExtension
     return vector.Vector(
         ptr,
         (val) => InternalDefaultRoutePinsStyleProviderImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<InternalDefaultRoutePinsStyleProvider?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => InternalDefaultRoutePinsStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<InternalDefaultRoutePinsStyleProvider>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<InternalDefaultRoutePinsStyleProvider>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -363,6 +445,18 @@ extension InternalDefaultRoutePinsStyleProviderContainerExtension
   static vector
       .Vector<string_map.StringMap<InternalDefaultRoutePinsStyleProvider>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector
+      .Vector<string_map.StringMap<InternalDefaultRoutePinsStyleProvider>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -466,11 +560,30 @@ extension InternalDefaultRouteViewStyleProviderContainerExtension
     return vector.Vector(
         ptr,
         (val) => InternalDefaultRouteViewStyleProviderImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<InternalDefaultRouteViewStyleProvider?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => InternalDefaultRouteViewStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<InternalDefaultRouteViewStyleProvider>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<InternalDefaultRouteViewStyleProvider>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -481,6 +594,18 @@ extension InternalDefaultRouteViewStyleProviderContainerExtension
   static vector
       .Vector<string_map.StringMap<InternalDefaultRouteViewStyleProvider>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector
+      .Vector<string_map.StringMap<InternalDefaultRouteViewStyleProvider>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -584,11 +709,30 @@ extension InternalDefaultBalloonImageProviderContainerExtension
     return vector.Vector(
         ptr,
         (val) => InternalDefaultBalloonImageProviderImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<InternalDefaultBalloonImageProvider?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => InternalDefaultBalloonImageProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<InternalDefaultBalloonImageProvider>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<InternalDefaultBalloonImageProvider>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -599,6 +743,18 @@ extension InternalDefaultBalloonImageProviderContainerExtension
   static vector
       .Vector<string_map.StringMap<InternalDefaultBalloonImageProvider>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector
+      .Vector<string_map.StringMap<InternalDefaultBalloonImageProvider>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -702,11 +858,30 @@ extension InternalDefaultHighlightStyleProviderContainerExtension
     return vector.Vector(
         ptr,
         (val) => InternalDefaultHighlightStyleProviderImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<InternalDefaultHighlightStyleProvider?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => InternalDefaultHighlightStyleProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<InternalDefaultHighlightStyleProvider>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<InternalDefaultHighlightStyleProvider>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -717,6 +892,18 @@ extension InternalDefaultHighlightStyleProviderContainerExtension
   static vector
       .Vector<string_map.StringMap<InternalDefaultHighlightStyleProvider>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector
+      .Vector<string_map.StringMap<InternalDefaultHighlightStyleProvider>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

@@ -91,11 +91,30 @@ extension ArrowStyleContainerExtension on ArrowStyle {
     return vector.Vector(
         ptr,
         (val) => ArrowStyleImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<ArrowStyle?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => ArrowStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<ArrowStyle>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<ArrowStyle>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -105,6 +124,17 @@ extension ArrowStyleContainerExtension on ArrowStyle {
 
   static vector.Vector<string_map.StringMap<ArrowStyle>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<ArrowStyle>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

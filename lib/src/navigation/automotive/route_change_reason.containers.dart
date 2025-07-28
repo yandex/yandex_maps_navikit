@@ -89,11 +89,28 @@ extension RouteChangeReasonContainerExtension on RouteChangeReason {
   static vector.Vector<RouteChangeReason> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => RouteChangeReasonImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<RouteChangeReason?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => RouteChangeReasonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<RouteChangeReason>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<RouteChangeReason>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -103,6 +120,17 @@ extension RouteChangeReasonContainerExtension on RouteChangeReason {
 
   static vector.Vector<string_map.StringMap<RouteChangeReason>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<RouteChangeReason>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

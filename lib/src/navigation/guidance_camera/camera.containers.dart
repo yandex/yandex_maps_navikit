@@ -90,10 +90,29 @@ extension CameraContainerExtension on Camera {
     return vector.Vector(
         ptr,
         (val) => CameraImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<Camera?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => CameraImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<Camera>> toPlatformVectorVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<Camera>?> toPlatformVectorVectorOptional(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
@@ -104,6 +123,17 @@ extension CameraContainerExtension on Camera {
 
   static vector.Vector<string_map.StringMap<Camera>> toPlatformVectorDictionary(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<Camera>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -192,11 +222,28 @@ extension CameraModeContainerExtension on CameraMode {
 
   static vector.Vector<CameraMode> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => CameraModeImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<CameraMode?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => CameraModeImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<CameraMode>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<CameraMode>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -206,6 +253,17 @@ extension CameraModeContainerExtension on CameraMode {
 
   static vector.Vector<string_map.StringMap<CameraMode>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<CameraMode>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

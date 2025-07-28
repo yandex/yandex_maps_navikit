@@ -92,11 +92,30 @@ extension PolylineStyleContainerExtension on PolylineStyle {
     return vector.Vector(
         ptr,
         (val) => PolylineStyleImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<PolylineStyle?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => PolylineStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<PolylineStyle>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<PolylineStyle>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -106,6 +125,17 @@ extension PolylineStyleContainerExtension on PolylineStyle {
 
   static vector.Vector<string_map.StringMap<PolylineStyle>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<PolylineStyle>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

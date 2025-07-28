@@ -88,11 +88,28 @@ extension RouteStatusContainerExtension on RouteStatus {
   static vector.Vector<RouteStatus> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => RouteStatusImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<RouteStatus?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => RouteStatusImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<RouteStatus>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<RouteStatus>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -102,6 +119,17 @@ extension RouteStatusContainerExtension on RouteStatus {
 
   static vector.Vector<string_map.StringMap<RouteStatus>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<RouteStatus>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

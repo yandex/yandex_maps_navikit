@@ -94,11 +94,30 @@ extension NavigationAlternativeContainerExtension on NavigationAlternative {
     return vector.Vector(
         ptr,
         (val) => NavigationAlternativeImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<NavigationAlternative?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => NavigationAlternativeImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<NavigationAlternative>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<NavigationAlternative>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -108,6 +127,17 @@ extension NavigationAlternativeContainerExtension on NavigationAlternative {
 
   static vector.Vector<string_map.StringMap<NavigationAlternative>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<NavigationAlternative>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

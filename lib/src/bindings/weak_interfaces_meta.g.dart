@@ -30,6 +30,7 @@ import 'package:yandex_maps_navikit/src/mapkit/map/clusterized_placemark_collect
     as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/composite_icon.dart'
     as mapkit;
+import 'package:yandex_maps_navikit/src/mapkit/map/icon.dart' as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/map.dart' as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/map_object.dart' as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/map_object_collection.dart'
@@ -38,6 +39,12 @@ import 'package:yandex_maps_navikit/src/mapkit/map/map_window.dart' as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/model.dart' as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/placemark.dart' as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/placemark_animation.dart'
+    as mapkit;
+import 'package:yandex_maps_navikit/src/mapkit/map/placemark_presentation.dart'
+    as mapkit;
+import 'package:yandex_maps_navikit/src/mapkit/map/placemark_text.dart'
+    as mapkit;
+import 'package:yandex_maps_navikit/src/mapkit/map/placemark_view.dart'
     as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/map/placemarks_styler.dart'
     as mapkit;
@@ -136,6 +143,7 @@ const weakInterfacesMeta = {
   'mapkit.map.ClusterizedPlacemarkCollection':
       mapkit.ClusterizedPlacemarkCollectionImpl.fromNativePtrImpl,
   'mapkit.map.CompositeIcon': mapkit.CompositeIconImpl.fromNativePtrImpl,
+  'mapkit.map.Icon': mapkit.IconImpl.fromNativePtrImpl,
   'mapkit.map.Map': mapkit.MapImpl.fromNativePtrImpl,
   'mapkit.map.MapObject': mapkit.MapObjectImpl.fromNativePtrImpl,
   'mapkit.map.MapObjectCollection':
@@ -146,6 +154,10 @@ const weakInterfacesMeta = {
       mapkit.PlacemarkAnimationImpl.fromNativePtrImpl,
   'mapkit.map.PlacemarkMapObject':
       mapkit.PlacemarkMapObjectImpl.fromNativePtrImpl,
+  'mapkit.map.PlacemarkPresentation':
+      mapkit.PlacemarkPresentationImpl.fromNativePtrImpl,
+  'mapkit.map.PlacemarkText': mapkit.PlacemarkTextImpl.fromNativePtrImpl,
+  'mapkit.map.PlacemarkView': mapkit.PlacemarkViewImpl.fromNativePtrImpl,
   'mapkit.map.PlacemarksStyler': mapkit.PlacemarksStylerImpl.fromNativePtrImpl,
   'mapkit.map.PolygonMapObject': mapkit.PolygonMapObjectImpl.fromNativePtrImpl,
   'mapkit.map.PolylineMapObject':

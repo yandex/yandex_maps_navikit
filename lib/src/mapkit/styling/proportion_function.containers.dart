@@ -99,11 +99,30 @@ extension StylingConstantFunctionPointsContainerExtension
     return vector.Vector(
         ptr,
         (val) => StylingConstantFunctionPointsImpl.fromPointer(val,
+            needFree: false)!);
+  }
+
+  static vector.Vector<StylingConstantFunctionPoints?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => StylingConstantFunctionPointsImpl.fromPointer(val,
             needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingConstantFunctionPoints>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<StylingConstantFunctionPoints>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -113,6 +132,17 @@ extension StylingConstantFunctionPointsContainerExtension
 
   static vector.Vector<string_map.StringMap<StylingConstantFunctionPoints>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<StylingConstantFunctionPoints>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -215,11 +245,30 @@ extension StylingLinearZoomFunctionPointsContainerExtension
     return vector.Vector(
         ptr,
         (val) => StylingLinearZoomFunctionPointsImpl.fromPointer(val,
+            needFree: false)!);
+  }
+
+  static vector.Vector<StylingLinearZoomFunctionPoints?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => StylingLinearZoomFunctionPointsImpl.fromPointer(val,
             needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingLinearZoomFunctionPoints>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<StylingLinearZoomFunctionPoints>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -229,6 +278,17 @@ extension StylingLinearZoomFunctionPointsContainerExtension
 
   static vector.Vector<string_map.StringMap<StylingLinearZoomFunctionPoints>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<StylingLinearZoomFunctionPoints>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -331,11 +391,30 @@ extension StylingLinearTiltFunctionPointsContainerExtension
     return vector.Vector(
         ptr,
         (val) => StylingLinearTiltFunctionPointsImpl.fromPointer(val,
+            needFree: false)!);
+  }
+
+  static vector.Vector<StylingLinearTiltFunctionPoints?>
+      toPlatformVectorOptional(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => StylingLinearTiltFunctionPointsImpl.fromPointer(val,
             needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingLinearTiltFunctionPoints>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<StylingLinearTiltFunctionPoints>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -345,6 +424,17 @@ extension StylingLinearTiltFunctionPointsContainerExtension
 
   static vector.Vector<string_map.StringMap<StylingLinearTiltFunctionPoints>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<StylingLinearTiltFunctionPoints>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -445,11 +535,30 @@ extension StylingBilinearFunctionMatrixContainerExtension
     return vector.Vector(
         ptr,
         (val) => StylingBilinearFunctionMatrixImpl.fromPointer(val,
+            needFree: false)!);
+  }
+
+  static vector.Vector<StylingBilinearFunctionMatrix?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => StylingBilinearFunctionMatrixImpl.fromPointer(val,
             needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingBilinearFunctionMatrix>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<StylingBilinearFunctionMatrix>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -459,6 +568,17 @@ extension StylingBilinearFunctionMatrixContainerExtension
 
   static vector.Vector<string_map.StringMap<StylingBilinearFunctionMatrix>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<StylingBilinearFunctionMatrix>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -555,11 +675,30 @@ extension StylingProportionFunctionContainerExtension
     return vector.Vector(
         ptr,
         (val) =>
+            StylingProportionFunctionImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<StylingProportionFunction?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) =>
             StylingProportionFunctionImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<StylingProportionFunction>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<StylingProportionFunction>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -569,6 +708,17 @@ extension StylingProportionFunctionContainerExtension
 
   static vector.Vector<string_map.StringMap<StylingProportionFunction>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<StylingProportionFunction>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

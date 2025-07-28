@@ -91,11 +91,30 @@ extension AnnotatorContainerExtension on Annotator {
     return vector.Vector(
         ptr,
         (val) => AnnotatorImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<Annotator?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => AnnotatorImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<Annotator>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<Annotator>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -105,6 +124,17 @@ extension AnnotatorContainerExtension on Annotator {
 
   static vector.Vector<string_map.StringMap<Annotator>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<Annotator>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -195,11 +225,28 @@ extension AnnotatedEventsContainerExtension on AnnotatedEvents {
   static vector.Vector<AnnotatedEvents> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => AnnotatedEventsImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<AnnotatedEvents?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => AnnotatedEventsImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<AnnotatedEvents>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<AnnotatedEvents>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -209,6 +256,17 @@ extension AnnotatedEventsContainerExtension on AnnotatedEvents {
 
   static vector.Vector<string_map.StringMap<AnnotatedEvents>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<AnnotatedEvents>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -300,11 +358,28 @@ extension AnnotatedRoadEventsContainerExtension on AnnotatedRoadEvents {
   static vector.Vector<AnnotatedRoadEvents> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(ptr,
+        (val) => AnnotatedRoadEventsImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<AnnotatedRoadEvents?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(ptr,
         (val) => AnnotatedRoadEventsImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<AnnotatedRoadEvents>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<AnnotatedRoadEvents>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -314,6 +389,17 @@ extension AnnotatedRoadEventsContainerExtension on AnnotatedRoadEvents {
 
   static vector.Vector<string_map.StringMap<AnnotatedRoadEvents>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<AnnotatedRoadEvents>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

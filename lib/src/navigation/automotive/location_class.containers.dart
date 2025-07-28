@@ -88,11 +88,28 @@ extension LocationClassContainerExtension on LocationClass {
   static vector.Vector<LocationClass> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => LocationClassImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<LocationClass?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => LocationClassImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<LocationClass>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<LocationClass>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -102,6 +119,17 @@ extension LocationClassContainerExtension on LocationClass {
 
   static vector.Vector<string_map.StringMap<LocationClass>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<LocationClass>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

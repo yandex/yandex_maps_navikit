@@ -93,11 +93,30 @@ extension SpeedLimitsPolicyContainerExtension on SpeedLimitsPolicy {
     return vector.Vector(
         ptr,
         (val) => SpeedLimitsPolicyImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<SpeedLimitsPolicy?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => SpeedLimitsPolicyImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<SpeedLimitsPolicy>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<SpeedLimitsPolicy>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -107,6 +126,17 @@ extension SpeedLimitsPolicyContainerExtension on SpeedLimitsPolicy {
 
   static vector.Vector<string_map.StringMap<SpeedLimitsPolicy>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<SpeedLimitsPolicy>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -202,11 +232,30 @@ extension SpeedPolicyProviderContainerExtension on SpeedPolicyProvider {
     return vector.Vector(
         ptr,
         (val) => SpeedPolicyProviderImpl.fromOptionalPtr(
+            val.cast<ffi.Pointer<ffi.Void>>().value)!);
+  }
+
+  static vector.Vector<SpeedPolicyProvider?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
+        (val) => SpeedPolicyProviderImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<SpeedPolicyProvider>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<SpeedPolicyProvider>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -216,6 +265,17 @@ extension SpeedPolicyProviderContainerExtension on SpeedPolicyProvider {
 
   static vector.Vector<string_map.StringMap<SpeedPolicyProvider>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<SpeedPolicyProvider>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -305,11 +365,28 @@ extension SpeedLimitsContainerExtension on SpeedLimits {
   static vector.Vector<SpeedLimits> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => SpeedLimitsImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<SpeedLimits?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => SpeedLimitsImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedLimits>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<SpeedLimits>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -319,6 +396,17 @@ extension SpeedLimitsContainerExtension on SpeedLimits {
 
   static vector.Vector<string_map.StringMap<SpeedLimits>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<SpeedLimits>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -409,11 +497,28 @@ extension SpeedLimitsRulesContainerExtension on SpeedLimitsRules {
   static vector.Vector<SpeedLimitsRules> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => SpeedLimitsRulesImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<SpeedLimitsRules?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => SpeedLimitsRulesImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedLimitsRules>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<SpeedLimitsRules>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -423,6 +528,17 @@ extension SpeedLimitsRulesContainerExtension on SpeedLimitsRules {
 
   static vector.Vector<string_map.StringMap<SpeedLimitsRules>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<SpeedLimitsRules>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -514,11 +630,28 @@ extension SpeedLimitsRulesTypeContainerExtension on SpeedLimitsRulesType {
   static vector.Vector<SpeedLimitsRulesType> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(ptr,
+        (val) => SpeedLimitsRulesTypeImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<SpeedLimitsRulesType?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(ptr,
         (val) => SpeedLimitsRulesTypeImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedLimitsRulesType>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<SpeedLimitsRulesType>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -528,6 +661,17 @@ extension SpeedLimitsRulesTypeContainerExtension on SpeedLimitsRulesType {
 
   static vector.Vector<string_map.StringMap<SpeedLimitsRulesType>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<SpeedLimitsRulesType>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
