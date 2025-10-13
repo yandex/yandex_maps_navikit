@@ -91,30 +91,11 @@ extension ReportDataContainerExtension on ReportData {
     return vector.Vector(
         ptr,
         (val) => ReportDataImpl.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value)!);
-  }
-
-  static vector.Vector<ReportData?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => ReportDataImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<ReportData>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<ReportData>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -124,17 +105,6 @@ extension ReportDataContainerExtension on ReportData {
 
   static vector.Vector<string_map.StringMap<ReportData>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<ReportData>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -229,30 +199,11 @@ extension ReportCollectorContainerExtension on ReportCollector {
     return vector.Vector(
         ptr,
         (val) => ReportCollectorImpl.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value)!);
-  }
-
-  static vector.Vector<ReportCollector?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => ReportCollectorImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<ReportCollector>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<ReportCollector>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -262,17 +213,6 @@ extension ReportCollectorContainerExtension on ReportCollector {
 
   static vector.Vector<string_map.StringMap<ReportCollector>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<ReportCollector>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

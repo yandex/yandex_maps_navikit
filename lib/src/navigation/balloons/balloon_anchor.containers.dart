@@ -89,28 +89,11 @@ extension VerticalPositionContainerExtension on VerticalPosition {
   static vector.Vector<VerticalPosition> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => VerticalPositionImpl.fromPointer(val, needFree: false)!);
-  }
-
-  static vector.Vector<VerticalPosition?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
         ptr, (val) => VerticalPositionImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<VerticalPosition>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<VerticalPosition>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -120,17 +103,6 @@ extension VerticalPositionContainerExtension on VerticalPosition {
 
   static vector.Vector<string_map.StringMap<VerticalPosition>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<VerticalPosition>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -220,29 +192,12 @@ extension HorizontalPositionContainerExtension on HorizontalPosition {
 
   static vector.Vector<HorizontalPosition> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(ptr,
-        (val) => HorizontalPositionImpl.fromPointer(val, needFree: false)!);
-  }
-
-  static vector.Vector<HorizontalPosition?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr, (val) => HorizontalPositionImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<HorizontalPosition>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<HorizontalPosition>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -252,17 +207,6 @@ extension HorizontalPositionContainerExtension on HorizontalPosition {
 
   static vector.Vector<string_map.StringMap<HorizontalPosition>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<HorizontalPosition>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -352,28 +296,11 @@ extension BalloonAnchorContainerExtension on BalloonAnchor {
   static vector.Vector<BalloonAnchor> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => BalloonAnchorImpl.fromPointer(val, needFree: false)!);
-  }
-
-  static vector.Vector<BalloonAnchor?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
         ptr, (val) => BalloonAnchorImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<BalloonAnchor>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<BalloonAnchor>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -383,17 +310,6 @@ extension BalloonAnchorContainerExtension on BalloonAnchor {
 
   static vector.Vector<string_map.StringMap<BalloonAnchor>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<BalloonAnchor>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

@@ -94,30 +94,11 @@ extension CustomRouteNavigationContainerExtension on CustomRouteNavigation {
     return vector.Vector(
         ptr,
         (val) => CustomRouteNavigationImpl.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value)!);
-  }
-
-  static vector.Vector<CustomRouteNavigation?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => CustomRouteNavigationImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<CustomRouteNavigation>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<CustomRouteNavigation>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -127,17 +108,6 @@ extension CustomRouteNavigationContainerExtension on CustomRouteNavigation {
 
   static vector.Vector<string_map.StringMap<CustomRouteNavigation>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<CustomRouteNavigation>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

@@ -92,30 +92,11 @@ extension PlacemarkStyleContainerExtension on PlacemarkStyle {
     return vector.Vector(
         ptr,
         (val) => PlacemarkStyleImpl.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value)!);
-  }
-
-  static vector.Vector<PlacemarkStyle?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => PlacemarkStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<PlacemarkStyle>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<PlacemarkStyle>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -125,17 +106,6 @@ extension PlacemarkStyleContainerExtension on PlacemarkStyle {
 
   static vector.Vector<string_map.StringMap<PlacemarkStyle>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<PlacemarkStyle>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

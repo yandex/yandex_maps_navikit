@@ -93,30 +93,11 @@ extension NavigationJamStyleContainerExtension on NavigationJamStyle {
     return vector.Vector(
         ptr,
         (val) => NavigationJamStyleImpl.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value)!);
-  }
-
-  static vector.Vector<NavigationJamStyle?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => NavigationJamStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<NavigationJamStyle>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<NavigationJamStyle>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -126,17 +107,6 @@ extension NavigationJamStyleContainerExtension on NavigationJamStyle {
 
   static vector.Vector<string_map.StringMap<NavigationJamStyle>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<NavigationJamStyle>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -232,30 +202,11 @@ extension NavigationRouteStyleContainerExtension on NavigationRouteStyle {
     return vector.Vector(
         ptr,
         (val) => NavigationRouteStyleImpl.fromOptionalPtr(
-            val.cast<ffi.Pointer<ffi.Void>>().value)!);
-  }
-
-  static vector.Vector<NavigationRouteStyle?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) => NavigationRouteStyleImpl.fromOptionalPtr(
             val.cast<ffi.Pointer<ffi.Void>>().value));
   }
 
   static vector.Vector<vector.Vector<NavigationRouteStyle>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<NavigationRouteStyle>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -265,17 +216,6 @@ extension NavigationRouteStyleContainerExtension on NavigationRouteStyle {
 
   static vector.Vector<string_map.StringMap<NavigationRouteStyle>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<NavigationRouteStyle>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr

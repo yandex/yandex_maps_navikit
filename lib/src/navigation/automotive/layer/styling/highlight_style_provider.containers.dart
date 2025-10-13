@@ -97,30 +97,11 @@ extension SpeedControlHighlightStyleContainerExtension
     return vector.Vector(
         ptr,
         (val) =>
-            SpeedControlHighlightStyleImpl.fromPointer(val, needFree: false)!);
-  }
-
-  static vector.Vector<SpeedControlHighlightStyle?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-        ptr,
-        (val) =>
             SpeedControlHighlightStyleImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<SpeedControlHighlightStyle>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<SpeedControlHighlightStyle>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -130,17 +111,6 @@ extension SpeedControlHighlightStyleContainerExtension
 
   static vector.Vector<string_map.StringMap<SpeedControlHighlightStyle>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<SpeedControlHighlightStyle>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -230,28 +200,11 @@ extension HighlightModeContainerExtension on HighlightMode {
   static vector.Vector<HighlightMode> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
-        ptr, (val) => HighlightModeImpl.fromPointer(val, needFree: false)!);
-  }
-
-  static vector.Vector<HighlightMode?> toPlatformVectorOptional(
-      ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
         ptr, (val) => HighlightModeImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<HighlightMode>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<vector.Vector<HighlightMode>?>
-      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -261,17 +214,6 @@ extension HighlightModeContainerExtension on HighlightMode {
 
   static vector.Vector<string_map.StringMap<HighlightMode>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
-    return vector.Vector(
-      ptr,
-      (val) {
-        assert(val != ffi.nullptr);
-        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
-      },
-    );
-  }
-
-  static vector.Vector<string_map.StringMap<HighlightMode>?>
-      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
