@@ -2,6 +2,8 @@ export 'package:yandex_maps_navikit/src/transport/masstransit/transport.dart'
     hide
         MasstransitTransportTransportThreadImpl,
         MasstransitTransportContainerExtension,
+        MasstransitTransportStopImpl,
+        MasstransitTransportStopContainerExtension,
         MasstransitTransportImpl,
         MasstransitBoardingOptionsBoardingAreaContainerExtension,
         MasstransitTransportThreadAlertClosedUntilNative,

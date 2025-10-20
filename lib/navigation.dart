@@ -11,7 +11,6 @@ export 'package:yandex_maps_navikit/src/navigation/automotive/navigation_export.
 export 'package:yandex_maps_navikit/src/navigation/automotive/location_class_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/speed_limit_status_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/alternative_export.dart';
-export 'package:yandex_maps_navikit/src/navigation/automotive/simulation/simulation_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/flutter_navigation_layer_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/balloon_export.dart';
 export 'package:yandex_maps_navikit/src/navigation/automotive/layer/navigation_layer_export.dart';

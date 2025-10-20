@@ -89,11 +89,28 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
   static vector.Vector<ManoeuvreBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => ManoeuvreBalloonImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<ManoeuvreBalloon?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => ManoeuvreBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<ManoeuvreBalloon>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<ManoeuvreBalloon>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -103,6 +120,17 @@ extension ManoeuvreBalloonContainerExtension on ManoeuvreBalloon {
 
   static vector.Vector<string_map.StringMap<ManoeuvreBalloon>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<ManoeuvreBalloon>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -202,12 +230,31 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
+        (val) => ManoeuvreWithLaneSignBalloonImpl.fromPointer(val,
+            needFree: false)!);
+  }
+
+  static vector.Vector<ManoeuvreWithLaneSignBalloon?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+        ptr,
         (val) =>
             ManoeuvreWithLaneSignBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<ManoeuvreWithLaneSignBalloon>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<ManoeuvreWithLaneSignBalloon>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -217,6 +264,17 @@ extension ManoeuvreWithLaneSignBalloonContainerExtension
 
   static vector.Vector<string_map.StringMap<ManoeuvreWithLaneSignBalloon>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<ManoeuvreWithLaneSignBalloon>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -307,11 +365,28 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
   static vector.Vector<LaneSignBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => LaneSignBalloonImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<LaneSignBalloon?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => LaneSignBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<LaneSignBalloon>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<LaneSignBalloon>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -321,6 +396,17 @@ extension LaneSignBalloonContainerExtension on LaneSignBalloon {
 
   static vector.Vector<string_map.StringMap<LaneSignBalloon>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<LaneSignBalloon>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -412,11 +498,28 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
   static vector.Vector<RouteSummaryBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(ptr,
+        (val) => RouteSummaryBalloonImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<RouteSummaryBalloon?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(ptr,
         (val) => RouteSummaryBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<RouteSummaryBalloon>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<RouteSummaryBalloon>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -426,6 +529,17 @@ extension RouteSummaryBalloonContainerExtension on RouteSummaryBalloon {
 
   static vector.Vector<string_map.StringMap<RouteSummaryBalloon>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<RouteSummaryBalloon>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -515,12 +629,29 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
 
   static vector.Vector<AlternativeBalloon> toPlatformVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(ptr,
+        (val) => AlternativeBalloonImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<AlternativeBalloon?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr, (val) => AlternativeBalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<AlternativeBalloon>>
       toPlatformVectorVector(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<AlternativeBalloon>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -530,6 +661,17 @@ extension AlternativeBalloonContainerExtension on AlternativeBalloon {
 
   static vector.Vector<string_map.StringMap<AlternativeBalloon>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<AlternativeBalloon>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -618,11 +760,28 @@ extension ManoeuvreContainerExtension on Manoeuvre {
 
   static vector.Vector<Manoeuvre> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => ManoeuvreImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<Manoeuvre?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => ManoeuvreImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<Manoeuvre>> toPlatformVectorVector(
       ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<Manoeuvre>?>
+      toPlatformVectorVectorOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -632,6 +791,17 @@ extension ManoeuvreContainerExtension on Manoeuvre {
 
   static vector.Vector<string_map.StringMap<Manoeuvre>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<Manoeuvre>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
@@ -720,10 +890,27 @@ extension BalloonContainerExtension on Balloon {
 
   static vector.Vector<Balloon> toPlatformVector(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
+        ptr, (val) => BalloonImpl.fromPointer(val, needFree: false)!);
+  }
+
+  static vector.Vector<Balloon?> toPlatformVectorOptional(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
         ptr, (val) => BalloonImpl.fromPointer(val, needFree: false));
   }
 
   static vector.Vector<vector.Vector<Balloon>> toPlatformVectorVector(
+      ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformVector(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<vector.Vector<Balloon>?> toPlatformVectorVectorOptional(
       ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
@@ -734,6 +921,17 @@ extension BalloonContainerExtension on Balloon {
 
   static vector.Vector<string_map.StringMap<Balloon>>
       toPlatformVectorDictionary(ffi.Pointer<ffi.Void> ptr) {
+    return vector.Vector(
+      ptr,
+      (val) {
+        assert(val != ffi.nullptr);
+        return toPlatformMap(val.cast<ffi.Pointer<ffi.Void>>().value);
+      },
+    );
+  }
+
+  static vector.Vector<string_map.StringMap<Balloon>?>
+      toPlatformVectorDictionaryOptional(ffi.Pointer<ffi.Void> ptr) {
     return vector.Vector(
         ptr,
         (val) => val == ffi.nullptr
