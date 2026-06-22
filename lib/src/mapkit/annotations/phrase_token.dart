@@ -236,6 +236,8 @@ enum SpeakerPhraseToken {
   MobileCamera,
   TrafficCamera,
   PolicePatrol,
+  CameraInBack,
+  CameraInBothDirections,
 
   /// Events
   Accident,

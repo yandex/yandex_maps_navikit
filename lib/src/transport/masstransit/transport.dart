@@ -229,6 +229,35 @@ abstract final class MasstransitBoardingOptionsBoardingArea
   }
 }
 
+/// Options about railway station dropoff expectations.
+abstract final class MasstransitDropOffOptions implements ffi.Finalizable {
+  factory MasstransitDropOffOptions(
+          transport_masstransit_common.MasstransitRailwayOptions
+              railwayOptions) =>
+      MasstransitDropOffOptionsImpl(railwayOptions);
+
+  MasstransitDropOffOptions._();
+
+  /// Options about dropoff from trains.
+  transport_masstransit_common.MasstransitRailwayOptions get railwayOptions;
+
+  @core.override
+  core.int get hashCode => core.Object.hashAll([railwayOptions]);
+
+  @core.override
+  core.bool operator ==(covariant MasstransitDropOffOptions other) {
+    if (core.identical(this, other)) {
+      return true;
+    }
+    return railwayOptions == other.railwayOptions;
+  }
+
+  @core.override
+  core.String toString() {
+    return "MasstransitDropOffOptions(railwayOptions: $railwayOptions)";
+  }
+}
+
 /// The data about the public transport stop.
 abstract final class MasstransitTransportStop implements ffi.Finalizable {
   factory MasstransitTransportStop(
@@ -317,12 +346,21 @@ abstract final class MasstransitTransportTransportThread
           core.List<MasstransitTransportThreadAlert> alerts,
           transport_masstransit_common.MasstransitStop? alternateDepartureStop,
           MasstransitBoardingOptions? boardingOptions,
+          MasstransitDropOffOptions dropOffOptions,
           transport_masstransit_travel_estimation.MasstransitTravelEstimation?
               estimation,
           core.List<MasstransitTransportStop> stops,
           mapkit_geometry_geometry.Polyline geometry) =>
-      MasstransitTransportTransportThreadImpl(thread, isRecommended, alerts,
-          alternateDepartureStop, boardingOptions, estimation, stops, geometry);
+      MasstransitTransportTransportThreadImpl(
+          thread,
+          isRecommended,
+          alerts,
+          alternateDepartureStop,
+          boardingOptions,
+          dropOffOptions,
+          estimation,
+          stops,
+          geometry);
 
   MasstransitTransportTransportThread._();
 
@@ -342,9 +380,12 @@ abstract final class MasstransitTransportTransportThread
   ///
   transport_masstransit_common.MasstransitStop? get alternateDepartureStop;
 
-  /// Recommended underground boarding options for this section.
+  /// Recommended underground or railway boarding options for this section.
   ///
   MasstransitBoardingOptions? get boardingOptions;
+
+  /// Railway drop-off options for this section.
+  MasstransitDropOffOptions get dropOffOptions;
 
   /// Time estimation for transport thread.
   ///
@@ -366,6 +407,7 @@ abstract final class MasstransitTransportTransportThread
         alerts,
         alternateDepartureStop,
         boardingOptions,
+        dropOffOptions,
         estimation,
         stops,
         geometry
@@ -381,6 +423,7 @@ abstract final class MasstransitTransportTransportThread
         alerts == other.alerts &&
         alternateDepartureStop == other.alternateDepartureStop &&
         boardingOptions == other.boardingOptions &&
+        dropOffOptions == other.dropOffOptions &&
         estimation == other.estimation &&
         stops == other.stops &&
         geometry == other.geometry;
@@ -388,6 +431,6 @@ abstract final class MasstransitTransportTransportThread
 
   @core.override
   core.String toString() {
-    return "MasstransitTransportTransportThread(thread: $thread, isRecommended: $isRecommended, alerts: $alerts, alternateDepartureStop: $alternateDepartureStop, boardingOptions: $boardingOptions, estimation: $estimation, stops: $stops, geometry: $geometry)";
+    return "MasstransitTransportTransportThread(thread: $thread, isRecommended: $isRecommended, alerts: $alerts, alternateDepartureStop: $alternateDepartureStop, boardingOptions: $boardingOptions, dropOffOptions: $dropOffOptions, estimation: $estimation, stops: $stops, geometry: $geometry)";
   }
 }

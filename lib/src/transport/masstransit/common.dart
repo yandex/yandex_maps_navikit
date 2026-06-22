@@ -468,42 +468,41 @@ abstract final class MasstransitThread extends mapkit_base_metadata.BaseMetadata
       const _MasstransitThreadFactory();
 }
 
-/// Contains information about boarding to trains.
+/// Contains information about boarding to or dropOff from trains.
 abstract final class MasstransitRailwayOptions implements ffi.Finalizable {
-  factory MasstransitRailwayOptions(core.String? boardingTrack,
-          core.String? boardingPlatform, core.bool uncertain) =>
-      MasstransitRailwayOptionsImpl(boardingTrack, boardingPlatform, uncertain);
+  factory MasstransitRailwayOptions(
+          core.String? tracks, core.String? platforms, core.bool uncertain) =>
+      MasstransitRailwayOptionsImpl(tracks, platforms, uncertain);
 
   MasstransitRailwayOptions._();
 
   /// Departure track annotation, e.g. "3 or 4 track".
   ///
-  core.String? get boardingTrack;
+  core.String? get tracks;
 
   /// Departure platform annotation, e.g. "2 platform".
   ///
-  core.String? get boardingPlatform;
+  core.String? get platforms;
 
   /// Flag of track/platform selection uncertainty to suggest user
   /// double-check it in the station.
   core.bool get uncertain;
 
   @core.override
-  core.int get hashCode =>
-      core.Object.hashAll([boardingTrack, boardingPlatform, uncertain]);
+  core.int get hashCode => core.Object.hashAll([tracks, platforms, uncertain]);
 
   @core.override
   core.bool operator ==(covariant MasstransitRailwayOptions other) {
     if (core.identical(this, other)) {
       return true;
     }
-    return boardingTrack == other.boardingTrack &&
-        boardingPlatform == other.boardingPlatform &&
+    return tracks == other.tracks &&
+        platforms == other.platforms &&
         uncertain == other.uncertain;
   }
 
   @core.override
   core.String toString() {
-    return "MasstransitRailwayOptions(boardingTrack: $boardingTrack, boardingPlatform: $boardingPlatform, uncertain: $uncertain)";
+    return "MasstransitRailwayOptions(tracks: $tracks, platforms: $platforms, uncertain: $uncertain)";
   }
 }

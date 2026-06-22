@@ -15,7 +15,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(id: "yandexmapsmobile.YandexMapsMobile", exact: "4.38.1-navikit-flutter"),
+        .package(id: "yandexmapsmobile.YandexMapsMobile", exact: ""),
     ],
     targets: [
         .target(

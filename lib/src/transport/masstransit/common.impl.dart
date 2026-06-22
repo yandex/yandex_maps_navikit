@@ -1079,19 +1079,19 @@ final ffi.Pointer<ffi.Void> Function(
         '(val) => MasstransitRailwayOptionsImpl.fromPointer(val, needFree: false)',
     platformType: 'MasstransitRailwayOptions')
 final class MasstransitRailwayOptionsImpl extends MasstransitRailwayOptions {
-  MasstransitRailwayOptionsImpl(core.String? boardingTrack,
-      core.String? boardingPlatform, core.bool uncertain)
+  MasstransitRailwayOptionsImpl(
+      core.String? tracks, core.String? platforms, core.bool uncertain)
       : this.fromNativePtr(_MasstransitRailwayOptions_init(
-            to_native.toNativePtrString(boardingTrack),
-            to_native.toNativePtrString(boardingPlatform),
+            to_native.toNativePtrString(tracks),
+            to_native.toNativePtrString(platforms),
             uncertain));
 
   @core.override
-  late final boardingTrack = to_platform.toPlatformFromPointerString(
-      _MasstransitRailwayOptions_get_boardingTrack(_ptr));
+  late final tracks = to_platform
+      .toPlatformFromPointerString(_MasstransitRailwayOptions_get_tracks(_ptr));
   @core.override
-  late final boardingPlatform = to_platform.toPlatformFromPointerString(
-      _MasstransitRailwayOptions_get_boardingPlatform(_ptr));
+  late final platforms = to_platform.toPlatformFromPointerString(
+      _MasstransitRailwayOptions_get_platforms(_ptr));
   @core.override
   late final uncertain = _MasstransitRailwayOptions_get_uncertain(_ptr);
 
@@ -1147,20 +1147,20 @@ final ffi.Pointer<ffi.Void> Function(
 
 final ffi.Pointer<ffi.Void> Function(
     ffi
-        .Pointer<ffi.Void>) _MasstransitRailwayOptions_get_boardingTrack = lib
+        .Pointer<ffi.Void>) _MasstransitRailwayOptions_get_tracks = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_transport_masstransit_MasstransitRailwayOptions_get_tracks')
+    .asFunction(isLeaf: true);
+final ffi.Pointer<ffi.Void> Function(
+    ffi
+        .Pointer<ffi.Void>) _MasstransitRailwayOptions_get_platforms = lib
     .library
     .lookup<
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_transport_masstransit_MasstransitRailwayOptions_get_boardingTrack')
-    .asFunction(isLeaf: true);
-final ffi.Pointer<ffi.Void> Function(
-    ffi.Pointer<
-        ffi.Void>) _MasstransitRailwayOptions_get_boardingPlatform = lib.library
-    .lookup<
-            ffi.NativeFunction<
-                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
-        'yandex_flutter_transport_masstransit_MasstransitRailwayOptions_get_boardingPlatform')
+        'yandex_flutter_transport_masstransit_MasstransitRailwayOptions_get_platforms')
     .asFunction(isLeaf: true);
 final core.bool Function(
     ffi

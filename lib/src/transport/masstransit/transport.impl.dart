@@ -432,6 +432,80 @@ final ffi.Pointer<ffi.Void> Function(
     .asFunction(isLeaf: true);
 
 @bindings_annotations.ContainerData(
+    toNative: 'MasstransitDropOffOptionsImpl.getNativePtr',
+    toPlatform:
+        '(val) => MasstransitDropOffOptionsImpl.fromPointer(val, needFree: false)',
+    platformType: 'MasstransitDropOffOptions')
+final class MasstransitDropOffOptionsImpl extends MasstransitDropOffOptions {
+  MasstransitDropOffOptionsImpl(
+      transport_masstransit_common.MasstransitRailwayOptions railwayOptions)
+      : this.fromNativePtr(_MasstransitDropOffOptions_init(
+            transport_masstransit_common.MasstransitRailwayOptionsImpl
+                .getNativePtr(railwayOptions)));
+
+  @core.override
+  late final railwayOptions =
+      transport_masstransit_common.MasstransitRailwayOptionsImpl.fromNativePtr(
+          _MasstransitDropOffOptions_get_railwayOptions(_ptr));
+
+  final ffi.Pointer<ffi.Void> _ptr;
+  static final _finalizer =
+      ffi.NativeFinalizer(_MasstransitDropOffOptions_free.cast());
+
+  MasstransitDropOffOptionsImpl.fromNativePtr(this._ptr) : super._() {
+    _finalizer.attach(this, _ptr);
+  }
+
+  static ffi.Pointer<ffi.Void> getNativePtr(MasstransitDropOffOptions? obj) {
+    return (obj as MasstransitDropOffOptionsImpl?)?._ptr ?? ffi.nullptr;
+  }
+
+  static MasstransitDropOffOptions? fromOptionalPtr(ffi.Pointer<ffi.Void> ptr) {
+    return ptr == ffi.nullptr
+        ? null
+        : MasstransitDropOffOptionsImpl.fromNativePtr(ptr);
+  }
+
+  static MasstransitDropOffOptions? fromPointer(ffi.Pointer<ffi.Void> ptr,
+      {core.bool needFree = true}) {
+    if (ptr == ffi.nullptr) {
+      return null;
+    }
+    final result = MasstransitDropOffOptionsImpl.fromNativePtr(
+        ptr.cast<ffi.Pointer<ffi.Void>>().value);
+
+    if (needFree) {
+      malloc.free(ptr);
+    }
+
+    return result;
+  }
+}
+
+final _MasstransitDropOffOptions_free = lib.library
+    .lookup<ffi.NativeFunction<ffi.Void Function(ffi.Void)>>(
+        'yandex_flutter_transport_masstransit_MasstransitDropOffOptions_free');
+
+final ffi.Pointer<ffi.Void> Function(
+    ffi
+        .Pointer<ffi.Void>) _MasstransitDropOffOptions_init = lib.library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_transport_masstransit_MasstransitDropOffOptions_init')
+    .asFunction(isLeaf: true);
+
+final ffi.Pointer<ffi.Void> Function(
+    ffi
+        .Pointer<ffi.Void>) _MasstransitDropOffOptions_get_railwayOptions = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_transport_masstransit_MasstransitDropOffOptions_get_railwayOptions')
+    .asFunction(isLeaf: true);
+
+@bindings_annotations.ContainerData(
     toNative: 'MasstransitTransportStopImpl.getNativePtr',
     toPlatform:
         '(val) => MasstransitTransportStopImpl.fromPointer(val, needFree: false)',
@@ -638,6 +712,7 @@ final class MasstransitTransportTransportThreadImpl
       core.List<MasstransitTransportThreadAlert> alerts,
       transport_masstransit_common.MasstransitStop? alternateDepartureStop,
       MasstransitBoardingOptions? boardingOptions,
+      MasstransitDropOffOptions dropOffOptions,
       transport_masstransit_travel_estimation.MasstransitTravelEstimation?
           estimation,
       core.List<MasstransitTransportStop> stops,
@@ -651,6 +726,7 @@ final class MasstransitTransportTransportThreadImpl
             transport_masstransit_common.MasstransitStopImpl.getNativePtr(
                 alternateDepartureStop),
             MasstransitBoardingOptionsImpl.getNativePtr(boardingOptions),
+            MasstransitDropOffOptionsImpl.getNativePtr(dropOffOptions),
             transport_masstransit_travel_estimation
                 .MasstransitTravelEstimationImpl.toPointer(estimation),
             MasstransitTransportStopContainerExtension.toNativeVector(stops),
@@ -675,6 +751,9 @@ final class MasstransitTransportTransportThreadImpl
   @core.override
   late final boardingOptions = MasstransitBoardingOptionsImpl.fromOptionalPtr(
       _MasstransitTransportTransportThread_get_boardingOptions(_ptr));
+  @core.override
+  late final dropOffOptions = MasstransitDropOffOptionsImpl.fromNativePtr(
+      _MasstransitTransportTransportThread_get_dropOffOptions(_ptr));
   @core.override
   late final estimation = transport_masstransit_travel_estimation
           .MasstransitTravelEstimationImpl
@@ -737,6 +816,7 @@ final ffi.Pointer<ffi.Void> Function(
     ffi.Pointer<ffi.Void>,
     ffi.Pointer<ffi.Void>,
     ffi.Pointer<ffi.Void>,
+    ffi.Pointer<ffi.Void>,
     ffi
         .Pointer<ffi.Void>) _MasstransitTransportTransportThread_init = lib.library
     .lookup<
@@ -744,6 +824,7 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.Pointer<ffi.Void> Function(
                     ffi.Pointer<ffi.Void>,
                     ffi.Bool,
+                    ffi.Pointer<ffi.Void>,
                     ffi.Pointer<ffi.Void>,
                     ffi.Pointer<ffi.Void>,
                     ffi.Pointer<ffi.Void>,
@@ -793,6 +874,15 @@ final ffi.Pointer<ffi.Void> Function(
             ffi.NativeFunction<
                 ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
         'yandex_flutter_transport_masstransit_Transport_MasstransitTransportTransportThread_get_boardingOptions')
+    .asFunction(isLeaf: true);
+final ffi.Pointer<ffi.Void> Function(
+    ffi.Pointer<
+        ffi.Void>) _MasstransitTransportTransportThread_get_dropOffOptions = lib
+    .library
+    .lookup<
+            ffi.NativeFunction<
+                ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>)>>(
+        'yandex_flutter_transport_masstransit_Transport_MasstransitTransportTransportThread_get_dropOffOptions')
     .asFunction(isLeaf: true);
 final ffi.Pointer<ffi.Void> Function(
     ffi.Pointer<

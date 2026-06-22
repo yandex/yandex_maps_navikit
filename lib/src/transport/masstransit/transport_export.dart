@@ -6,6 +6,7 @@ export 'package:yandex_maps_navikit/src/transport/masstransit/transport.dart'
         MasstransitTransportStopContainerExtension,
         MasstransitTransportImpl,
         MasstransitBoardingOptionsBoardingAreaContainerExtension,
+        MasstransitDropOffOptionsImpl,
         MasstransitTransportThreadAlertClosedUntilNative,
         MasstransitTransportThreadAlertLastTripContainerExtension,
         MasstransitTransportThreadAlertClosedUntilContainerExtension,
@@ -15,6 +16,7 @@ export 'package:yandex_maps_navikit/src/transport/masstransit/transport.dart'
         MasstransitBoardingOptionsImpl,
         MasstransitBoardingOptionsBoardingAreaImpl,
         MasstransitBoardingOptionsContainerExtension,
+        MasstransitDropOffOptionsContainerExtension,
         MasstransitTransportThreadAlertContainerExtension,
         MasstransitTransportThreadAlertNative,
         MasstransitTransportThreadAlertLastTripNative;
