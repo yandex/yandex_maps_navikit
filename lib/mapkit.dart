@@ -142,6 +142,8 @@ export 'package:yandex_maps_navikit/src/mapkit/geometry/geo/polyline_utils_expor
 export 'package:yandex_maps_navikit/src/mapkit/geometry/geo/projection_export.dart';
 export 'package:yandex_maps_navikit/src/mapkit/geometry/geo/xy_point_export.dart';
 export 'package:yandex_maps_navikit/src/mapkit/geometry/geo/polyline_index_export.dart';
+export 'package:yandex_maps_navikit/src/mapkit/address_book/address_book_manager_export.dart';
+export 'package:yandex_maps_navikit/src/mapkit/address_book/address_book_export.dart';
 export 'package:yandex_maps_navikit/src/mapkit/uri/uri_object_metadata_export.dart';
 export 'package:yandex_maps_navikit/src/mapkit/indoor/indoor_state_listener_export.dart';
 export 'package:yandex_maps_navikit/src/mapkit/indoor/indoor_plan_export.dart';

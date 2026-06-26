@@ -7,6 +7,7 @@ export 'package:yandex_maps_navikit/src/runtime/vulkan_launcher/vulkan_launcher_
 export 'package:yandex_maps_navikit/src/runtime/sensors/internal/gnss_measurements_export.dart';
 export 'package:yandex_maps_navikit/src/runtime/connectivity/connectivity_status_export.dart';
 export 'package:yandex_maps_navikit/src/runtime/config/ui_experiment_export.dart';
+export 'package:yandex_maps_navikit/src/runtime/auth/account_export.dart';
 export 'package:yandex_maps_navikit/src/runtime/network/errors_export.dart';
 export 'package:yandex_maps_navikit/src/runtime/attestation_storage/internal/attestation_listener_export.dart';
 export 'package:yandex_maps_navikit/src/runtime/attestation_storage/internal/platform_keystore_export.dart';

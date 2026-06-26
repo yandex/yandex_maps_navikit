@@ -80,6 +80,12 @@ class MapKitImpl implements MapKit, ffi.Finalizable {
     exception.checkCallResult();
   }
 
+  void setAccount(runtime_auth_account.Account? account) {
+    _MapKit_setAccount(
+        ptr, runtime_auth_account.AccountImpl.getNativePtr(account));
+    exception.checkCallResult();
+  }
+
   void setLocationManager(
       mapkit_location_location_manager.LocationManager locationManager) {
     _MapKit_setLocationManager(
@@ -253,6 +259,14 @@ final void Function(ffi.Pointer<ffi.Void>, native_types.NativeString)
                     ffi.Void Function(
                         ffi.Pointer<ffi.Void>, native_types.NativeString)>>(
             'yandex_flutter_mapkit_MapKit_setUserId')
+        .asFunction();
+final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
+    _MapKit_setAccount = lib.library
+        .lookup<
+                ffi.NativeFunction<
+                    ffi.Void Function(
+                        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>(
+            'yandex_flutter_mapkit_MapKit_setAccount')
         .asFunction();
 final void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)
     _MapKit_setLocationManager = lib.library

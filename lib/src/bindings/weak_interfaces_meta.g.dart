@@ -4,6 +4,8 @@ import 'package:yandex_maps_navikit/src/directions/directions.dart'
     as directions;
 import 'package:yandex_maps_navikit/src/directions/driving/driving_router.dart'
     as directions;
+import 'package:yandex_maps_navikit/src/mapkit/address_book/address_book_manager.dart'
+    as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/geometry/geo/projection.dart'
     as mapkit;
 import 'package:yandex_maps_navikit/src/mapkit/layers/data_source.dart'
@@ -118,6 +120,8 @@ const weakInterfacesMeta = {
   'directions.driving.TooComplexAvoidedZonesError':
       directions.DrivingTooComplexAvoidedZonesErrorImpl.fromNativePtrImpl,
   'mapkit.MapKit': mapkit.MapKitImpl.fromNativePtrImpl,
+  'mapkit.address_book.AddressBookManager':
+      mapkit.AddressBookManagerImpl.fromNativePtrImpl,
   'mapkit.geometry.geo.Projection': mapkit.ProjectionImpl.fromNativePtrImpl,
   'mapkit.layers.BaseDataSource': mapkit.BaseDataSourceImpl.fromNativePtrImpl,
   'mapkit.layers.DataSource': mapkit.DataSourceImpl.fromNativePtrImpl,

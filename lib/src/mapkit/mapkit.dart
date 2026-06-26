@@ -40,6 +40,8 @@ import 'package:yandex_maps_navikit/src/mapkit/traffic/traffic_layer.dart'
     as mapkit_traffic_traffic_layer;
 import 'package:yandex_maps_navikit/src/mapkit/user_location/user_location.dart'
     as mapkit_user_location_user_location;
+import 'package:yandex_maps_navikit/src/runtime/auth/account.dart'
+    as runtime_auth_account;
 
 part 'mapkit.containers.dart';
 part 'mapkit.impl.dart';
@@ -75,6 +77,13 @@ abstract class MapKit implements ffi.Finalizable {
   ///
   /// [id] User id is your own identifier for all mapkit requests
   void setUserId(core.String id);
+
+  /// Sets the account that is used by services. Use this method before
+  /// onStart to avoid double request to server
+  ///
+  /// The class maintains a strong reference to the object in
+  /// the 'account' parameter until it (the class) is invalidated.
+  void setAccount(runtime_auth_account.Account? account);
 
   /// Sets single global location manager that is used by every module in
   /// MapKit by default. The provided location manager must have async
