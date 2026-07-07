@@ -213,6 +213,7 @@ enum SpeakerPhraseToken {
   LaneLocative,
 
   /// Speed limits & camera
+  SpeedLimitAhead,
   SpeedCamera,
   SpeedLimitCamera,
   LaneCamera,
